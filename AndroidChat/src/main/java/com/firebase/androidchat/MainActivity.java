@@ -80,7 +80,7 @@ public class MainActivity extends ListActivity {
         // Tell our list adapter that we only want 50 messages at a time
 
 
-        
+
         mChatListAdapter = new ChatListAdapter(mFirebaseRef.limit(50), this, R.layout.chat_message, mUsername);
 
         listView.setAdapter(mChatListAdapter);
