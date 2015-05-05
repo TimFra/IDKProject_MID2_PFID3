@@ -1,1 +1,1 @@
-include ':app', 'AndroidChat'
+include 'AndroidChat', 'AndroidDraw'
