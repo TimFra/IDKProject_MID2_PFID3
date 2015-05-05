@@ -39,7 +39,7 @@ public class MainActivity extends ListActivity {
         // Make sure we have a mUsername
         setupUsername();
 
-        setTitle("Chatting as " + mUsername);
+        setTitle("Guessing as user: " + mUsername);
 
         // Setup our Firebase mFirebaseRef
         mFirebaseRef = new Firebase(FIREBASE_URL).child("chat");
@@ -136,7 +136,7 @@ public class MainActivity extends ListActivity {
         if (mUsername == null) {
             Random r = new Random();
             // Assign a random user name if we don't have one saved.
-            mUsername = "JavaUser" + r.nextInt(100000);
+            mUsername = "Guesser" + r.nextInt(100000);
             prefs.edit().putString("username", mUsername).commit();
         }
     }
@@ -148,7 +148,11 @@ public class MainActivity extends ListActivity {
             // Create our 'model', a Chat object
             Chat chat = new Chat(input, mUsername);
             // Create a new, auto-generated child of that chat location, and save our chat data there
+
+
+            // If guess is correct
             if(storedWord.equals(input)) {
+
                 Toast.makeText(MainActivity.this, "Win!", Toast.LENGTH_SHORT).show();
             }
             mFirebaseRef.push().setValue(chat);
