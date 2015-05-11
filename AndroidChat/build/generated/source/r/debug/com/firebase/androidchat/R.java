@@ -15,7 +15,8 @@ public final class R {
         public static final int activity_vertical_margin=0x7f040001;
     }
     public static final class drawable {
-        public static final int firebase_logo=0x7f020000;
+        public static final int ds_icon=0x7f020000;
+        public static final int firebase_logo=0x7f020001;
     }
     public static final class id {
         public static final int author=0x7f070003;
@@ -32,15 +33,7 @@ public final class R {
         public static final int app_name=0x7f050000;
     }
     public static final class style {
-        /** 
-            Theme customizations available in newer API levels can go in
-            res/values-vXX/styles.xml, while customizations related to
-            backward-compatibility can go here.
-        
-         */
-        public static final int AppBaseTheme=0x7f060000;
-        /**  All customizations that are NOT specific to a particular API-level can go here. 
-         */
-        public static final int AppTheme=0x7f060001;
+        public static final int AppTheme=0x7f060000;
+        public static final int MyActionBarColor=0x7f060001;
     }
 }

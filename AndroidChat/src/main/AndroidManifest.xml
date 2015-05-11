@@ -7,7 +7,7 @@
     <application
         android:name="com.firebase.androidchat.ChatApplication"
         android:allowBackup="true"
-        android:icon="@drawable/firebase_logo"
+        android:icon="@drawable/ds_icon"
         android:label="@string/app_name"
         android:theme="@style/AppTheme">
         <activity
