@@ -7,6 +7,7 @@ bin/
 gen/
 .idea/workspace.xml
 .idea/tasks.xml
+.idea/misc.xml
 # and these sensitive or high-churn files:
 .idea/dataSources.ids
 .idea/dataSources.xml
