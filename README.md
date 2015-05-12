@@ -12,3 +12,4 @@ Anton Örnberg | *Github Master* | ![Github-Master](https://fbcdn-profile-a.akam
 Tim Franzén | *Github Assistant* | ![SideShow Tim](https://pbs.twimg.com/profile_images/1030660658/sideshow_large_normal.jpg "SideShow Tim")
 Oliver Nilsson | Github Assistant |![Kappa](https://lh3.googleusercontent.com/-fKGcb8OtqEg/AAAAAAAAAAI/AAAAAAAAAC4/okPPXnDNLp4/photo.jpg?sz=50 "Kappa")
 
+Here is a link to our public panel java code: https://github.com/olivernilsson/publicScreen
