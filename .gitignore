@@ -5,7 +5,13 @@
 # Generated files
 bin/
 gen/
-.idea/
+.idea/workspace.xml
+.idea/tasks.xml
+# and these sensitive or high-churn files:
+.idea/dataSources.ids
+.idea/dataSources.xml
+.idea/sqlDataSources.xml
+.idea/dynamic.xml
 
 # Gradle files
 .gradle/
