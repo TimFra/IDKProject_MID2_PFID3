@@ -2,10 +2,9 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/AndroidChat/AndroidChat.iml" filepath="$PROJECT_DIR$/AndroidChat/AndroidChat.iml" />
       <module fileurl="file://$PROJECT_DIR$/AndroidDraw/AndroidDraw.iml" filepath="$PROJECT_DIR$/AndroidDraw/AndroidDraw.iml" />
       <module fileurl="file://$PROJECT_DIR$/DrawSomething_Test.iml" filepath="$PROJECT_DIR$/DrawSomething_Test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/IDKProject_MID2_PFID3_.iml" filepath="$PROJECT_DIR$/IDKProject_MID2_PFID3_.iml" />
     </modules>
   </component>
 </project>
-
