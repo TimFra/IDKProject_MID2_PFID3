@@ -1,6 +1,5 @@
 package com.drawstuff.mah.drawstuff.Chat;
 
-import android.app.Activity;
 import android.graphics.Color;
 import android.view.View;
 import android.widget.TextView;
