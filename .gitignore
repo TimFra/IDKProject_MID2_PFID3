@@ -5,6 +5,7 @@
 # Generated files
 bin/
 gen/
+.idea/
 
 # Gradle files
 .gradle/
