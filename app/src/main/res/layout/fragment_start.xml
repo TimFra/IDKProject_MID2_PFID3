@@ -5,21 +5,36 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     android:paddingBottom="@dimen/activity_vertical_margin" tools:context=".Main">
 
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/imageView"
+        android:src="@drawable/start_layout"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_above="@+id/drawBtn" />
+
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/drawBtn"
         android:id="@+id/drawBtn"
+        android:background="#ffffffff"
+        android:textColor="#049a95"
         android:layout_centerVertical="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="41dp" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/guessBtn"
         android:id="@+id/guessBtn"
-        android:layout_alignTop="@+id/drawBtn"
-        android:layout_alignParentEnd="true" />
+        android:background="#ffffffff"
+        android:textColor="#049a95"
+        android:layout_below="@+id/imageView"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="45dp" />
 
     <EditText
         android:layout_width="match_parent"
