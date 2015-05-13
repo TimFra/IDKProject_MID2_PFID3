@@ -6,7 +6,7 @@
 ### Members
 Member | Role | A.k.a
 --- | --- | --- | --- |
-Amanda Lundius Mörck | *Scrum Master* | ![*SCRUM MASTER*](https://i.imgur.com/4RU2aC6.jpg "Dear Leader")
+Amanda Lundius Mörck | *Scrum Master* | ![*SCRUM MASTER*](https://i.imgur.com/gzkGvrV.jpg "Dear Leader")
 Christian Blom | *Wiki Master* | !["Griffin"](http://eksploratorzy.com.pl/download/file.php?avatar=2834_1391031207.png "Griffin")
 Nellie Östergaard | *Wiki Assistant* | ![*Power Nellie*](http://www.marheavenj.net/milly/collective/joined/bubbles.gif "Power Nellie!!")
 Viktoria Karlsson | *Wiki Assistant* | ![*Power Vickan*](http://images2.fanpop.com/image/category/www/19169_50_50.jpg "Power Vickan!!")
