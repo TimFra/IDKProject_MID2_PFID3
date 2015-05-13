@@ -1,6 +1,8 @@
 package com.drawstuff.mah.drawstuff.Chat;
 
 
+import android.app.FragmentManager;
+import android.app.FragmentTransaction;
 import android.app.ListFragment;
 import android.content.SharedPreferences;
 import android.database.DataSetObserver;
@@ -17,6 +19,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.drawstuff.mah.drawstuff.Constants.Constants;
+import com.drawstuff.mah.drawstuff.EndScreen;
 import com.drawstuff.mah.drawstuff.R;
 import com.firebase.client.DataSnapshot;
 import com.firebase.client.Firebase;
@@ -168,7 +171,18 @@ public class ChatFragment extends ListFragment {
             if(storedWord.equals(input)) {
 
 
-                Toast.makeText(getActivity(), "Win!", Toast.LENGTH_SHORT).show();
+                Firebase gameStateFirebase = new Firebase(Constants.FIREBASE_URL).child("gameState");
+                gameStateFirebase.setValue(mUsername);
+
+                Toast.makeText(getActivity(), "Winner: " + mUsername, Toast.LENGTH_SHORT).show();
+
+                FragmentManager fm = getFragmentManager();
+                FragmentTransaction ft = fm.beginTransaction();
+                EndScreen es = new EndScreen();
+                ft.replace(R.id.main_activity_container,es);
+                ft.commit();
+
+
             }
             mFirebaseRef.push().setValue(chat);
             inputText.setText("");

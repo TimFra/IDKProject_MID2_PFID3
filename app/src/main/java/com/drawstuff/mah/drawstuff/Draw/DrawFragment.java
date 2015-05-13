@@ -1,22 +1,29 @@
 package com.drawstuff.mah.drawstuff.Draw;
 
 
+import android.app.FragmentManager;
+import android.app.FragmentTransaction;
 import android.os.Bundle;
 import android.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.drawstuff.mah.drawstuff.Constants.Constants;
+import com.drawstuff.mah.drawstuff.EndScreen;
 import com.drawstuff.mah.drawstuff.R;
 import com.firebase.client.DataSnapshot;
 import com.firebase.client.Firebase;
 import com.firebase.client.FirebaseError;
 import com.firebase.client.ValueEventListener;
+
+import org.w3c.dom.Text;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -31,14 +38,20 @@ public class DrawFragment extends Fragment implements ColorPickerDialog.OnColorC
     private DrawingView mDrawingView;
     private Firebase mFirebaseRef;
     private ValueEventListener mConnectedListener;
-
+    private Firebase word;
+    private Firebase setWin;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         super.onCreate(savedInstanceState);
+
+
+
+
         mFirebaseRef = new Firebase(Constants.FIREBASE_URL).child("draw");
         mDrawingView = new DrawingView(getActivity(), mFirebaseRef);
+        word = new Firebase(Constants.FIREBASE_URL);
 
 
         // Vi vill att den ska
@@ -57,6 +70,7 @@ public class DrawFragment extends Fragment implements ColorPickerDialog.OnColorC
     public void onStart() {
         super.onStart();
         // Set up a notification to let us know when we're connected or disconnected from the Firebase servers
+
         mConnectedListener = mFirebaseRef.getRoot().child(".info/connected").addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
@@ -73,6 +87,7 @@ public class DrawFragment extends Fragment implements ColorPickerDialog.OnColorC
                 // No-op
             }
         });
+        displayWord();
     }
 
     @Override
@@ -99,6 +114,65 @@ public class DrawFragment extends Fragment implements ColorPickerDialog.OnColorC
     @Override
     public void colorChanged(int newColor) {
         mDrawingView.setColor(newColor);
+    }
+
+
+    public void displayWord(){
+
+
+
+        setWin = new Firebase(Constants.FIREBASE_URL).child("gameInProgress");
+        setWin.getRoot().addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                Iterable<DataSnapshot> dsList = dataSnapshot.getChildren();
+                for(DataSnapshot snapshot : dsList) {
+
+                    if(snapshot.getValue().equals("true")){
+
+                        FragmentManager fm = getFragmentManager();
+                        FragmentTransaction ft = fm.beginTransaction();
+                        EndScreen es = new EndScreen();
+                        ft.replace(R.id.main_activity_container,es);
+                        ft.commit();
+                    }
+
+                }
+
+
+            }
+
+            @Override
+            public void onCancelled(FirebaseError firebaseError) {
+
+            }
+        });
+
+        word.getRoot().addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+
+                Iterable<DataSnapshot> dsList = dataSnapshot.getChildren();
+                for (DataSnapshot snapshot : dsList) {
+                    if (snapshot.getKey().equals("selectedword")) {
+                       // for (int i = 0; i < 10; i++) {
+                            Toast.makeText(getActivity(), snapshot.getValue().toString(), Toast.LENGTH_LONG).show();
+                      //  }
+
+                    }
+                }
+
+            }
+
+            @Override
+            public void onCancelled(FirebaseError firebaseError) {
+
+            }
+        });
+
+
+
+
     }
 }
 
