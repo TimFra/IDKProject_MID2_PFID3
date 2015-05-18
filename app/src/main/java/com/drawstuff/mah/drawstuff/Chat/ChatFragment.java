@@ -55,7 +55,6 @@ public class ChatFragment extends ListFragment {
         setupUsername();
 
 
-
         final EditText inputText = (EditText) v.findViewById(R.id.messageInput);
         inputText.setOnEditorActionListener(new TextView.OnEditorActionListener() {
             @Override
@@ -90,7 +89,6 @@ public class ChatFragment extends ListFragment {
         // Setup our view and list adapter. Ensure it scrolls to the bottom as data changes
         final ListView listView = getListView();
         // Tell our list adapter that we only want 50 messages at a time
-
 
 
         mChatListAdapter = new ChatListAdapter(mFirebaseRef.limit(50), this, R.layout.chat_message, mUsername);
@@ -172,7 +170,7 @@ public class ChatFragment extends ListFragment {
 
             mFirebaseRef.push().setValue(chat);
             inputText.setText("");
-            if(storedWord.equals(input)) {
+            if (storedWord.equals(input)) {
 
                 // What happens when you win
                 Firebase gameStateFirebase = new Firebase(Constants.FIREBASE_URL).child("roundWinner");
@@ -181,15 +179,28 @@ public class ChatFragment extends ListFragment {
                 // Toast.makeText(getActivity(), "Winner: " + mUsername, Toast.LENGTH_SHORT).show();
                 mFirebaseRef.push().setValue(winMsg);
 
+                final Firebase firebaseChecker = new Firebase(Constants.FIREBASE_URL).child("gameInProgress");
+                firebaseChecker.addListenerForSingleValueEvent(new ValueEventListener() {
+
+                    @Override
+                    public void onDataChange(DataSnapshot dataSnapshot) {
+                        firebaseChecker.setValue("false");
+                    }
+
+                    @Override
+                    public void onCancelled(FirebaseError firebaseError) {
+
+                    }
+                });
+
             }
+
 
         }
 
 
     }
-
-
-
 }
+
 
 
