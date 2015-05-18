@@ -76,6 +76,7 @@ public class DrawFragment extends Fragment implements ColorPickerDialog.OnColorC
             @Override
             public void onCancelled(FirebaseError firebaseError) {
                 Toast.makeText(getActivity(), "Check your internet connection", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getActivity(), "Disconnected from Firebase", Toast.LENGTH_SHORT).show();
             }
         });
         displayWord();
