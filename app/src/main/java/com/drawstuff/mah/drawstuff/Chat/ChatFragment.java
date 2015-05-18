@@ -161,24 +161,26 @@ public class ChatFragment extends ListFragment {
     private void sendMessage() {
         EditText inputText = (EditText) getView().findViewById(R.id.messageInput);
         String input = inputText.getText().toString();
+        String win = "---- Winner is: " + mUsername + " ----";
         if (!input.equals("")) {
             // Create our 'model', a Chat object
             Chat chat = new Chat(input, mUsername);
             // Create a new, auto-generated child of that chat location, and save our chat data there
-
+            Chat winMsg = new Chat(win, "*** Game ");
 
             // If guess is correct
+
+            mFirebaseRef.push().setValue(chat);
+            inputText.setText("");
             if(storedWord.equals(input)) {
 
                 // What happens when you win
                 Firebase gameStateFirebase = new Firebase(Constants.FIREBASE_URL).child("roundWinner");
                 gameStateFirebase.setValue(mUsername);
 
-               // Toast.makeText(getActivity(), "Winner: " + mUsername, Toast.LENGTH_SHORT).show();
-                mFirebaseRef.push().setValue("------ Winner is:" +  mUsername+ " ------");
+                // Toast.makeText(getActivity(), "Winner: " + mUsername, Toast.LENGTH_SHORT).show();
+                mFirebaseRef.push().setValue(winMsg);
             }
-            mFirebaseRef.push().setValue(chat);
-            inputText.setText("");
 
         }
 

@@ -1,6 +1,6 @@
 package com.drawstuff.mah.drawstuff.Chat;
 
-import android.app.Activity;
+
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -137,6 +137,8 @@ public abstract class FirebaseListAdapter<T> extends BaseAdapter {
 
         });
     }
+
+
 
     public void cleanup() {
         // We're being destroyed, let go of our mListener and forget about all of the mModels
