@@ -78,23 +78,7 @@ public class StartFragment extends Fragment {
 
     }
 
-    public String winCheck(){
 
-
-        firebaseChecker.getRoot().addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(DataSnapshot dataSnapshot) {
-                checked = dataSnapshot.getValue().toString();
-            }
-
-            @Override
-            public void onCancelled(FirebaseError firebaseError) {
-
-            }
-        });
-
-        return checked;
-    }
 
 
 }
