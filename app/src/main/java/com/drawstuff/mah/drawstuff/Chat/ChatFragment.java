@@ -170,7 +170,7 @@ public class ChatFragment extends ListFragment {
             // If guess is correct
             if(storedWord.equals(input)) {
 
-
+                // What happens when you win
                 Firebase gameStateFirebase = new Firebase(Constants.FIREBASE_URL).child("gameState");
                 gameStateFirebase.setValue(mUsername);
 
