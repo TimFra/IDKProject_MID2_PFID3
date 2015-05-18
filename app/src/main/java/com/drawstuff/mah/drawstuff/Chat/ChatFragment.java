@@ -180,6 +180,7 @@ public class ChatFragment extends ListFragment {
 
                 // Toast.makeText(getActivity(), "Winner: " + mUsername, Toast.LENGTH_SHORT).show();
                 mFirebaseRef.push().setValue(winMsg);
+
             }
 
         }

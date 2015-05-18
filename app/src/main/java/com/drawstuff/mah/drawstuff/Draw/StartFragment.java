@@ -10,6 +10,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.drawstuff.mah.drawstuff.Chat.ChatFragment;
 import com.drawstuff.mah.drawstuff.Constants.Constants;
@@ -43,14 +44,34 @@ public class StartFragment extends Fragment {
 
             @Override
             public void onClick(View v) {
-//                if (winCheck().equals("false")) {
-                    FragmentManager fm = getFragmentManager();
-                    FragmentTransaction ft = fm.beginTransaction();
-                    DrawFragment df = new DrawFragment();
+
+                firebaseChecker.addListenerForSingleValueEvent(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(DataSnapshot dataSnapshot) {
+                        if (dataSnapshot.getValue().toString().equals("false")) {
+                            FragmentManager fm = getFragmentManager();
+                            FragmentTransaction ft = fm.beginTransaction();
+                            DrawFragment df = new DrawFragment();
+                            firebaseChecker.setValue("true");
+
+                            ft.replace(R.id.main_activity_container, df);
+                            ft.commit();
 
 
-                    ft.replace(R.id.main_activity_container, df);
-                    ft.commit();
+                             } else if (dataSnapshot.getValue().toString().equals("true")) {
+                               Toast.makeText(getActivity(), "There is already someone drawing.", Toast.LENGTH_SHORT).show();
+                            //  }
+
+                        }
+                    }
+
+                    @Override
+                    public void onCancelled(FirebaseError firebaseError) {
+
+                    }
+                });
+
+
 
                // }
             }
