@@ -171,18 +171,11 @@ public class ChatFragment extends ListFragment {
             if(storedWord.equals(input)) {
 
                 // What happens when you win
-                Firebase gameStateFirebase = new Firebase(Constants.FIREBASE_URL).child("gameState");
+                Firebase gameStateFirebase = new Firebase(Constants.FIREBASE_URL).child("roundWinner");
                 gameStateFirebase.setValue(mUsername);
 
-                Toast.makeText(getActivity(), "Winner: " + mUsername, Toast.LENGTH_SHORT).show();
-
-                FragmentManager fm = getFragmentManager();
-                FragmentTransaction ft = fm.beginTransaction();
-                EndScreen es = new EndScreen();
-                ft.replace(R.id.main_activity_container,es);
-                ft.commit();
-
-
+               // Toast.makeText(getActivity(), "Winner: " + mUsername, Toast.LENGTH_SHORT).show();
+                mFirebaseRef.push().setValue("------ Winner is:" +  mUsername+ " ------");
             }
             mFirebaseRef.push().setValue(chat);
             inputText.setText("");

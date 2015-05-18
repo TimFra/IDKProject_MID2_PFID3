@@ -76,7 +76,7 @@ public class DrawFragment extends Fragment implements ColorPickerDialog.OnColorC
             @Override
             public void onCancelled(FirebaseError firebaseError) {
                 Toast.makeText(getActivity(), "Check your internet connection", Toast.LENGTH_SHORT).show();
-                
+
             }
         });
         displayWord();
@@ -112,7 +112,7 @@ public class DrawFragment extends Fragment implements ColorPickerDialog.OnColorC
     public void displayWord(){
 
 
-
+        /// win check
         setWin = new Firebase(Constants.FIREBASE_URL).child("gameInProgress");
         setWin.getRoot().addValueEventListener(new ValueEventListener() {
             @Override
@@ -120,7 +120,7 @@ public class DrawFragment extends Fragment implements ColorPickerDialog.OnColorC
                 Iterable<DataSnapshot> dsList = dataSnapshot.getChildren();
                 for(DataSnapshot snapshot : dsList) {
 
-                    if(snapshot.getValue().equals("true")){
+                    if(snapshot.getValue().equals("false")){
 
                         FragmentManager fm = getFragmentManager();
                         FragmentTransaction ft = fm.beginTransaction();
