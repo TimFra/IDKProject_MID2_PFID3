@@ -52,15 +52,6 @@ public class DrawFragment extends Fragment implements ColorPickerDialog.OnColorC
         mFirebaseRef = new Firebase(Constants.FIREBASE_URL).child("draw");
         mDrawingView = new DrawingView(getActivity(), mFirebaseRef);
         word = new Firebase(Constants.FIREBASE_URL);
-
-
-        // Vi vill att den ska
-        // setContentView(mDrawingView)
-        // vilket inte gr i ett fragment, hur gr vi?
-
-
-        //return inflater.inflate(R.layout.fragment_draw, container, false);
-        //Just return the view.........
         return mDrawingView;
     }
 
@@ -84,7 +75,7 @@ public class DrawFragment extends Fragment implements ColorPickerDialog.OnColorC
 
             @Override
             public void onCancelled(FirebaseError firebaseError) {
-                // No-op
+                Toast.makeText(getActivity(), "Check your internet connection", Toast.LENGTH_SHORT).show();
             }
         });
         displayWord();
