@@ -18,6 +18,9 @@ import java.util.List;
 import java.util.Set;
 
 /**
+ * The drawing-part of our application should be accredited properly.
+ * TODO: Reference code to the rightful owner before product release. Add a link to the persons Github-repository.
+ *
  * @author greg
  * @since 6/26/13
  */
@@ -98,6 +101,9 @@ public class DrawingView extends View {
         mBitmapPaint = new Paint(Paint.DITHER_FLAG);
     }
 
+    /**
+     * TODO: Implement a cleanup function in the database. This is a low priority item as of 19/05/2015.
+     */
     public void cleanup() {
         mFirebaseRef.removeEventListener(mListener);
     }
