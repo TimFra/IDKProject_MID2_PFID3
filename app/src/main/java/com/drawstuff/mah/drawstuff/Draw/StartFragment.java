@@ -92,7 +92,7 @@ public class StartFragment extends Fragment {
                 FragmentManager fm = getFragmentManager();
                 FragmentTransaction ft = fm.beginTransaction();
                 ChatFragment cf = new ChatFragment();
-
+                ft.addToBackStack(null);
 
                 ft.replace(R.id.main_activity_container,cf);
                 ft.commit();

@@ -37,7 +37,7 @@ public class Main extends Activity {
 
             FragmentManager fm = getFragmentManager();
             FragmentTransaction ft = fm.beginTransaction(); //Start adding the fragment by getting the manager for handling this
-           SplashFragment sf = new SplashFragment(); //Creates splashscreen
+            SplashFragment sf = new SplashFragment(); //Creates splashscreen
             ft.add(R.id.main_activity_container, sf); //And add it to the manager
             ft.commit(); //OK go ahead do your transaction nothing really happens until here
         }
