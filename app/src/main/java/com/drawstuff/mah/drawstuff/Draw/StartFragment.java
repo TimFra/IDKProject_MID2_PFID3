@@ -56,11 +56,10 @@ public class StartFragment extends Fragment {
                             DrawFragment df = new DrawFragment();
                             firebaseChecker.setValue("true");
                             clearDraw.removeValue();
-
+                            ft.addToBackStack(null);
                             ft.replace(R.id.main_activity_container, df);
                             ft.commit();
-
-
+                            
                              } else if (dataSnapshot.getValue().toString().equals("true")) {
                                Toast.makeText(getActivity(), "There is already someone drawing.", Toast.LENGTH_SHORT).show();
                             //  }
