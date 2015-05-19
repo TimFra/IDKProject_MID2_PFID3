@@ -1,11 +1,15 @@
 package com.drawstuff.mah.drawstuff;
 
+import android.app.ActionBar;
 import android.app.Activity;
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.view.Window;
 
 import com.drawstuff.mah.drawstuff.Constants.Constants;
 import com.drawstuff.mah.drawstuff.Draw.DrawingView;
@@ -20,18 +24,26 @@ public class Main extends Activity {
     //final View drawView = (View) mDrawingView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
+        getWindow().requestFeature(Window.FEATURE_ACTION_BAR);
+
+        getActionBar().hide();
         setContentView(R.layout.activity_main);  //This is empty to makr place for fragments
+
         //So put in the startfragment
         Firebase.setAndroidContext(this);
         if (savedInstanceState == null) {  //If savedInstanceState not is null then we already have the activity fx if we were interupted by a phonecall and  b
+
             FragmentManager fm = getFragmentManager();
             FragmentTransaction ft = fm.beginTransaction(); //Start adding the fragment by getting the manager for handling this
-            StartFragment sf = new StartFragment(); //Create the fragment
+           SplashFragment sf = new SplashFragment(); //Creates splashscreen
             ft.add(R.id.main_activity_container, sf); //And add it to the manager
             ft.commit(); //OK go ahead do your transaction nothing really happens until here
         }
     }
+
+
 
 
     @Override
@@ -48,6 +60,7 @@ public class Main extends Activity {
         // Handle action bar item clicks here. The action bar will
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
+
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
