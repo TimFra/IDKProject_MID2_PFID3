@@ -28,7 +28,8 @@
             android:layout_weight="1"
             android:inputType="textShortMessage"
             android:lines="1"
-            android:singleLine="true" />
+            android:singleLine="true"
+            android:textColor="#ffffffff" />
 
         <ImageButton
             android:id="@+id/sendButton"

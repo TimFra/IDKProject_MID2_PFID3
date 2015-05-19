@@ -44,6 +44,7 @@ public class SplashFragment extends Fragment {
 
             }
             public void onFinish() {
+                getActivity().getActionBar().show();
                 FragmentManager fm = getFragmentManager();
                 FragmentTransaction ft = fm.beginTransaction(); //Start adding the fragment by getting the manager for handling this
                 StartFragment sf = new StartFragment(); //Creates splashscreen
