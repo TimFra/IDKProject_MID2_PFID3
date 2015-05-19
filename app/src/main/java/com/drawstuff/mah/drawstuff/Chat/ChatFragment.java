@@ -158,7 +158,7 @@ public class ChatFragment extends ListFragment {
 
     private void sendMessage() {
         EditText inputText = (EditText) getView().findViewById(R.id.messageInput);
-        String input = inputText.getText().toString();
+        String input = inputText.getText().toString().toLowerCase();
         String win = "---- Winner is: " + mUsername + " ----";
         if (!input.equals("")) {
             // Create our 'model', a Chat object

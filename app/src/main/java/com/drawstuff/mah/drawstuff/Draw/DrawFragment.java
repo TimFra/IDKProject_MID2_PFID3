@@ -22,6 +22,7 @@ import com.firebase.client.DataSnapshot;
 import com.firebase.client.Firebase;
 import com.firebase.client.FirebaseError;
 import com.firebase.client.ValueEventListener;
+import com.firebase.client.core.Context;
 
 import org.w3c.dom.Text;
 
@@ -122,16 +123,18 @@ public class DrawFragment extends Fragment implements ColorPickerDialog.OnColorC
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 Iterable<DataSnapshot> dsList = dataSnapshot.getChildren();
-                for(DataSnapshot snapshot : dsList) {
-                        String gameInProgress;
-                        gameInProgress = snapshot.getValue().toString();
+                for (DataSnapshot snapshot : dsList) {
+                    String gameInProgress;
+                    gameInProgress = snapshot.getValue().toString();
 
-                    if(gameInProgress.equals("false")){
-                      //  Toast.makeText(getActivity(), "Someone guessed your word!", Toast.LENGTH_LONG).show();
+                    if (gameInProgress.equals("false")) {
+                        Log.i("asdf", snapshot.getValue().toString());
+                        Toast.makeText(getActivity(), "Someone guessed your word!", Toast.LENGTH_LONG).show();
                         FragmentManager fm = getActivity().getFragmentManager();
                         FragmentTransaction ft = fm.beginTransaction();
                         StartFragment sf = new StartFragment();
-                        ft.replace(R.id.main_activity_container,sf);
+                        ft.replace(R.id.main_activity_container, sf);
+                        Log.i("asdf", snapshot.getValue().toString()+"-- 2nd");
                         ft.commit();
                     }
 
@@ -142,7 +145,7 @@ public class DrawFragment extends Fragment implements ColorPickerDialog.OnColorC
 
             @Override
             public void onCancelled(FirebaseError firebaseError) {
-            //TODO: Add a toast or message if the user experience an error in regard to trying to become a drawer.
+                //TODO: Add a toast or message if the user experience an error in regard to trying to become a drawer.
             }
         });
 
