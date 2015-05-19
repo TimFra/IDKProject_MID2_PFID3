@@ -41,6 +41,7 @@ public class DrawFragment extends Fragment implements ColorPickerDialog.OnColorC
     private ValueEventListener mConnectedListener;
     private Firebase word;
     private Firebase setWin;
+    private ValueEventListener winCheck;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -53,6 +54,8 @@ public class DrawFragment extends Fragment implements ColorPickerDialog.OnColorC
         mFirebaseRef = new Firebase(Constants.FIREBASE_URL).child("draw");
         mDrawingView = new DrawingView(getActivity(), mFirebaseRef);
         word = new Firebase(Constants.FIREBASE_URL);
+        setWin = new Firebase(Constants.FIREBASE_URL).child("gameInProgress");
+        winChecker();
         return mDrawingView;
     }
 
@@ -116,39 +119,6 @@ public class DrawFragment extends Fragment implements ColorPickerDialog.OnColorC
     public void displayWord(){
 
 
-        //Below is a checker that halts users from picking "Drawer" as the game element if someone is already drawing.
-        //TODO: Fix the gameInProgress function so  that it works constantly and doesn't crash.
-        setWin = new Firebase(Constants.FIREBASE_URL).child("gameInProgress");
-        setWin.getRoot().addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(DataSnapshot dataSnapshot) {
-                Iterable<DataSnapshot> dsList = dataSnapshot.getChildren();
-                for (DataSnapshot snapshot : dsList) {
-                    String gameInProgress;
-                    gameInProgress = snapshot.getValue().toString();
-
-                    if (gameInProgress.equals("false")) {
-                        Log.i("asdf", snapshot.getValue().toString());
-                        Toast.makeText(getActivity(), "Someone guessed your word!", Toast.LENGTH_LONG).show();
-                        FragmentManager fm = getActivity().getFragmentManager();
-                        FragmentTransaction ft = fm.beginTransaction();
-                        StartFragment sf = new StartFragment();
-                        ft.replace(R.id.main_activity_container, sf);
-                        Log.i("asdf", snapshot.getValue().toString()+"-- 2nd");
-                        ft.commit();
-                    }
-
-                }
-
-
-            }
-
-            @Override
-            public void onCancelled(FirebaseError firebaseError) {
-                //TODO: Add a toast or message if the user experience an error in regard to trying to become a drawer.
-            }
-        });
-
 
         /**
          * This is a function that checks for the correct word. This item will contain more words and will be presented to the drawer before he or she starts to draw.
@@ -161,9 +131,9 @@ public class DrawFragment extends Fragment implements ColorPickerDialog.OnColorC
                 Iterable<DataSnapshot> dsList = dataSnapshot.getChildren();
                 for (DataSnapshot snapshot : dsList) {
                     if (snapshot.getKey().equals("selectedword")) {
-                       // for (int i = 0; i < 10; i++) {
-                            Toast.makeText(getActivity(), snapshot.getValue().toString(), Toast.LENGTH_LONG).show();
-                      //  }
+                        // for (int i = 0; i < 10; i++) {
+                        Toast.makeText(getActivity(), snapshot.getValue().toString(), Toast.LENGTH_LONG).show();
+                        //  }
 
                     }
                 }
@@ -180,5 +150,41 @@ public class DrawFragment extends Fragment implements ColorPickerDialog.OnColorC
 
 
     }
+
+    public void winChecker(){
+        //Below is a checker that halts users from picking "Drawer" as the game element if someone is already drawing.
+        //TODO: Fix the gameInProgress function so  that it works constantly and doesn't crash.
+
+        winCheck = setWin.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                if (dataSnapshot.getKey().equals("gameInProgress")) {
+                    if (dataSnapshot.getValue() != null) {
+                        if (dataSnapshot.getValue().toString().equals("false")) {
+
+                            Log.i("asdf", "Value changed");
+                            Toast.makeText(getActivity(), "Someone guessed your word!", Toast.LENGTH_LONG).show();
+                            FragmentManager fm = getActivity().getFragmentManager();
+                            FragmentTransaction ft = fm.beginTransaction();
+                            StartFragment sf = new StartFragment();
+                            ft.replace(R.id.main_activity_container, sf);
+                            Log.i("asdf", "-- 2nd");
+                            setWin.removeEventListener(winCheck);
+                            ft.commit();
+                        }
+
+                    }
+                }
+
+            }
+
+
+            @Override
+            public void onCancelled(FirebaseError firebaseError) {
+                //TODO: Add a toast or message if the user experience an error in regard to trying to become a drawer.
+            }
+        });
+    }
+
 }
 
