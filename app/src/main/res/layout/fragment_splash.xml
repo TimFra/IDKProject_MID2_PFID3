@@ -1,0 +1,15 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent" tools:context="com.drawstuff.mah.drawstuff.SplashFragment"
+    android:id="@+id/splash"
+    android:background="#049a95">
+
+    <!-- TODO: Update blank fragment layout -->
+    <ImageView
+    android:id="@+id/imgLogo"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_centerInParent="true"
+    android:src="@drawable/splash_screen"/>
+
+</FrameLayout>

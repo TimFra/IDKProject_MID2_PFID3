@@ -37,12 +37,4 @@
         android:layout_alignParentEnd="true"
         android:layout_marginEnd="45dp" />
 
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:id="@+id/usernameField"
-        android:layout_below="@+id/guessBtn"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="57dp" />
-
 </RelativeLayout>
