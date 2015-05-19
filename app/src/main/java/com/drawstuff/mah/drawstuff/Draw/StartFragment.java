@@ -26,7 +26,7 @@ import com.firebase.client.ValueEventListener;
  */
 public class StartFragment extends Fragment {
     public Firebase firebaseChecker;
-    public String checked;
+    public Firebase clearDraw;
     public StartFragment() {
         // Required empty public
     }
@@ -37,6 +37,7 @@ public class StartFragment extends Fragment {
                              Bundle savedInstanceState) {
 
         firebaseChecker = new Firebase(Constants.FIREBASE_URL).child("gameInProgress");
+        clearDraw = new Firebase(Constants.FIREBASE_URL).child("draw");
         View v = inflater.inflate(R.layout.fragment_start, container, false);
 
         Button drawButton;
@@ -54,6 +55,7 @@ public class StartFragment extends Fragment {
                             FragmentTransaction ft = fm.beginTransaction();
                             DrawFragment df = new DrawFragment();
                             firebaseChecker.setValue("true");
+                            clearDraw.removeValue();
 
                             ft.replace(R.id.main_activity_container, df);
                             ft.commit();

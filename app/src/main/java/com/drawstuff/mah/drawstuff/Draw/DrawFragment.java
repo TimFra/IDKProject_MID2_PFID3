@@ -118,18 +118,20 @@ public class DrawFragment extends Fragment implements ColorPickerDialog.OnColorC
         //Below is a checker that halts users from picking "Drawer" as the game element if someone is already drawing.
         //TODO: Fix the gameInProgress function so  that it works constantly and doesn't crash.
         setWin = new Firebase(Constants.FIREBASE_URL).child("gameInProgress");
-        setWin.addValueEventListener(new ValueEventListener() {
+        setWin.getRoot().addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 Iterable<DataSnapshot> dsList = dataSnapshot.getChildren();
                 for(DataSnapshot snapshot : dsList) {
+                        String gameInProgress;
+                        gameInProgress = snapshot.getValue().toString();
 
-                    if(snapshot.getValue().toString().equals("false")){
-
-                        FragmentManager fm = getFragmentManager();
+                    if(gameInProgress.equals("false")){
+                      //  Toast.makeText(getActivity(), "Someone guessed your word!", Toast.LENGTH_LONG).show();
+                        FragmentManager fm = getActivity().getFragmentManager();
                         FragmentTransaction ft = fm.beginTransaction();
-                        EndScreen es = new EndScreen();
-                        ft.replace(R.id.main_activity_container,es);
+                        StartFragment sf = new StartFragment();
+                        ft.replace(R.id.main_activity_container,sf);
                         ft.commit();
                     }
 
@@ -149,7 +151,7 @@ public class DrawFragment extends Fragment implements ColorPickerDialog.OnColorC
          * This is a function that checks for the correct word. This item will contain more words and will be presented to the drawer before he or she starts to draw.
          * TODO: Expand the wordlist with more words. Implement so that when a drawing session begins, the drawer gets a message on what the winning word will be.
          */
-        word.getRoot().addValueEventListener(new ValueEventListener() {
+        word.getRoot().addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
 
