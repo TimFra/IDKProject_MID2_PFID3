@@ -26,8 +26,7 @@ import com.firebase.client.ValueEventListener;
  */
 public class EndScreen extends Fragment {
 
-    public Firebase winner;
-    public Firebase setWin;
+
     public EndScreen() {
         // Required empty public constructor
     }
@@ -38,11 +37,7 @@ public class EndScreen extends Fragment {
                              Bundle savedInstanceState) {
         View v =  inflater.inflate(R.layout.fragment_end_screen, container, false);
         // Inflate the layout for this fragment
-        winner = new Firebase(Constants.FIREBASE_URL);
-        displayWord();
 
-        setWin = new Firebase(Constants.FIREBASE_URL).child("gameInProgress");
-        setWin.setValue("false");
 
 
 
@@ -65,33 +60,7 @@ public class EndScreen extends Fragment {
         return v;
     }
 
-    public void displayWord(){
-        winner.getRoot().addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(DataSnapshot dataSnapshot) {
-                TextView win = (TextView) getView().findViewById(R.id.textWinner);
 
-                Iterable<DataSnapshot> dsList = dataSnapshot.getChildren();
-                for (DataSnapshot snapshot : dsList) {
-                    if (snapshot.getKey().equals("gameState")) {
-                        for (int i = 0; i < 10; i++) {
-                            win.setText(snapshot.getValue().toString());
-                        }
-
-                    }
-                }
-
-            }
-
-            @Override
-            public void onCancelled(FirebaseError firebaseError) {
-
-            }
-        });
-
-
-
-    }
 
 
 }

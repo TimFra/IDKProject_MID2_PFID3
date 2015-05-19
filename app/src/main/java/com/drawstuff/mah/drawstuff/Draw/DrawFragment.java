@@ -114,13 +114,13 @@ public class DrawFragment extends Fragment implements ColorPickerDialog.OnColorC
 
         /// win check
         setWin = new Firebase(Constants.FIREBASE_URL).child("gameInProgress");
-        setWin.getRoot().addValueEventListener(new ValueEventListener() {
+        setWin.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 Iterable<DataSnapshot> dsList = dataSnapshot.getChildren();
                 for(DataSnapshot snapshot : dsList) {
 
-                    if(snapshot.getValue().equals("false")){
+                    if(snapshot.getValue().toString().equals("false")){
 
                         FragmentManager fm = getFragmentManager();
                         FragmentTransaction ft = fm.beginTransaction();
