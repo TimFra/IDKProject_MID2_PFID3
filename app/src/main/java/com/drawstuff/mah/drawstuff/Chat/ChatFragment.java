@@ -146,13 +146,14 @@ public class ChatFragment extends ListFragment {
 
     private void setupUsername() {
         SharedPreferences prefs = getActivity().getApplication().getSharedPreferences("ChatPrefs", 0);
+        prefs.edit().remove("username").apply(); //This clears  the SharedPreferences in Android making the user a new username each time they launch the application.
         mUsername = prefs.getString("username", null);
         if (mUsername == null) {
             Random r = new Random();
             // Assign a random user name if we don't have one saved
 
-            mUsername = "Guesser" + r.nextInt(100000);
-            prefs.edit().putString("username", mUsername).commit();
+            mUsername = "Player" + r.nextInt(1000);
+            prefs.edit().putString("username", mUsername).apply();
         }
     }
 
@@ -164,7 +165,7 @@ public class ChatFragment extends ListFragment {
             // Create our 'model', a Chat object
             Chat chat = new Chat(input, mUsername);
             // Create a new, auto-generated child of that chat location, and save our chat data there
-            Chat winMsg = new Chat(win, "• Game •");
+            Chat winMsg = new Chat(win, "@DrawStuff");
 
             // If guess is correct
 
