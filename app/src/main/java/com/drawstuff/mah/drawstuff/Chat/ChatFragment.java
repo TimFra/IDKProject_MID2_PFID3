@@ -158,19 +158,19 @@ public class ChatFragment extends ListFragment {
 
     private void sendMessage() {
         EditText inputText = (EditText) getView().findViewById(R.id.messageInput);
-        String input = inputText.getText().toString().toLowerCase();
-        String win = "---- Winner is: " + mUsername + " ----";
+        String input = inputText.getText().toString();
+        String win = mUsername + " guessed the right word! +pts!";
         if (!input.equals("")) {
             // Create our 'model', a Chat object
             Chat chat = new Chat(input, mUsername);
             // Create a new, auto-generated child of that chat location, and save our chat data there
-            Chat winMsg = new Chat(win, "*** Game ");
+            Chat winMsg = new Chat(win, "*** Game ***");
 
             // If guess is correct
 
             mFirebaseRef.push().setValue(chat);
             inputText.setText("");
-            if (storedWord.equals(input)) {
+            if (storedWord.equals(input.toLowerCase())) {
 
                 // What happens when you win
                 Firebase gameStateFirebase = new Firebase(Constants.FIREBASE_URL).child("roundWinner");
