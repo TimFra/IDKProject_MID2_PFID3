@@ -232,11 +232,21 @@ public class DrawFragment extends Fragment implements ColorPickerDialog.OnColorC
 
     public void setRandomWord(){
         setWords();
+        String previouslySelectedWord ="";
         Random r = new Random();
 
         int x = r.nextInt(words.size() - 0 + 1);
 
         String selectedWord = words.get(x).toString();
+
+
+        if(selectedWord == previouslySelectedWord) {
+
+        }
+
+
+
+        previouslySelectedWord = selectedWord;
 
         ////// Push "selectedWord" to firebase
         Firebase setWord = new Firebase(Constants.FIREBASE_URL).child("selectedword");

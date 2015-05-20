@@ -4,7 +4,8 @@
     tools:context="com.drawstuff.mah.drawstuff.Draw.DrawFragment"
     android:id="@+id/drawfragment"
     android:paddingTop="5dp"
-    android:paddingBottom="5dp">
+    android:paddingBottom="5dp"
+    android:orientation="vertical">
 
     <!-- TODO: Update blank fragment layout -->
 
