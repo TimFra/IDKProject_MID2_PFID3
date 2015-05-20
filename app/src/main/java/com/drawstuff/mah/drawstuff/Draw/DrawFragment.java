@@ -17,6 +17,7 @@ import android.widget.Toast;
 
 import com.drawstuff.mah.drawstuff.Constants.Constants;
 import com.drawstuff.mah.drawstuff.EndScreen;
+import com.drawstuff.mah.drawstuff.FirebaseSelectedWord;
 import com.drawstuff.mah.drawstuff.R;
 import com.firebase.client.DataSnapshot;
 import com.firebase.client.Firebase;
@@ -25,6 +26,9 @@ import com.firebase.client.ValueEventListener;
 import com.firebase.client.core.Context;
 
 import org.w3c.dom.Text;
+
+import java.util.ArrayList;
+import java.util.Random;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -42,6 +46,9 @@ public class DrawFragment extends Fragment implements ColorPickerDialog.OnColorC
     private Firebase word;
     private Firebase setWin;
     private ValueEventListener winCheck;
+    ArrayList<String> words = new ArrayList<>();
+
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -49,13 +56,14 @@ public class DrawFragment extends Fragment implements ColorPickerDialog.OnColorC
         super.onCreate(savedInstanceState);
 
 
-
+        setRandomWord();
 
         mFirebaseRef = new Firebase(Constants.FIREBASE_URL).child("draw");
         mDrawingView = new DrawingView(getActivity(), mFirebaseRef);
         word = new Firebase(Constants.FIREBASE_URL);
         setWin = new Firebase(Constants.FIREBASE_URL).child("gameInProgress");
         winChecker();
+
         return mDrawingView;
     }
 
@@ -162,13 +170,13 @@ public class DrawFragment extends Fragment implements ColorPickerDialog.OnColorC
                     if (dataSnapshot.getValue() != null) {
                         if (dataSnapshot.getValue().toString().equals("false")) {
 
-                            Log.i("asdf", "Value changed");
+
                             Toast.makeText(getActivity(), "Someone guessed your word!", Toast.LENGTH_LONG).show();
                             FragmentManager fm = getActivity().getFragmentManager();
                             FragmentTransaction ft = fm.beginTransaction();
                             StartFragment sf = new StartFragment();
                             ft.replace(R.id.main_activity_container, sf);
-                            Log.i("asdf", "-- 2nd");
+
                             setWin.removeEventListener(winCheck);
                             ft.commit();
                         }
@@ -186,5 +194,58 @@ public class DrawFragment extends Fragment implements ColorPickerDialog.OnColorC
         });
     }
 
+
+
+    ////////// Set word //////////
+    public void setWords() {
+        words.add("cat");
+        words.add("dog");
+        words.add("rabbit");
+        words.add("spider");
+        words.add("fish");
+        words.add("house");
+        words.add("flower");
+        words.add("tree");
+        words.add("car");
+        words.add("bus");
+        words.add("candy");
+        words.add("cookie");
+        words.add("pizza");
+        words.add("tomatoe");
+        words.add("apple");
+        words.add("pants");
+        words.add("jacket");
+        words.add("socks");
+        words.add("skirt");
+        words.add("necklace");
+        words.add("smartphone");
+        words.add("tv");
+        words.add("computer");
+        words.add("laptop");
+        words.add("harddrive");
+
+    }
+
+
+
+
+
+    public void setRandomWord(){
+        setWords();
+        Random r = new Random();
+
+        int x = r.nextInt(words.size() - 0 + 1);
+
+        String selectedWord = words.get(x).toString();
+
+        ////// Push "selectedWord" to firebase
+        Firebase setWord = new Firebase(Constants.FIREBASE_URL).child("selectedword");
+        setWord.setValue(selectedWord);
+
+
+
+
+
+    }
 }
 
