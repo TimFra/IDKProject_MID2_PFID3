@@ -164,7 +164,7 @@ public class ChatFragment extends ListFragment {
             // Create our 'model', a Chat object
             Chat chat = new Chat(input, mUsername);
             // Create a new, auto-generated child of that chat location, and save our chat data there
-            Chat winMsg = new Chat(win, "*** Game ***");
+            Chat winMsg = new Chat(win, "• Game •");
 
             // If guess is correct
 
