@@ -158,9 +158,9 @@ public class ChatFragment extends ListFragment {
     }
 
     private void sendMessage() {
-        EditText inputText = (EditText) getView().findViewById(R.id.messageInput);
+        EditText inputText = (EditText) getView().findViewById(R.id.messageInput); //TODO: This gives off a null pointer exception warning. It MAY cause us problems.
         String input = inputText.getText().toString();
-        String win = mUsername + " guessed the right word! +pts!";
+        String win = "You guessed the right word " + mUsername + "! The word was: " + storedWord + ".";
         if (!input.equals("")) {
             // Create our 'model', a Chat object
             Chat chat = new Chat(input, mUsername);
