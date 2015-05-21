@@ -198,38 +198,43 @@ public class DrawFragment extends Fragment implements ColorPickerDialog.OnColorC
 
     ////////// Set word //////////
     public void setWords() {
-
+        //animals
         words.add("cat");
         words.add("dog");
         words.add("rabbit");
         words.add("spider");
         words.add("fish");
         words.add("house");
-
+        //nature
         words.add("flower");
         words.add("tree");
-
+        words.add("grass");
+        words.add("sun");
+        words.add("sky");
+        //vehicles
         words.add("car");
         words.add("bus");
-
+        words.add("train");
+        words.add("airplane");
+        //food
         words.add("candy");
         words.add("cookie");
         words.add("pizza");
         words.add("tomatoe");
         words.add("apple");
-
+        //clothing
         words.add("pants");
         words.add("jacket");
         words.add("socks");
         words.add("skirt");
         words.add("necklace");
-
+        //devices
         words.add("smartphone");
         words.add("tv");
         words.add("computer");
         words.add("laptop");
         words.add("harddrive");
-
+        //buildings
         words.add("eiffel tower");
         words.add("turning torso");
         words.add("big ben");
