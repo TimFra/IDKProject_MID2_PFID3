@@ -6,6 +6,7 @@ import android.app.FragmentTransaction;
 import android.os.Bundle;
 import android.app.Fragment;
 import android.os.CountDownTimer;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -30,10 +31,6 @@ public class SplashFragment extends Fragment {
         // Inflate the layout for this fragment
         splashTimer();
         return inflater.inflate(R.layout.fragment_splash, container, false);
-
-
-
-
     }
 
 
@@ -45,13 +42,18 @@ public class SplashFragment extends Fragment {
             }
             //TODO: getActivity().getActionBar().show() MAY create an issue on start up which results in a crash.
             public void onFinish() {
-                getActivity().getActionBar().show();
-                FragmentManager fm = getFragmentManager();
-                FragmentTransaction ft = fm.beginTransaction(); //Start adding the fragment by getting the manager for handling this
-                StartFragment sf = new StartFragment(); //Creates splashscreen
-                ft.add(R.id.splash, sf); //And add it to the manager
+                //getActivity().getActionBar().show();
+                try {
+                    FragmentManager fm = getFragmentManager();
+                    FragmentTransaction ft = fm.beginTransaction(); //Start adding the fragment by getting the manager for handling this
+                    StartFragment sf = new StartFragment(); //Creates splashscreen
+                    ft.add(R.id.splash, sf); //And add it to the manager
 
-                ft.commit();
+                    ft.commit();
+                } catch (Throwable e) {
+                    Log.i("Error: ", "NullPointer... :" + e.toString());
+                }
+
             }
         }.start();
 

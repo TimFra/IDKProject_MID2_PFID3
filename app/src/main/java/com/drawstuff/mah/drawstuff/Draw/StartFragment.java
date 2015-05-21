@@ -5,6 +5,7 @@ import android.app.FragmentManager;
 import android.app.FragmentTransaction;
 import android.os.Bundle;
 import android.app.Fragment;
+import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -39,6 +40,7 @@ public class StartFragment extends Fragment {
         firebaseChecker = new Firebase(Constants.FIREBASE_URL).child("gameInProgress");
         clearDraw = new Firebase(Constants.FIREBASE_URL).child("draw");
         View v = inflater.inflate(R.layout.fragment_start, container, false);
+        getActivity().getActionBar().show();
 
         Button drawButton;
         drawButton = (Button) v.findViewById(R.id.drawBtn);
@@ -56,8 +58,8 @@ public class StartFragment extends Fragment {
                             DrawFragment df = new DrawFragment();
                             firebaseChecker.setValue("true");
                             clearDraw.removeValue();
-                            //ft.addToBackStack(null);
-                            ft.replace(R.id.main_activity_container, df);
+                            ft.replace(R.id.fragment_start, df);
+                            ft.addToBackStack(null);
                             ft.commit();
 
                              } else if (dataSnapshot.getValue().toString().equals("true")) {

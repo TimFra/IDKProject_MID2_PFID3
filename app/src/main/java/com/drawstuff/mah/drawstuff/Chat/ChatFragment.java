@@ -168,6 +168,7 @@ public class ChatFragment extends ListFragment {
 
             // If guess is correct
 
+            //TODO: Check if inputText.setText(""); is vulnerable to injection in Firebase DB.
             mFirebaseRef.push().setValue(chat);
             inputText.setText("");
             if (storedWord.equals(input.toLowerCase())) {
