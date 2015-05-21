@@ -15,6 +15,7 @@ import android.widget.FrameLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.drawstuff.mah.drawstuff.Chat.Chat;
 import com.drawstuff.mah.drawstuff.Constants.Constants;
 import com.drawstuff.mah.drawstuff.EndScreen;
 import com.drawstuff.mah.drawstuff.FirebaseSelectedWord;
@@ -45,6 +46,7 @@ public class DrawFragment extends Fragment implements ColorPickerDialog.OnColorC
     private ValueEventListener mConnectedListener;
     private Firebase word;
     private Firebase setWin;
+    private Firebase fbChat;
     private ValueEventListener winCheck;
     ArrayList<String> words = new ArrayList<>();
 
@@ -54,10 +56,11 @@ public class DrawFragment extends Fragment implements ColorPickerDialog.OnColorC
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         super.onCreate(savedInstanceState);
+        fbChat = new Firebase(Constants.FIREBASE_URL).child("chat");
 
 
         setRandomWord();
-
+        welcomeNewDrawer();
         mFirebaseRef = new Firebase(Constants.FIREBASE_URL).child("draw");
         mDrawingView = new DrawingView(getActivity(), mFirebaseRef);
         word = new Firebase(Constants.FIREBASE_URL);
@@ -82,7 +85,7 @@ public class DrawFragment extends Fragment implements ColorPickerDialog.OnColorC
                 if (connected) {
                     Toast.makeText(getActivity(), "Connected to Firebase", Toast.LENGTH_SHORT).show();
                 } else {
-                    Toast.makeText(getActivity(), "Disconnected from Firebase", Toast.LENGTH_SHORT).show();
+                    //Toast.makeText(getActivity(), "Disconnected from Firebase", Toast.LENGTH_SHORT).show();
                 }
             }
 
@@ -332,6 +335,12 @@ public class DrawFragment extends Fragment implements ColorPickerDialog.OnColorC
 
 
 
+    }
+
+    public void welcomeNewDrawer(){
+
+        Chat chat = new Chat("Someone started drawing.", "@DrawStuff");
+        fbChat.push().setValue(chat);
     }
 
 
