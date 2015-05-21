@@ -41,7 +41,7 @@ public class ChatListAdapter extends FirebaseListAdapter<Chat> {
         // If the message was sent by this user, color it differently
         if (author != null && author.equals(mUsername)) {
             authorText.setTextColor(Color.RED);
-        } else if(author.equals("*** Game ***")) {
+        } else if(author.equals("@DrawStuff")) {
             authorText.setTextColor(Color.BLACK);
         }
 

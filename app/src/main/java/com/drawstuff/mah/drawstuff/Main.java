@@ -11,6 +11,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.Window;
 
+import com.drawstuff.mah.drawstuff.Chat.Chat;
 import com.drawstuff.mah.drawstuff.Constants.Constants;
 import com.drawstuff.mah.drawstuff.Draw.DrawingView;
 import com.drawstuff.mah.drawstuff.Draw.StartFragment;
@@ -20,6 +21,7 @@ import com.firebase.client.Firebase;
 public class Main extends Activity {
 
     private DrawingView mDrawingView;
+    private Firebase mFirebaseRef;
 
     //final View drawView = (View) mDrawingView;
     @Override
@@ -33,6 +35,7 @@ public class Main extends Activity {
 
         //So put in the startfragment
         Firebase.setAndroidContext(this);
+        mFirebaseRef = new Firebase(Constants.FIREBASE_URL).child("chat");
         if (savedInstanceState == null) {  //If savedInstanceState not is null then we already have the activity fx if we were interupted by a phonecall and  b
 
             FragmentManager fm = getFragmentManager();
@@ -77,6 +80,19 @@ public class Main extends Activity {
     public boolean onPrepareOptionsMenu(Menu menu) {
         super.onPrepareOptionsMenu(menu);
         return true;
+    }
+
+    @Override
+    public void onBackPressed() {
+        if(getFragmentManager().findFragmentByTag("drawTag") !=null){
+            Firebase inDraw = new Firebase(Constants.FIREBASE_URL).child("gameInProgress");
+            inDraw.setValue("false");
+            Chat chat = new Chat("Drawer has quit.", "@DrawStuff");
+            mFirebaseRef.push().setValue(chat);
+
+        }
+
+        super.onBackPressed();
     }
 
 

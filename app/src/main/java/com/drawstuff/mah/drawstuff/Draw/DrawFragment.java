@@ -171,15 +171,19 @@ public class DrawFragment extends Fragment implements ColorPickerDialog.OnColorC
                     if (dataSnapshot.getValue() != null) {
                         if (dataSnapshot.getValue().toString().equals("false")) {
 
+                            try {
+                                Toast.makeText(getActivity(), "Someone guessed your word!", Toast.LENGTH_LONG).show();
+                                FragmentManager fm = getActivity().getFragmentManager();
+                                FragmentTransaction ft = fm.beginTransaction();
+                                StartFragment sf = new StartFragment();
+                                ft.replace(R.id.main_activity_container, sf);
+                                ft.addToBackStack(null);
+                                setWin.removeEventListener(winCheck);
+                                ft.commit();
+                            } catch (Throwable e) {
+                                Log.i("Error: ", " -- In DrawFragment: " + e.toString());
+                            }
 
-                            Toast.makeText(getActivity(), "Someone guessed your word!", Toast.LENGTH_LONG).show();
-                            FragmentManager fm = getActivity().getFragmentManager();
-                            FragmentTransaction ft = fm.beginTransaction();
-                            StartFragment sf = new StartFragment();
-                            ft.replace(R.id.main_activity_container, sf);
-
-                            setWin.removeEventListener(winCheck);
-                            ft.commit();
                         }
 
                     }
@@ -302,6 +306,7 @@ public class DrawFragment extends Fragment implements ColorPickerDialog.OnColorC
 
 
     public void setRandomWord(){
+
         setWords();
         String previouslySelectedWord ="";
         Random r = new Random();

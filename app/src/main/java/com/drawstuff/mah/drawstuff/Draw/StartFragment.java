@@ -58,7 +58,7 @@ public class StartFragment extends Fragment {
                             DrawFragment df = new DrawFragment();
                             firebaseChecker.setValue("true");
                             clearDraw.removeValue();
-                            ft.replace(R.id.fragment_start, df);
+                            ft.replace(R.id.fragment_start, df,"drawTag");
                             ft.addToBackStack(null);
                             ft.commit();
 
@@ -93,7 +93,7 @@ public class StartFragment extends Fragment {
                 FragmentManager fm = getFragmentManager();
                 FragmentTransaction ft = fm.beginTransaction();
                 ChatFragment cf = new ChatFragment();
-                ft.replace(R.id.fragment_start,cf);
+                ft.replace(R.id.fragment_start,cf, "chatTag");
                 ft.addToBackStack(null);
                 ft.commit();
             }
