@@ -205,35 +205,58 @@ public class DrawFragment extends Fragment implements ColorPickerDialog.OnColorC
         words.add("spider");
         words.add("fish");
         words.add("house");
+        words.add("bee");
+        words.add("ant");
+        words.add("mouse");
+        words.add("bird");
+        words.add("giraff");
+        words.add("elephant");
+        words.add("bear");
         //nature
         words.add("flower");
         words.add("tree");
         words.add("grass");
         words.add("sun");
         words.add("sky");
+        words.add("leaf");
+        words.add("mountain");
         //vehicles
         words.add("car");
         words.add("bus");
         words.add("train");
         words.add("airplane");
+        words.add("bicycle");
+        words.add("surfboard");
+        words.add("skateboard");
         //food
         words.add("candy");
         words.add("cookie");
         words.add("pizza");
         words.add("tomatoe");
         words.add("apple");
+        words.add("banana");
+        words.add("cucumber");
+        words.add("sandwich");
+        words.add("icecream");
+        words.add("cake");
+        words.add("cheese doodles");
         //clothing
         words.add("pants");
         words.add("jacket");
         words.add("socks");
         words.add("skirt");
         words.add("necklace");
+        words.add("t-shirt");
+        words.add("shorts");
+        words.add("shoes");
+        words.add("hat");
         //devices
         words.add("smartphone");
         words.add("tv");
         words.add("computer");
         words.add("laptop");
         words.add("harddrive");
+        words.add("radio");
         //buildings
         words.add("eiffel tower");
         words.add("turning torso");
@@ -254,8 +277,13 @@ public class DrawFragment extends Fragment implements ColorPickerDialog.OnColorC
         words.add("nose");
         words.add("knee");
         words.add("lips");
-        //
-    }
+        //music
+        words.add("guitarr");
+        words.add("drums");
+        words.add("microphone");
+        words.add("trumpet");
+
+            }
 
 
 
