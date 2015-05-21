@@ -281,9 +281,12 @@ public class DrawFragment extends Fragment implements ColorPickerDialog.OnColorC
         words.add("hammer");
         words.add("screwdriver");
         words.add("saw");
-        words.add("scissors");
+        words.add("scissor");
         words.add("pen");
         words.add("knife");
+        words.add("spoon");
+        words.add("fork");
+        words.add("pencil");
         //body parts
         words.add("eye");
         words.add("foot");
@@ -294,6 +297,7 @@ public class DrawFragment extends Fragment implements ColorPickerDialog.OnColorC
         words.add("nose");
         words.add("knee");
         words.add("lips");
+        words.add("eyebrows");
         //furniture
         words.add("table");
         words.add("lamp");
@@ -306,7 +310,20 @@ public class DrawFragment extends Fragment implements ColorPickerDialog.OnColorC
         words.add("toilet");
         words.add("shower");
         words.add("painting");
-
+        words.add("bathtub");
+        //sports
+        words.add("football");
+        words.add("basketball");
+        words.add("ice hockey");
+        words.add("handball");
+        words.add("tennis");
+        words.add("golf");
+        //logo
+        words.add("facebook");
+        words.add("twitter");
+        words.add("nike");
+        words.add("puma");
+        words.add("apple");
             }
 
 
