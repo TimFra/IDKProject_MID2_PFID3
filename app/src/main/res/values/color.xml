@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!--application colors-->
+    <!--Application colors used-->
     <color name="light_orange">#F89E02</color>
     <color name="mid_orange">#DD8D02</color>
     <color name="dark_orange">#C27C01</color>
