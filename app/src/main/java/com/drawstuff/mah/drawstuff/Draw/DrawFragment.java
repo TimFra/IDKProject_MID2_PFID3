@@ -144,7 +144,7 @@ public class DrawFragment extends Fragment implements ColorPickerDialog.OnColorC
                 for (DataSnapshot snapshot : dsList) {
                     if (snapshot.getKey().equals("selectedword")) {
                         // for (int i = 0; i < 10; i++) {
-                        Toast.makeText(getActivity(), snapshot.getValue().toString(), Toast.LENGTH_LONG).show();
+                        Toast.makeText(getActivity(), snapshot.getValue().toString(), Toast.LENGTH_LONG).show(); //TODO: This needs a try catch or null object reference.
                         //  }
 
                     }
