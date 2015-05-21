@@ -239,6 +239,22 @@ public class DrawFragment extends Fragment implements ColorPickerDialog.OnColorC
         words.add("turning torso");
         words.add("big ben");
         words.add("leaning tower of pisa");
+        //tools
+        words.add("hammer");
+        words.add("screwdriver");
+        words.add("saw");
+        words.add("scissors");
+        //body parts
+        words.add("eye");
+        words.add("foot");
+        words.add("elbow");
+        words.add("toe");
+        words.add("hair");
+        words.add("ear");
+        words.add("nose");
+        words.add("knee");
+        words.add("lips");
+        //
     }
 
 
