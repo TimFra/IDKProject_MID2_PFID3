@@ -25,7 +25,7 @@
         android:id="@+id/drawBtn"
         android:textColor="@android:color/white"
         android:layout_marginBottom="140dp"
-        android:textSize="@dimen/button_style"
+        android:textSize="@dimen/button_style2"
         android:layout_marginStart="50dp"
         android:layout_alignParentBottom="true"
         android:layout_alignParentStart="true"
@@ -39,7 +39,7 @@
         android:id="@+id/guessBtn"
         android:textColor="@android:color/white"
         android:layout_marginEnd="49dp"
-        android:textSize="@dimen/button_style"
+        android:textSize="@dimen/button_style2"
         android:layout_alignTop="@+id/drawBtn"
         android:layout_alignParentEnd="true"
         android:textAlignment="center" />
