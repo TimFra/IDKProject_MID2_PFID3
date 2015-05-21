@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--application colors-->
+    <color name="light_orange">#F89E02</color>
+    <color name="mid_orange">#DD8D02</color>
+    <color name="dark_orange">#C27C01</color>
+    <color name="white">#ffffff</color>
+    <color name="background_blue">#049A95</color>
+    <color name="drop_shadow_grey">#555555</color>
+</resources>
