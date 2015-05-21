@@ -217,11 +217,12 @@ public class DrawFragment extends Fragment implements ColorPickerDialog.OnColorC
         words.add("ant");
         words.add("mouse");
         words.add("bird");
-        words.add("giraff");
+        words.add("giraffe");
         words.add("elephant");
         words.add("bear");
-        words.add("apa");
-        words.add("orm");
+        words.add("monkey");
+        words.add("snake");
+        words.add("ladybug");
         //nature
         words.add("flower");
         words.add("tree");
@@ -230,6 +231,9 @@ public class DrawFragment extends Fragment implements ColorPickerDialog.OnColorC
         words.add("sky");
         words.add("leaf");
         words.add("mountain");
+        words.add("wave");
+        words.add("rain");
+        words.add("tornado");
         //vehicles
         words.add("car");
         words.add("bus");
@@ -238,6 +242,8 @@ public class DrawFragment extends Fragment implements ColorPickerDialog.OnColorC
         words.add("bicycle");
         words.add("surfboard");
         words.add("skateboard");
+        words.add("helicopter");
+        words.add("parachute");
         //food
         words.add("candy");
         words.add("cookie");
@@ -247,16 +253,16 @@ public class DrawFragment extends Fragment implements ColorPickerDialog.OnColorC
         words.add("banana");
         words.add("cucumber");
         words.add("sandwich");
-        words.add("icecream");
+        words.add("lollipop");
         words.add("cake");
-        words.add("cheese doodles");
+        words.add("chesse");
         //clothing
         words.add("pants");
         words.add("jacket");
         words.add("socks");
         words.add("skirt");
         words.add("necklace");
-        words.add("t-shirt");
+        words.add("sunglasses");
         words.add("shorts");
         words.add("shoes");
         words.add("hat");
@@ -271,7 +277,6 @@ public class DrawFragment extends Fragment implements ColorPickerDialog.OnColorC
         words.add("eiffel tower");
         words.add("turning torso");
         words.add("big ben");
-        words.add("leaning tower of pisa");
         //tools
         words.add("hammer");
         words.add("screwdriver");
