@@ -64,6 +64,7 @@ public class DrawFragment extends Fragment implements ColorPickerDialog.OnColorC
         setWin = new Firebase(Constants.FIREBASE_URL).child("gameInProgress");
         winChecker();
 
+
         return mDrawingView;
     }
 
@@ -327,5 +328,8 @@ public class DrawFragment extends Fragment implements ColorPickerDialog.OnColorC
 
 
     }
+
+
+
 }
 

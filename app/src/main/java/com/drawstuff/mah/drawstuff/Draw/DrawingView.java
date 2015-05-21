@@ -47,6 +47,7 @@ public class DrawingView extends View {
 
         mOutstandingSegments = new HashSet<String>();
         mPath = new Path();
+
         this.mFirebaseRef = ref;
 
         mListener = ref.addChildEventListener(new ChildEventListener() {
@@ -97,6 +98,8 @@ public class DrawingView extends View {
         mPaint.setDither(true);
         mPaint.setColor(0xFFFF0000);
         mPaint.setStyle(Paint.Style.STROKE);
+        mPaint.setStrokeWidth(10);
+
 
         mBitmapPaint = new Paint(Paint.DITHER_FLAG);
     }
