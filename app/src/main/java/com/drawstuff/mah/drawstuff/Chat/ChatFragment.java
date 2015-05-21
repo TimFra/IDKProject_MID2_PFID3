@@ -39,6 +39,7 @@ public class ChatFragment extends ListFragment {
     private String storedWord;
     private ChatListAdapter mChatListAdapter;
     private Firebase guessWord;
+    private Firebase gameStateFirebase;
 
     public ChatFragment() {
         // Required empty public constructor
@@ -51,6 +52,7 @@ public class ChatFragment extends ListFragment {
         View v = inflater.inflate(R.layout.fragment_chat, container, false);
         mFirebaseRef = new Firebase(Constants.FIREBASE_URL).child("chat");
         guessWord = new Firebase(Constants.FIREBASE_URL).child("selectedword");
+        gameStateFirebase = new Firebase(Constants.FIREBASE_URL).child("roundWinner");
 
         setupUsername();
 
@@ -164,7 +166,7 @@ public class ChatFragment extends ListFragment {
             // Create our 'model', a Chat object
             Chat chat = new Chat(input, mUsername);
             // Create a new, auto-generated child of that chat location, and save our chat data there
-            Chat winMsg = new Chat(win, "@DrawStuff");
+            final Chat winMsg = new Chat(win, "@DrawStuff");
 
             // If guess is correct
 
@@ -174,11 +176,11 @@ public class ChatFragment extends ListFragment {
             if (storedWord.equals(input.toLowerCase())) {
 
                 // What happens when you win
-                Firebase gameStateFirebase = new Firebase(Constants.FIREBASE_URL).child("roundWinner");
-                gameStateFirebase.setValue(mUsername);
+
+
 
                 // Toast.makeText(getActivity(), "Winner: " + mUsername, Toast.LENGTH_SHORT).show();
-                mFirebaseRef.push().setValue(winMsg);
+
 
                 final Firebase firebaseChecker = new Firebase(Constants.FIREBASE_URL).child("gameInProgress");
                 firebaseChecker.addListenerForSingleValueEvent(new ValueEventListener() {
@@ -186,6 +188,10 @@ public class ChatFragment extends ListFragment {
                     @Override
                     public void onDataChange(DataSnapshot dataSnapshot) {
                         firebaseChecker.setValue("false");
+                        if(dataSnapshot.getValue().toString().equals("true")){
+                            mFirebaseRef.push().setValue(winMsg);
+                            gameStateFirebase.setValue(mUsername);
+                        }
                     }
 
                     @Override
