@@ -45,6 +45,7 @@ public class ChatListAdapter extends FirebaseListAdapter<Chat> {
             authorText.setTextColor(Color.BLACK);
         }
 
+
         else {
             authorText.setTextColor(Color.BLUE);
         }

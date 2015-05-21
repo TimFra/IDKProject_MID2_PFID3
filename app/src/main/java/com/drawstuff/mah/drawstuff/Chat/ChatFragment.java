@@ -125,7 +125,6 @@ public class ChatFragment extends ListFragment {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 storedWord = (String) dataSnapshot.getValue();
-
             }
 
             @Override
