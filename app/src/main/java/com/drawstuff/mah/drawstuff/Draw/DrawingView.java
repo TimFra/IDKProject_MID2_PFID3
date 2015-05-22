@@ -5,6 +5,7 @@ import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.graphics.Path;
+import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 
@@ -119,18 +120,26 @@ public class DrawingView extends View {
     @Override
     protected void onSizeChanged(int w, int h, int oldW, int oldH) {
         super.onSizeChanged(w, h, oldW, oldH);
-
-        mBitmap = Bitmap.createBitmap(w, h, Bitmap.Config.ARGB_8888);
-        mBuffer = new Canvas(mBitmap);
+try {
+    mBitmap = Bitmap.createBitmap(w, h, Bitmap.Config.ARGB_8888);
+    mBuffer = new Canvas(mBitmap);
+} catch (Throwable e){
+    Log.i("Error", "mBitmap DrawingView.java");
+}
     }
 
     @Override
     protected void onDraw(Canvas canvas) {
-        canvas.drawColor(0xFFFFFFFF);
+try {
+    canvas.drawColor(0xFFFFFFFF);
 
-        canvas.drawBitmap(mBitmap, 0, 0, mBitmapPaint);
+    canvas.drawBitmap(mBitmap, 0, 0, mBitmapPaint);
 
-        canvas.drawPath(mPath, mPaint);
+    canvas.drawPath(mPath, mPaint);
+}catch(Throwable e){
+    Log.i("Error", "mBitmap DrawingView.java");
+}
+
     }
 
     private Paint paintFromColor(long color) {

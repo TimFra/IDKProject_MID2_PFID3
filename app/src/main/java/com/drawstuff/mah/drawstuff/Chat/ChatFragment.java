@@ -119,6 +119,7 @@ public class ChatFragment extends ListFragment {
 
             @Override
             public void onCancelled(FirebaseError firebaseError) {
+
                 // No-op
             }
         });
