@@ -10,6 +10,20 @@
     <string name="loser">Loser is:</string>
 
 <!-- TODO: Remove or change this placeholder text -->
-
+    <!--login screen-->
     <string name="pickUserName">Pick a user name</string>
+
+    <!--category screen-->
+    <string name="animalBtn">Animals</string>
+    <string name="natureBtn">Nature</string>
+    <string name="vehiclesBtn">Vehicles</string>
+    <string name="foodBtn">Food</string>
+    <string name="clothingBtn">Clothing</string>
+    <string name="buildingsBtn">Buildings</string>
+    <string name="devicesBtn">Devices</string>
+    <string name="toolsBtn">Tools</string>
+    <string name="bodyBtn">Body</string>
+    <string name="furnitureBtn">Furniture</string>
+    <string name="logosBtn">Logos</string>
+    <string name="verbsBtn">Verbs</string>
 </resources>

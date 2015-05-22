@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#049a95"
+    android:weightSum="1">
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/imageView"
+        android:src="@drawable/start_layout"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_above="@+id/drawBtn" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="@string/pickUserName"
+        android:id="@+id/username"
+        android:textColor="#ffffffff"
+        android:enabled="false"
+        android:editable="false"
+        android:layout_marginLeft="80dip"
+        android:textSize="@dimen/button_style2" />
+
+    <TextView
+        android:layout_width="201dp"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:id="@+id/usernameWrite"
+        android:editable="true"
+        android:background="#ffffffff"
+        android:layout_weight="0.07"
+        android:layout_marginLeft="80dip"
+        android:textSize="@dimen/button_style2"
+        android:textColor="@color/background_blue" />
+
+    <Button
+        android:background="@drawable/button_style"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/doneBtn"
+        android:id="@+id/doneBtn"
+        android:textColor="@android:color/white"
+        android:layout_marginBottom="140dp"
+        android:textSize="@dimen/button_style2"
+        android:layout_marginStart="50dp"
+        android:textAlignment="center"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="30dp"/>
+
+</LinearLayout>
