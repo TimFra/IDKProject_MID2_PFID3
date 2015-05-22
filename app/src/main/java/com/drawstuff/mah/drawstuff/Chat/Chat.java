@@ -6,6 +6,7 @@ package com.drawstuff.mah.drawstuff.Chat;
  */
 public class Chat {
 
+        //message and author
     public String message;
     public String author;
 
