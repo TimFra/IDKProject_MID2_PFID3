@@ -210,7 +210,7 @@ public class DrawFragment extends Fragment implements ColorPickerDialog.OnColorC
 
     ////////// Set word //////////
     public void setWords() {
-        //animals
+        //animals 18
         words.add("cat");
         words.add("dog");
         words.add("rabbit");
@@ -227,7 +227,9 @@ public class DrawFragment extends Fragment implements ColorPickerDialog.OnColorC
         words.add("monkey");
         words.add("snake");
         words.add("ladybug");
-        //nature
+        words.add("alien");
+        words.add("unicorn");
+        //nature 23
         words.add("flower");
         words.add("tree");
         words.add("grass");
@@ -238,7 +240,20 @@ public class DrawFragment extends Fragment implements ColorPickerDialog.OnColorC
         words.add("wave");
         words.add("rain");
         words.add("tornado");
-        //vehicles
+        words.add("thunder");
+        words.add("rainbow");
+        words.add("sunset");
+        words.add("sunrise");
+        words.add("forest");
+        words.add("waterfall");
+        words.add("lake");
+        words.add("sea");
+        words.add("cloud");
+        words.add("bridge");
+        words.add("rose");
+        words.add("drop");
+        words.add("dandelion");
+        //vehicles 23
         words.add("car");
         words.add("bus");
         words.add("train");
@@ -248,21 +263,49 @@ public class DrawFragment extends Fragment implements ColorPickerDialog.OnColorC
         words.add("skateboard");
         words.add("helicopter");
         words.add("parachute");
-        //food
+        words.add("wheel chair");
+        words.add("inlines");
+        words.add("segway");
+        words.add("kickboard");
+        words.add("motorcycle");
+        words.add("vespa");
+        words.add("skates");
+        words.add("caravan");
+        words.add("ambulance");
+        words.add("truck");
+        words.add("police car");
+        words.add("tank");
+        words.add("jetski");
+        words.add("hot-air balloon");
+
+        //food 23
         words.add("candy");
         words.add("cookie");
         words.add("pizza");
         words.add("tomatoe");
         words.add("apple");
+        words.add("chocolate");
         words.add("banana");
         words.add("cucumber");
         words.add("sandwich");
         words.add("lollipop");
         words.add("cake");
         words.add("chesse");
-        //clothing
+        words.add("corn");
+        words.add("ketchup");
+        words.add("soda");
+        words.add("sushi");
+        words.add("pancakes");
+        words.add("waffle");
+        words.add("hot dog");
+        words.add("donut");
+        words.add("broccoli");
+        words.add("coffee");
+        words.add("taco");
+        //clothing 16
         words.add("pants");
         words.add("jacket");
+        words.add("umbrella");
         words.add("socks");
         words.add("skirt");
         words.add("necklace");
@@ -270,18 +313,44 @@ public class DrawFragment extends Fragment implements ColorPickerDialog.OnColorC
         words.add("shorts");
         words.add("shoes");
         words.add("hat");
-        //devices
+        words.add("scarf");
+        words.add("gloves");
+        words.add("cap");
+        words.add("bikini");
+        words.add("vest");
+        words.add("sandals");
+
+        //devices 17
         words.add("smartphone");
         words.add("tv");
         words.add("computer");
         words.add("laptop");
         words.add("harddrive");
         words.add("radio");
-        //buildings
+        words.add("tablet");
+        words.add("cable");
+        words.add("gameboy");
+        words.add("game console");
+        words.add("headphones");
+        words.add("cd");
+        words.add("watch");
+        words.add("calculator");
+        words.add("camera");
+        words.add("selfie stick");
+        words.add("keyboard");
+        //buildings 10
         words.add("eiffel tower");
         words.add("turning torso");
         words.add("big ben");
-        //tools
+        words.add("pyramid");
+        words.add("colosseum");
+        words.add("great wall of china");
+        words.add("white house");
+        words.add("triumphal arch");
+        words.add("christ the redeemer");
+        words.add("petronas twin towers");
+
+        //tools 10
         words.add("hammer");
         words.add("screwdriver");
         words.add("saw");
@@ -291,7 +360,8 @@ public class DrawFragment extends Fragment implements ColorPickerDialog.OnColorC
         words.add("spoon");
         words.add("fork");
         words.add("pencil");
-        //body parts
+        words.add("gun");
+        //body parts 11
         words.add("eye");
         words.add("foot");
         words.add("elbow");
@@ -302,7 +372,7 @@ public class DrawFragment extends Fragment implements ColorPickerDialog.OnColorC
         words.add("knee");
         words.add("lips");
         words.add("eyebrows");
-        //furniture
+        //furniture 12
         words.add("table");
         words.add("lamp");
         words.add("chair");
@@ -315,19 +385,47 @@ public class DrawFragment extends Fragment implements ColorPickerDialog.OnColorC
         words.add("shower");
         words.add("painting");
         words.add("bathtub");
-        //sports
+        //sports 13
         words.add("football");
         words.add("basketball");
         words.add("ice hockey");
         words.add("handball");
         words.add("tennis");
         words.add("golf");
-        //logo
+        words.add("floorball");
+        words.add("baseball");
+        words.add("polo");
+        words.add("swimming");
+        words.add("horseback riding");
+        words.add("running");
+        words.add("high jump");
+
+        //logo 5
         words.add("facebook");
         words.add("twitter");
         words.add("nike");
         words.add("puma");
         words.add("apple");
+
+        //Verbs 12
+        words.add("paint");
+        words.add("run");
+        words.add("swim");
+        words.add("fly");
+        words.add("walk");
+        words.add("jump");
+        words.add("sing");
+        words.add("kiss");
+        words.add("talk");
+        words.add("listen");
+        words.add("write");
+        words.add("fight");
+
+
+
+
+
+
             }
 
 
