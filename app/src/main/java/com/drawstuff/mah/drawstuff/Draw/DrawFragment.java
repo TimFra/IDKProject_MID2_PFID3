@@ -279,7 +279,6 @@ public class DrawFragment extends Fragment implements ColorPickerDialog.OnColorC
         words.add("skateboard");
         words.add("helicopter");
         words.add("parachute");
-        words.add("wheel chair");
         words.add("inlines");
         words.add("segway");
         words.add("kickboard");
@@ -289,10 +288,8 @@ public class DrawFragment extends Fragment implements ColorPickerDialog.OnColorC
         words.add("caravan");
         words.add("ambulance");
         words.add("truck");
-        words.add("police car");
         words.add("tank");
         words.add("jetski");
-        words.add("hot-air balloon");
 
         //food
         words.add("candy");
@@ -313,7 +310,6 @@ public class DrawFragment extends Fragment implements ColorPickerDialog.OnColorC
         words.add("sushi");
         words.add("pancakes");
         words.add("waffle");
-        words.add("hot dog");
         words.add("donut");
         words.add("broccoli");
         words.add("coffee");
@@ -352,28 +348,15 @@ public class DrawFragment extends Fragment implements ColorPickerDialog.OnColorC
         words.add("tablet");
         words.add("cable");
         words.add("gameboy");
-        words.add("game console");
         words.add("headphones");
         words.add("cd");
         words.add("watch");
         words.add("calculator");
         words.add("camera");
-        words.add("selfie stick");
         words.add("keyboard");
-        words.add("computer mouse");
         words.add("fan");
         words.add("battery");
-        //buildings 10
-        words.add("eiffel tower");
-        words.add("turning torso");
-        words.add("big ben");
-        words.add("pyramid");
-        words.add("colosseum");
-        words.add("great wall of china");
-        words.add("white house");
-        words.add("triumphal arch");
-        words.add("christ the redeemer");
-        words.add("petronas twin towers");
+
 
         //tools
         words.add("hammer");
@@ -441,7 +424,6 @@ public class DrawFragment extends Fragment implements ColorPickerDialog.OnColorC
         //sports
         words.add("football");
         words.add("basketball");
-        words.add("ice hockey");
         words.add("handball");
         words.add("tennis");
         words.add("golf");
@@ -449,11 +431,8 @@ public class DrawFragment extends Fragment implements ColorPickerDialog.OnColorC
         words.add("baseball");
         words.add("polo");
         words.add("swimming");
-        words.add("horseback riding");
         words.add("running");
-        words.add("high jump");
         words.add("badminton");
-        words.add("ping-pong");
         words.add("boxing");
         words.add("volleyball");
         words.add("ballet");
