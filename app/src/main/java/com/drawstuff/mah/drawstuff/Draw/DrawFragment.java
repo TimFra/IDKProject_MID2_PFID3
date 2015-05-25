@@ -16,6 +16,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.drawstuff.mah.drawstuff.Chat.Chat;
+import com.drawstuff.mah.drawstuff.Chat.ChatFragment;
 import com.drawstuff.mah.drawstuff.Constants.Constants;
 import com.drawstuff.mah.drawstuff.EndScreen;
 import com.drawstuff.mah.drawstuff.FirebaseSelectedWord;
@@ -48,6 +49,8 @@ public class DrawFragment extends Fragment implements ColorPickerDialog.OnColorC
     private Firebase setWin;
     private Firebase fbChat;
     private ValueEventListener winCheck;
+
+
     ArrayList<String> words = new ArrayList<>();
 
 
@@ -59,13 +62,20 @@ public class DrawFragment extends Fragment implements ColorPickerDialog.OnColorC
         fbChat = new Firebase(Constants.FIREBASE_URL).child("chat");
 
 
-        setRandomWord();
-        welcomeNewDrawer();
+
+
         mFirebaseRef = new Firebase(Constants.FIREBASE_URL).child("draw");
         mDrawingView = new DrawingView(getActivity(), mFirebaseRef);
         word = new Firebase(Constants.FIREBASE_URL);
         setWin = new Firebase(Constants.FIREBASE_URL).child("gameInProgress");
-        winChecker();
+
+
+
+                    winChecker();
+                    setRandomWord();
+                    welcomeNewDrawer();
+
+
 
 
         return mDrawingView;
@@ -183,7 +193,7 @@ public class DrawFragment extends Fragment implements ColorPickerDialog.OnColorC
                                 FragmentManager fm = getActivity().getFragmentManager();
                                 FragmentTransaction ft = fm.beginTransaction();
                                 StartFragment sf = new StartFragment();
-                                ft.replace(R.id.main_activity_container, sf);
+                                ft.replace(R.id.main_activity_container, sf, "startFragment");
                                 ft.addToBackStack(null);
                                 setWin.removeEventListener(winCheck);
                                 ft.commit();
@@ -522,6 +532,7 @@ public class DrawFragment extends Fragment implements ColorPickerDialog.OnColorC
         Chat chat = new Chat("Someone started drawing.", "@DrawStuff");
         fbChat.push().setValue(chat);
     }
+
 
 
 

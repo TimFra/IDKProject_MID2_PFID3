@@ -6,7 +6,8 @@
     android:paddingBottom="0dp" tools:context=".Main"
     android:background="#049a95"
     android:orientation="vertical"
-    android:id="@+id/fragment_start">
+    android:id="@+id/fragment_start"
+    android:tag="startFragment">
 
     <ImageView
         android:layout_width="wrap_content"

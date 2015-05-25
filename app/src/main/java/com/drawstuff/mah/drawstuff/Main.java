@@ -13,6 +13,7 @@ import android.view.Window;
 
 import com.drawstuff.mah.drawstuff.Chat.Chat;
 import com.drawstuff.mah.drawstuff.Constants.Constants;
+import com.drawstuff.mah.drawstuff.Draw.DrawFragment;
 import com.drawstuff.mah.drawstuff.Draw.DrawingView;
 import com.drawstuff.mah.drawstuff.Draw.StartFragment;
 import com.firebase.client.Firebase;
@@ -84,15 +85,26 @@ public class Main extends Activity {
 
     @Override
     public void onBackPressed() {
-        if(getFragmentManager().findFragmentByTag("drawTag") !=null){
+
+        //getFragmentManager().popBackStack();
+
+        if(getFragmentManager().findFragmentByTag("drawTag") !=null) {
             Firebase inDraw = new Firebase(Constants.FIREBASE_URL).child("gameInProgress");
             inDraw.setValue("false");
             Chat chat = new Chat("Drawer has quit.", "@DrawStuff");
             mFirebaseRef.push().setValue(chat);
 
-        }
 
-        super.onBackPressed();
+        } else if(getFragmentManager().findFragmentByTag("chatTag") !=null){
+            FragmentManager fm = this.getFragmentManager();
+            FragmentTransaction ft = fm.beginTransaction();
+            StartFragment sf = new StartFragment();
+            ft.replace(R.id.main_activity_container, sf, "startFragment");
+            ft.addToBackStack(null);
+            ft.commit();
+        } else {
+            super.onBackPressed();
+        }
     }
 
 
