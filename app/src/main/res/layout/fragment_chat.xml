@@ -4,7 +4,7 @@
     android:layout_height="fill_parent"
 
     tools:context=".MainActivity"
-    android:background="@color/white">
+    android:background="#FFC37E">
 
     <ListView
         android:id="@android:id/list"
@@ -12,7 +12,13 @@
         android:layout_height="wrap_content"
         android:layout_above="@+id/listFooter"
         android:layout_alignParentTop="true"
-        android:transcriptMode="alwaysScroll" />
+        android:transcriptMode="alwaysScroll"
+        android:footerDividersEnabled="false"
+        android:divider="@color/light_orange"
+        android:dividerHeight="0.3dp"
+        android:drawSelectorOnTop="true"
+        android:paddingTop="3dp"
+        android:paddingBottom="3dp" />
 
     <LinearLayout
         android:id="@+id/listFooter"
@@ -29,7 +35,7 @@
             android:inputType="textShortMessage"
             android:lines="1"
             android:singleLine="true"
-            android:textColor="@color/dark_orange" />
+            android:textColor="@color/drop_shadow_grey" />
 
         <ImageButton
             android:id="@+id/sendButton"
