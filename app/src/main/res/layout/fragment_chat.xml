@@ -4,7 +4,7 @@
     android:layout_height="fill_parent"
 
     tools:context=".MainActivity"
-    android:background="#F89E02">
+    android:background="@color/white">
 
     <ListView
         android:id="@android:id/list"
@@ -29,7 +29,7 @@
             android:inputType="textShortMessage"
             android:lines="1"
             android:singleLine="true"
-            android:textColor="#ffffffff" />
+            android:textColor="@color/dark_orange" />
 
         <ImageButton
             android:id="@+id/sendButton"
