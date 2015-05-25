@@ -93,7 +93,7 @@ public class DrawingView extends View {
             }
         });
 
-
+        // Drawing color and Stroke
         mPaint = new Paint();
         mPaint.setAntiAlias(true);
         mPaint.setDither(true);
