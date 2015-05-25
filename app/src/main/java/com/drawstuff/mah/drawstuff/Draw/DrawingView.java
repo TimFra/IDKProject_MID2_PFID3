@@ -6,9 +6,15 @@ import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.graphics.Path;
 import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
+import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.ImageButton;
+import android.widget.RelativeLayout;
 
+import com.drawstuff.mah.drawstuff.R;
 import com.firebase.client.ChildEventListener;
 import com.firebase.client.DataSnapshot;
 import com.firebase.client.Firebase;
@@ -17,6 +23,7 @@ import com.firebase.client.FirebaseError;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
+import java.util.zip.Inflater;
 
 /**
  * The drawing-part of our application should be accredited properly.
@@ -43,8 +50,12 @@ public class DrawingView extends View {
     private Segment mCurrentSegment;
     private Path mChildPath = new Path();
 
+
+
+
     public DrawingView(Context context, Firebase ref) {
         super(context);
+
 
         mOutstandingSegments = new HashSet<String>();
         mPath = new Path();
@@ -103,6 +114,10 @@ public class DrawingView extends View {
 
 
         mBitmapPaint = new Paint(Paint.DITHER_FLAG);
+
+
+
+
     }
 
     /**
@@ -232,5 +247,12 @@ try {
         }
         return true;
     }
+
+
+@Override
+    public boolean isInEditMode (){
+    return true;
+}
+
 
 }

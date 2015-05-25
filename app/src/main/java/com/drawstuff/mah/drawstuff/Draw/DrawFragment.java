@@ -5,29 +5,26 @@ import android.app.FragmentManager;
 import android.app.FragmentTransaction;
 import android.os.Bundle;
 import android.app.Fragment;
+import android.renderscript.Sampler;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.FrameLayout;
-import android.widget.TextView;
+
 import android.widget.Toast;
 
 import com.drawstuff.mah.drawstuff.Chat.Chat;
-import com.drawstuff.mah.drawstuff.Chat.ChatFragment;
+
 import com.drawstuff.mah.drawstuff.Constants.Constants;
-import com.drawstuff.mah.drawstuff.EndScreen;
-import com.drawstuff.mah.drawstuff.FirebaseSelectedWord;
+
 import com.drawstuff.mah.drawstuff.R;
 import com.firebase.client.DataSnapshot;
 import com.firebase.client.Firebase;
 import com.firebase.client.FirebaseError;
 import com.firebase.client.ValueEventListener;
-import com.firebase.client.core.Context;
 
-import org.w3c.dom.Text;
 
 import java.util.ArrayList;
 import java.util.Random;
@@ -49,13 +46,15 @@ public class DrawFragment extends Fragment implements ColorPickerDialog.OnColorC
     private Firebase setWin;
     private Firebase fbChat;
     private ValueEventListener winCheck;
+    private ValueEventListener containerListener;
+
 
 
     ArrayList<String> words = new ArrayList<>();
 
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+    public View onCreateView(LayoutInflater inflater, final ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         super.onCreate(savedInstanceState);
@@ -73,12 +72,26 @@ public class DrawFragment extends Fragment implements ColorPickerDialog.OnColorC
                     setRandomWord();
                     welcomeNewDrawer();
                     winChecker();
+        container.addView(mDrawingView);
+        View v = inflater.inflate(R.layout.fragment_draw, container, false);
+
+        containerListener = setWin.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                if(dataSnapshot.getValue().toString().equals("false")){
+                    container.removeView(mDrawingView);
+                    setWin.removeEventListener(containerListener);
+                }
+            }
+
+            @Override
+            public void onCancelled(FirebaseError firebaseError) {
+
+            }
+        });
 
 
-
-
-
-        return mDrawingView;
+        return v;
     }
 
 
@@ -114,6 +127,7 @@ public class DrawFragment extends Fragment implements ColorPickerDialog.OnColorC
         // Clean up our listener so we don't have it attached twice.
         mFirebaseRef.getRoot().child(".info/connected").removeEventListener(mConnectedListener);
         mDrawingView.cleanup();
+
     }
 
 
@@ -190,6 +204,7 @@ public class DrawFragment extends Fragment implements ColorPickerDialog.OnColorC
                         if (dataSnapshot.getValue().toString().equals("false")) {
 
                             try {
+
                                 Toast.makeText(getActivity(), "Someone guessed your word!", Toast.LENGTH_LONG).show();
                                 FragmentManager fm = getActivity().getFragmentManager();
                                 FragmentTransaction ft = fm.beginTransaction();
@@ -513,6 +528,8 @@ public class DrawFragment extends Fragment implements ColorPickerDialog.OnColorC
         Chat chat = new Chat("Someone started drawing.", "@DrawStuff");
         fbChat.push().setValue(chat);
     }
+
+
 
 
 
