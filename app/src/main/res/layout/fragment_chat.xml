@@ -15,7 +15,7 @@
         android:transcriptMode="alwaysScroll"
         android:footerDividersEnabled="false"
         android:divider="@color/light_orange"
-        android:dividerHeight="0.3dp"
+        android:dividerHeight="0.2dp"
         android:drawSelectorOnTop="true"
         android:paddingTop="3dp"
         android:paddingBottom="3dp" />
