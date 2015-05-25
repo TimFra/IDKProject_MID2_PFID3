@@ -10,6 +10,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.Window;
+import android.widget.Toast;
 
 import com.drawstuff.mah.drawstuff.Chat.Chat;
 import com.drawstuff.mah.drawstuff.Constants.Constants;
@@ -92,19 +93,13 @@ public class Main extends Activity {
             Firebase inDraw = new Firebase(Constants.FIREBASE_URL).child("gameInProgress");
             inDraw.setValue("false");
             Chat chat = new Chat("Drawer has quit.", "@DrawStuff");
+            Toast.makeText(this, "You quit drawing.", Toast.LENGTH_SHORT).show();
             mFirebaseRef.push().setValue(chat);
 
 
-        } else if(getFragmentManager().findFragmentByTag("chatTag") !=null){
-            FragmentManager fm = this.getFragmentManager();
-            FragmentTransaction ft = fm.beginTransaction();
-            StartFragment sf = new StartFragment();
-            ft.replace(R.id.main_activity_container, sf, "startFragment");
-            ft.addToBackStack(null);
-            ft.commit();
-        } else {
-            super.onBackPressed();
         }
+            super.onBackPressed();
+        
     }
 
 

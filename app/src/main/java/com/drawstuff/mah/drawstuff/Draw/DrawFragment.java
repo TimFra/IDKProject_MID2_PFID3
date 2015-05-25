@@ -70,10 +70,10 @@ public class DrawFragment extends Fragment implements ColorPickerDialog.OnColorC
         setWin = new Firebase(Constants.FIREBASE_URL).child("gameInProgress");
 
 
-
-                    winChecker();
                     setRandomWord();
                     welcomeNewDrawer();
+                    winChecker();
+
 
 
 
@@ -93,7 +93,7 @@ public class DrawFragment extends Fragment implements ColorPickerDialog.OnColorC
             public void onDataChange(DataSnapshot dataSnapshot) {
                 boolean connected = (Boolean) dataSnapshot.getValue();
                 if (connected) {
-                    Toast.makeText(getActivity(), "Connected to Firebase", Toast.LENGTH_SHORT).show();
+                    //Toast.makeText(getActivity(), "Connected to Firebase", Toast.LENGTH_SHORT).show();
                 } else {
                     //Toast.makeText(getActivity(), "Disconnected from Firebase", Toast.LENGTH_SHORT).show();
                 }
@@ -195,6 +195,7 @@ public class DrawFragment extends Fragment implements ColorPickerDialog.OnColorC
                                 StartFragment sf = new StartFragment();
                                 ft.replace(R.id.main_activity_container, sf, "startFragment");
                                 ft.addToBackStack(null);
+                                fm.popBackStack();
                                 setWin.removeEventListener(winCheck);
                                 ft.commit();
                             } catch (Throwable e) {
