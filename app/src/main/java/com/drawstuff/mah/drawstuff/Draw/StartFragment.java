@@ -41,6 +41,7 @@ public class StartFragment extends Fragment {
         clearDraw = new Firebase(Constants.FIREBASE_URL).child("draw");
         View v = inflater.inflate(R.layout.fragment_start, container, false);
         getActivity().getActionBar().show();
+        getActivity().getActionBar().setTitle("DrawStuff");
 
         Button drawButton;
         drawButton = (Button) v.findViewById(R.id.drawBtn);

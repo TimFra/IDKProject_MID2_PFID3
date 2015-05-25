@@ -95,6 +95,7 @@ public class Main extends Activity {
             Chat chat = new Chat("Drawer has quit.", "@DrawStuff");
             Toast.makeText(this, "You quit drawing.", Toast.LENGTH_SHORT).show();
             mFirebaseRef.push().setValue(chat);
+            this.getActionBar().setTitle("DrawStuff");
 
 
         }

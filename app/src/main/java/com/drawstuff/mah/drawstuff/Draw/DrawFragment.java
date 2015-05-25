@@ -157,6 +157,7 @@ public class DrawFragment extends Fragment implements ColorPickerDialog.OnColorC
 
                         try {
                             Toast.makeText(getActivity(),"Your word to draw is: " + snapshot.getValue().toString(), Toast.LENGTH_LONG).show(); //TODO: This needs a try catch or null object reference.
+                            getActivity().getActionBar().setTitle("DrawStuff: " + snapshot.getValue().toString());
                         } catch (Throwable e) {
                             Log.i("Error: ", " -- In DrawFragment, word toast: " + e.toString());
                         }
