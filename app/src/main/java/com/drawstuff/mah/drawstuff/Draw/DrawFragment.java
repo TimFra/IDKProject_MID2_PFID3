@@ -13,6 +13,8 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 
+import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.Toast;
 
 import com.drawstuff.mah.drawstuff.Chat.Chat;
@@ -47,6 +49,7 @@ public class DrawFragment extends Fragment implements ColorPickerDialog.OnColorC
     private Firebase fbChat;
     private ValueEventListener winCheck;
     private ValueEventListener containerListener;
+    private Firebase clearDraw;
 
 
 
@@ -87,6 +90,42 @@ public class DrawFragment extends Fragment implements ColorPickerDialog.OnColorC
             @Override
             public void onCancelled(FirebaseError firebaseError) {
 
+            }
+        });
+
+
+        // Setup buttons
+
+        ImageButton trashcan;
+
+
+        trashcan = (ImageButton) v.findViewById(R.id.binButton);
+        clearDraw = new Firebase(Constants.FIREBASE_URL).child("draw");
+        trashcan.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                clearDraw.removeValue();
+                
+                // Måste tömma mdrawing view
+
+            }
+        });
+
+        Button redButton;
+        redButton = (Button) v.findViewById(R.id.redButton);
+        redButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mDrawingView.setColor(0xFFFF0000);
+            }
+        });
+
+        Button blackButton;
+        blackButton = (Button) v.findViewById(R.id.blackButton);
+        blackButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mDrawingView.setColor(0xFF000000);
             }
         });
 
