@@ -130,80 +130,191 @@ public class DrawFragment extends Fragment implements ColorPickerDialog.OnColorC
 
 
 
-        Button blackButton;
+        final Button blackButton;
         blackButton = (Button) v.findViewById(R.id.blackButton);
+
+        final Button redButton;
+        redButton = (Button) v.findViewById(R.id.redButton);
+
+        final Button yellowButton;
+        yellowButton = (Button) v.findViewById(R.id.yellowButton);
+
+        final Button greenButton;
+        greenButton = (Button) v.findViewById(R.id.greenButton);
+
+        final Button blueButton;
+        blueButton = (Button) v.findViewById(R.id.blueButton);
+
+        final Button purpleButton;
+        purpleButton = (Button) v.findViewById(R.id.purpleButton);
+
+        final Button pinkButton;
+        pinkButton = (Button) v.findViewById(R.id.pinkButton);
+
+
         blackButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 mDrawingView.setColor(0xFF000000);
                 Firebase currentColor = new Firebase(Constants.FIREBASE_URL).child("currentColor");
                 currentColor.setValue("black");
+
+                blackButton.setBackground(getResources().getDrawable(R.drawable.button_style_blackbutton_pressed));
+
+
+                    redButton.setBackground(getResources().getDrawable(R.drawable.button_style_redbutton));
+
+
+
+                    yellowButton.setBackground(getResources().getDrawable(R.drawable.button_style_yellowbutton));
+
+
+
+                    greenButton.setBackground(getResources().getDrawable(R.drawable.button_style_greenbutton));
+
+
+                    blueButton.setBackground(getResources().getDrawable(R.drawable.button_style_bluebutton));
+
+
+
+                    purpleButton.setBackground(getResources().getDrawable(R.drawable.button_style_purplebutton));
+
+
+
+                    pinkButton.setBackground(getResources().getDrawable(R.drawable.button_style_pinkbutton));
+
+
+
             }
         });
 
-        Button redButton;
-        redButton = (Button) v.findViewById(R.id.redButton);
+
         redButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 mDrawingView.setColor(0xFFC04545);
                 Firebase currentColor = new Firebase(Constants.FIREBASE_URL).child("currentColor");
                 currentColor.setValue("red");
+                redButton.setBackground(getResources().getDrawable(R.drawable.button_style_redbutton_pressed));
+
+                                   blackButton.setBackground(getResources().getDrawable(R.drawable.button_style_blackbutton));
+
+
+
+                    yellowButton.setBackground(getResources().getDrawable(R.drawable.button_style_yellowbutton));
+
+
+                                    greenButton.setBackground(getResources().getDrawable(R.drawable.button_style_greenbutton));
+
+
+                     blueButton.setBackground(getResources().getDrawable(R.drawable.button_style_bluebutton));
+
+
+                    purpleButton.setBackground(getResources().getDrawable(R.drawable.button_style_purplebutton));
+
+
+                    pinkButton.setBackground(getResources().getDrawable(R.drawable.button_style_pinkbutton));
+
+
             }
         });
 
-        Button yellowButton;
-        yellowButton = (Button) v.findViewById(R.id.yellowButton);
+
         yellowButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 mDrawingView.setColor(0xFFC0B945);
                 Firebase currentColor = new Firebase(Constants.FIREBASE_URL).child("currentColor");
                 currentColor.setValue("yellow");
+
+                yellowButton.setBackground(getResources().getDrawable(R.drawable.button_style_yellowbutton_pressed));
+                    redButton.setBackground(getResources().getDrawable(R.drawable.button_style_redbutton));
+                    blackButton.setBackground(getResources().getDrawable(R.drawable.button_style_blackbutton));
+                    greenButton.setBackground(getResources().getDrawable(R.drawable.button_style_greenbutton));
+                    blueButton.setBackground(getResources().getDrawable(R.drawable.button_style_bluebutton));
+                    purpleButton.setBackground(getResources().getDrawable(R.drawable.button_style_purplebutton));
+                    pinkButton.setBackground(getResources().getDrawable(R.drawable.button_style_pinkbutton));
+
+
             }
         });
 
-        Button greenButton;
-        greenButton = (Button) v.findViewById(R.id.greenButton);
+
         greenButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 mDrawingView.setColor(0xFF7FC045);
                 Firebase currentColor = new Firebase(Constants.FIREBASE_URL).child("currentColor");
                 currentColor.setValue("green");
+
+
+                yellowButton.setBackground(getResources().getDrawable(R.drawable.button_style_yellowbutton));
+                redButton.setBackground(getResources().getDrawable(R.drawable.button_style_redbutton));
+                blackButton.setBackground(getResources().getDrawable(R.drawable.button_style_blackbutton));
+                greenButton.setBackground(getResources().getDrawable(R.drawable.button_style_greenbutton_pressed));
+                blueButton.setBackground(getResources().getDrawable(R.drawable.button_style_bluebutton));
+                purpleButton.setBackground(getResources().getDrawable(R.drawable.button_style_purplebutton));
+                pinkButton.setBackground(getResources().getDrawable(R.drawable.button_style_pinkbutton));
+
             }
         });
 
-        Button blueButton;
-        blueButton = (Button) v.findViewById(R.id.blueButton);
+
         blueButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 mDrawingView.setColor(0xFF459FC0);
                 Firebase currentColor = new Firebase(Constants.FIREBASE_URL).child("currentColor");
                 currentColor.setValue("blue");
+
+                yellowButton.setBackground(getResources().getDrawable(R.drawable.button_style_yellowbutton));
+                redButton.setBackground(getResources().getDrawable(R.drawable.button_style_redbutton));
+                blackButton.setBackground(getResources().getDrawable(R.drawable.button_style_blackbutton));
+                greenButton.setBackground(getResources().getDrawable(R.drawable.button_style_greenbutton));
+                blueButton.setBackground(getResources().getDrawable(R.drawable.button_style_bluebutton_pressed));
+                purpleButton.setBackground(getResources().getDrawable(R.drawable.button_style_purplebutton));
+                pinkButton.setBackground(getResources().getDrawable(R.drawable.button_style_pinkbutton));
+
             }
         });
 
-        Button purpleButton;
-        purpleButton = (Button) v.findViewById(R.id.purpleButton);
+
         purpleButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 mDrawingView.setColor(0xFF9645C0);
                 Firebase currentColor = new Firebase(Constants.FIREBASE_URL).child("currentColor");
                 currentColor.setValue("purple");
+
+
+                yellowButton.setBackground(getResources().getDrawable(R.drawable.button_style_yellowbutton));
+                redButton.setBackground(getResources().getDrawable(R.drawable.button_style_redbutton));
+                blackButton.setBackground(getResources().getDrawable(R.drawable.button_style_blackbutton));
+                greenButton.setBackground(getResources().getDrawable(R.drawable.button_style_greenbutton));
+                blueButton.setBackground(getResources().getDrawable(R.drawable.button_style_bluebutton));
+                purpleButton.setBackground(getResources().getDrawable(R.drawable.button_style_purplebutton_pressed));
+                pinkButton.setBackground(getResources().getDrawable(R.drawable.button_style_pinkbutton));
+
             }
         });
 
-        Button pinkButton;
-        pinkButton = (Button) v.findViewById(R.id.pinkButton);
+
         pinkButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 mDrawingView.setColor(0xFFC04596);
                 Firebase currentColor = new Firebase(Constants.FIREBASE_URL).child("currentColor");
                 currentColor.setValue("pink");
+
+
+                yellowButton.setBackground(getResources().getDrawable(R.drawable.button_style_yellowbutton));
+                redButton.setBackground(getResources().getDrawable(R.drawable.button_style_redbutton));
+                blackButton.setBackground(getResources().getDrawable(R.drawable.button_style_blackbutton));
+                greenButton.setBackground(getResources().getDrawable(R.drawable.button_style_greenbutton));
+                blueButton.setBackground(getResources().getDrawable(R.drawable.button_style_bluebutton));
+                purpleButton.setBackground(getResources().getDrawable(R.drawable.button_style_purplebutton));
+                pinkButton.setBackground(getResources().getDrawable(R.drawable.button_style_pinkbutton_pressed));
+
             }
         });
 
