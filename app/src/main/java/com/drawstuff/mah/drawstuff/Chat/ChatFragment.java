@@ -20,6 +20,7 @@ import android.widget.Toast;
 
 import com.drawstuff.mah.drawstuff.Constants.Constants;
 import com.drawstuff.mah.drawstuff.EndScreen;
+import com.drawstuff.mah.drawstuff.LoginFragment;
 import com.drawstuff.mah.drawstuff.R;
 import com.firebase.client.DataSnapshot;
 import com.firebase.client.Firebase;
@@ -42,7 +43,7 @@ public class ChatFragment extends ListFragment {
     private Firebase guessWord;
     private Firebase gameStateFirebase;
     private boolean isUserNameSet=false;
-
+    private LoginFragment loginFragment;
     public ChatFragment() {
         // Required empty public constructor
     }
@@ -57,7 +58,8 @@ public class ChatFragment extends ListFragment {
         gameStateFirebase = new Firebase(Constants.FIREBASE_URL).child("roundWinner");
 
         setupUsername();
-        getActivity().getActionBar().setTitle("DrawStuff: "+ mUsername);
+        //mUsername = Constants.userName;
+        getActivity().getActionBar().setTitle("DrawStuff: " + mUsername);
 
 
 
@@ -150,34 +152,7 @@ public class ChatFragment extends ListFragment {
         mChatListAdapter.cleanup();
     }
 
-    public void setupUsername() {
-        //Resets Prefes
-        SharedPreferences prefs = getActivity().getApplication().getSharedPreferences("ChatPrefs", 0);
-        prefs.edit().remove("username").apply(); //This clears the SharedPreferences in Android making the user a new username each time they launch the application.
-        mUsername = prefs.getString("username", null);
-        //Prefs and name has been reset above, below is a naming process.
-        EditText name;
-        name = (EditText) getActivity().findViewById(R.id.setUserName); //This allows the user to pick a username instead of the random generated one.
-        mUsername = name.getText().toString();
-        prefs.edit().putString("username", mUsername).apply();
 
-
-        if (mUsername == null) {
-            Random r = new Random();
-            // Assign a random user name if we don't have one saved
-
-            mUsername = "NoNamePlayer" + r.nextInt(100);
-            prefs.edit().putString("username", mUsername).apply();
-        }
-
-
-        if (mUsername != null) {
-            name.setBackgroundColor(0xFF049A95);
-            name.setText(mUsername);
-            name.setEnabled(false);
-
-        }
-    }
 
     private void sendMessage() {
         EditText inputText = (EditText) getView().findViewById(R.id.messageInput); //TODO: This gives off a null pointer exception warning. It MAY cause us problems.
@@ -227,6 +202,36 @@ public class ChatFragment extends ListFragment {
         }
 
 
+    }
+
+
+    public void setupUsername() {
+        //Resets Prefes
+        SharedPreferences prefs = getActivity().getApplication().getSharedPreferences("ChatPrefs", 0);
+        prefs.edit().remove("username").apply(); //This clears the SharedPreferences in Android making the user a new username each time they launch the application.
+        mUsername = prefs.getString("username", null);
+        //Prefs and name has been reset above, below is a naming process.
+
+        prefs.edit().putString("username", mUsername).apply();
+
+
+        if (mUsername == null) {
+            //Random r = new Random();
+            // Assign a random user name if we don't have one saved
+            mUsername = Constants.userName;
+            //mUsername = "NoNamePlayer" + r.nextInt(100);
+            prefs.edit().putString("username", mUsername).apply();
+        }
+
+
+        //if (mUsername != null) {
+          //  name.setBackgroundColor(0xFF049A95);
+            //name.setText(mUsername);
+           // name.setEnabled(false);
+
+        //}
+
+       // Constants.userName = mUsername;
     }
 }
 

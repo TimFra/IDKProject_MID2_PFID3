@@ -3,6 +3,7 @@ package com.drawstuff.mah.drawstuff;
 
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.app.Fragment;
 import android.util.Log;
@@ -10,8 +11,12 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.EditText;
 
+import com.drawstuff.mah.drawstuff.Constants.Constants;
 import com.drawstuff.mah.drawstuff.Draw.StartFragment;
+
+import java.util.Random;
 
 
 /**
@@ -19,6 +24,7 @@ import com.drawstuff.mah.drawstuff.Draw.StartFragment;
  */
 public class LoginFragment extends Fragment {
 
+    private String mUsername;
 
     public LoginFragment() {
         // Required empty public constructor
@@ -36,23 +42,25 @@ public class LoginFragment extends Fragment {
 
             @Override
             public void onClick(View v) {
-                try {
+
                     Log.i("FragmentTransaction,", "Moving to startfragment");
                     FragmentManager fm = getFragmentManager();
                     FragmentTransaction ft = fm.beginTransaction(); //Start adding the fragment by getting the manager for handling this
                     StartFragment sf = new StartFragment(); //Creates splashscreen
-                    ft.replace(R.id.fragment_login, sf); //And add it to the manager
-
+                    ft.replace(R.id.main_activity_container, sf); //And add it to the manager
+                    //setupUsername();
+                      EditText name;
+                        name = (EditText) getActivity().findViewById(R.id.setUserName); //This allows the user to pick a username instead of the random generated one.
+                        mUsername = name.getText().toString();
+                        Constants.userName = mUsername;
                     ft.commit();
-                } catch (Throwable e) {
-                    Log.i("Error: ", "NullPointer... :" + e.toString());
-                }
 
             }
         });
 
         return v;
     }
+
 
 
 }
