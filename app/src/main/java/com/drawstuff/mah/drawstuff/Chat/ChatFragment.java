@@ -57,6 +57,8 @@ public class ChatFragment extends ListFragment {
         gameStateFirebase = new Firebase(Constants.FIREBASE_URL).child("roundWinner");
 
         setupUsername();
+        getActivity().getActionBar().setTitle("DrawStuff: "+ mUsername);
+
 
 
         final EditText inputText = (EditText) v.findViewById(R.id.messageInput);
@@ -171,7 +173,7 @@ public class ChatFragment extends ListFragment {
 
         if (mUsername != null) {
             name.setBackgroundColor(0xFF049A95);
-            name.setText("Your username is: "+mUsername);
+            name.setText(mUsername);
             name.setEnabled(false);
 
         }

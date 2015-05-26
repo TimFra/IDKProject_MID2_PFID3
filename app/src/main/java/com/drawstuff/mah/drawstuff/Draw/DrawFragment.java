@@ -111,6 +111,7 @@ public class DrawFragment extends Fragment implements ColorPickerDialog.OnColorC
 
                 // Måste tömma mdrawing view
 
+
             }
         });
 

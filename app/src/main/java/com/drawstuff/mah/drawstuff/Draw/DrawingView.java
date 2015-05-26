@@ -113,6 +113,7 @@ public class DrawingView extends View {
         mPaint.setStrokeWidth(10);
 
 
+
         mBitmapPaint = new Paint(Paint.DITHER_FLAG);
 
 
