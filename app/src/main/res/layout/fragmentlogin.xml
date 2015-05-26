@@ -27,11 +27,11 @@
         android:layout_marginLeft="80dip"
         android:textSize="@dimen/button_style2" />
 
-    <TextView
+    <EditText
         android:layout_width="201dp"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:id="@+id/usernameWrite"
+        android:id="@+id/setUserName"
         android:editable="true"
         android:background="#ffffffff"
         android:layout_weight="0.07"

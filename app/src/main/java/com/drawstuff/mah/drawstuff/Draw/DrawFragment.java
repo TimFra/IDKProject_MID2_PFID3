@@ -109,7 +109,7 @@ public class DrawFragment extends Fragment implements ColorPickerDialog.OnColorC
             public void onClick(View v) {
                 clearDraw.removeValue();
 
-                // Måste tömma mdrawing view
+                // Maste tomma mdrawing view
 
 
             }
