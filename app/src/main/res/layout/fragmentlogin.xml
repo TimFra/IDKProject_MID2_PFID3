@@ -3,7 +3,8 @@
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#049a95"
-    android:weightSum="1">
+    android:weightSum="1"
+    android:id="@+id/fragment_login">
 
     <ImageView
         android:layout_width="wrap_content"
@@ -37,7 +38,8 @@
         android:layout_weight="0.07"
         android:layout_marginLeft="80dip"
         android:textSize="@dimen/button_style2"
-        android:textColor="@color/background_blue" />
+        android:textColor="@color/background_blue"
+        android:enabled="true" />
 
     <Button
         android:background="@drawable/button_state"

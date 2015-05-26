@@ -46,8 +46,8 @@ public class SplashFragment extends Fragment {
                 try {
                     FragmentManager fm = getFragmentManager();
                     FragmentTransaction ft = fm.beginTransaction(); //Start adding the fragment by getting the manager for handling this
-                    StartFragment sf = new StartFragment(); //Creates splashscreen
-                    ft.add(R.id.splash, sf); //And add it to the manager
+                    LoginFragment lf = new LoginFragment(); //Creates splashscreen
+                    ft.replace(R.id.splash, lf); //And add it to the manager
 
                     ft.commit();
                 } catch (Throwable e) {
