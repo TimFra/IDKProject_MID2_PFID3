@@ -10,7 +10,7 @@
     <!-- TODO: Update blank fragment layout -->
 
     <Button
-        android:background="@drawable/button_style_blackbutton"
+        android:background="@drawable/button_state_blackbutton"
         android:layout_width="50dp"
         android:layout_height="48dp"
         android:id="@+id/blackButton"
@@ -19,7 +19,7 @@
         android:clickable="false" />
 
     <Button
-        android:background="@drawable/button_style_redbutton"
+        android:background="@drawable/button_state_redbutton"
         android:layout_width="50dp"
         android:layout_height="48dp"
         android:id="@+id/redButton"
@@ -27,7 +27,7 @@
         android:layout_toEndOf="@+id/blackButton" />
 
     <Button
-        android:background="@drawable/button_style_yellowbutton"
+        android:background="@drawable/button_state_yellowbutton"
         android:layout_width="50dp"
         android:layout_height="48dp"
         android:id="@+id/yellowButton"
@@ -35,7 +35,7 @@
         android:layout_toEndOf="@+id/redButton" />
 
     <Button
-        android:background="@drawable/button_style_greenbutton"
+        android:background="@drawable/button_state_greenbutton"
         android:layout_width="50dp"
         android:layout_height="48dp"
         android:id="@+id/greenButton"
@@ -43,7 +43,7 @@
         android:layout_toEndOf="@+id/yellowButton" />
 
     <Button
-        android:background="@drawable/button_style_bluebutton"
+        android:background="@drawable/button_state_bluebutton"
         android:layout_width="50dp"
         android:layout_height="48dp"
         android:id="@+id/blueButton"
@@ -51,7 +51,7 @@
         android:layout_toEndOf="@+id/greenButton" />
 
     <Button
-        android:background="@drawable/button_style_purplebutton"
+        android:background="@drawable/button_state_purplebutton"
         android:layout_width="50dp"
         android:layout_height="48dp"
         android:id="@+id/purpleButton"
@@ -59,7 +59,7 @@
         android:layout_toEndOf="@+id/blueButton" />
 
     <Button
-        android:background="@drawable/button_style_pinkbutton"
+        android:background="@drawable/button_state_pinkbutton"
         android:layout_width="50dp"
         android:layout_height="48dp"
         android:id="@+id/pinkButton"
@@ -107,7 +107,7 @@
         android:text="Done"
         android:id="@+id/doneButton"
         android:layout_alignParentBottom="true"
-        android:background="@drawable/button_style"
+        android:background="@drawable/button_state"
         android:textColor="#ffffffff"
         android:layout_alignEnd="@+id/pinkButton"
         android:padding="5dp" />

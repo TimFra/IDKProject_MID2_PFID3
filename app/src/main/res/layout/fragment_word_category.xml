@@ -7,7 +7,7 @@
     <!--word category buttons-->
 
     <Button
-        android:background="@drawable/button_style"
+        android:background="@drawable/button_state"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/animalBtn"
@@ -20,7 +20,7 @@
         android:text="@string/animalBtn"/>
 
     <Button
-        android:background="@drawable/button_style"
+        android:background="@drawable/button_state"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/natureBtn"
@@ -33,7 +33,7 @@
         android:text="@string/natureBtn"/>
 
     <Button
-        android:background="@drawable/button_style"
+        android:background="@drawable/button_state"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/foodBtn"
@@ -47,7 +47,7 @@
         android:layout_alignStart="@+id/animalBtn" />
 
     <Button
-        android:background="@drawable/button_style"
+        android:background="@drawable/button_state"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/toolsBtn"
@@ -60,7 +60,7 @@
         android:layout_alignStart="@+id/natureBtn" />
 
     <Button
-        android:background="@drawable/button_style"
+        android:background="@drawable/button_state"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/devicesBtn"
@@ -74,7 +74,7 @@
         android:layout_marginTop="30dp" />
 
     <Button
-        android:background="@drawable/button_style"
+        android:background="@drawable/button_state"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/furnitureBtn"
@@ -87,7 +87,7 @@
         android:layout_alignStart="@+id/toolsBtn" />
 
     <Button
-        android:background="@drawable/button_style"
+        android:background="@drawable/button_state"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/clothingBtn"
@@ -101,7 +101,7 @@
         android:layout_marginTop="30dp" />
 
     <Button
-        android:background="@drawable/button_style"
+        android:background="@drawable/button_state"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/bodyBtn"
@@ -114,7 +114,7 @@
         android:layout_alignEnd="@+id/furnitureBtn" />
 
     <Button
-        android:background="@drawable/button_style"
+        android:background="@drawable/button_state"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/vehiclesBtn"
@@ -128,7 +128,7 @@
         android:layout_alignStart="@+id/clothingBtn" />
 
     <Button
-        android:background="@drawable/button_style"
+        android:background="@drawable/button_state"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/buildingsBtn"
@@ -141,7 +141,7 @@
         android:layout_alignStart="@+id/bodyBtn" />
 
     <Button
-        android:background="@drawable/button_style"
+        android:background="@drawable/button_state"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/logosBtn"
@@ -155,7 +155,7 @@
         android:layout_marginTop="30dp" />
 
     <Button
-        android:background="@drawable/button_style"
+        android:background="@drawable/button_state"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/verbsBtn"

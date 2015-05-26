@@ -39,7 +39,7 @@
         android:textColor="@color/background_blue" />
 
     <Button
-        android:background="@drawable/button_style"
+        android:background="@drawable/button_state"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/doneBtn"
