@@ -83,10 +83,10 @@
     <ImageButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/backButton"
+        android:id="@+id/rubberButton"
         android:layout_alignParentBottom="true"
         android:layout_toEndOf="@+id/pencilButton"
-        android:src="@drawable/back_button"
+        android:src="@drawable/rubber_button"
         android:background="#ffffffff"
         android:padding="5dp"
         android:layout_marginRight="10dp"/>
@@ -96,7 +96,7 @@
         android:layout_height="wrap_content"
         android:id="@+id/binButton"
         android:layout_alignParentBottom="true"
-        android:layout_toEndOf="@+id/backButton"
+        android:layout_toEndOf="@+id/rubberButton"
         android:padding="5dp"
         android:src="@drawable/bin_button"
         android:background="#ffffffff" />

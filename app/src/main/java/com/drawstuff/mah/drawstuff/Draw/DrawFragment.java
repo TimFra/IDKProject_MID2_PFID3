@@ -108,11 +108,26 @@ public class DrawFragment extends Fragment implements ColorPickerDialog.OnColorC
             @Override
             public void onClick(View v) {
                 clearDraw.removeValue();
-                
+
                 // Måste tömma mdrawing view
 
             }
         });
+
+        ImageButton rubber;
+
+
+        rubber = (ImageButton) v.findViewById(R.id.rubberButton);
+        rubber.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mDrawingView.setColor(0xFFffffff);
+                Firebase currentColor = new Firebase(Constants.FIREBASE_URL).child("currentColor");
+                currentColor.setValue("white");
+
+            }
+        });
+
 
 
         Button blackButton;
