@@ -45,11 +45,11 @@
         android:text="@string/doneBtn"
         android:id="@+id/doneBtn"
         android:textColor="@android:color/white"
-        android:layout_marginBottom="140dp"
+        android:layout_marginBottom="0dp"
         android:textSize="@dimen/button_style2"
-        android:layout_marginStart="50dp"
+        android:layout_marginStart="0dp"
         android:textAlignment="center"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginTop="30dp"/>
+        android:layout_marginTop="20dp"
+        android:layout_gravity="center" />
 
 </LinearLayout>

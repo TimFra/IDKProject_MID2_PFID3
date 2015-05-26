@@ -45,6 +45,22 @@
         android:layout_alignParentEnd="true"
         android:textAlignment="center" />
 
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:text=""
+        android:hint="@string/enterUsernameString"
+        android:ems="10"
+        android:id="@+id/setUserName"
+        android:layout_marginTop="31dp"
+        android:layout_below="@+id/guessBtn"
+        android:layout_centerHorizontal="true"
+        android:background="@color/white"
+        android:textStyle="italic"
+        android:typeface="sans"
+        android:gravity="center"
+        android:layout_marginLeft="10dp" />
 
 
 </RelativeLayout>

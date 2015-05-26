@@ -27,6 +27,7 @@ import com.firebase.client.FirebaseError;
 import com.firebase.client.ValueEventListener;
 
 import java.util.Random;
+import java.util.Scanner;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -40,6 +41,7 @@ public class ChatFragment extends ListFragment {
     private ChatListAdapter mChatListAdapter;
     private Firebase guessWord;
     private Firebase gameStateFirebase;
+    private boolean isUserNameSet=false;
 
     public ChatFragment() {
         // Required empty public constructor
@@ -146,16 +148,32 @@ public class ChatFragment extends ListFragment {
         mChatListAdapter.cleanup();
     }
 
-    private void setupUsername() {
+    public void setupUsername() {
+        //Resets Prefes
         SharedPreferences prefs = getActivity().getApplication().getSharedPreferences("ChatPrefs", 0);
-        prefs.edit().remove("username").apply(); //This clears  the SharedPreferences in Android making the user a new username each time they launch the application.
+        prefs.edit().remove("username").apply(); //This clears the SharedPreferences in Android making the user a new username each time they launch the application.
         mUsername = prefs.getString("username", null);
+        //Prefs and name has been reset above, below is a naming process.
+        EditText name;
+        name = (EditText) getActivity().findViewById(R.id.setUserName); //This allows the user to pick a username instead of the random generated one.
+        mUsername = name.getText().toString();
+        prefs.edit().putString("username", mUsername).apply();
+
+
         if (mUsername == null) {
             Random r = new Random();
             // Assign a random user name if we don't have one saved
 
-            mUsername = "Player" + r.nextInt(1000);
+            mUsername = "NoNamePlayer" + r.nextInt(100);
             prefs.edit().putString("username", mUsername).apply();
+        }
+
+
+        if (mUsername != null) {
+            name.setBackgroundColor(0xFF049A95);
+            name.setText("Your username is: "+mUsername);
+            name.setEnabled(false);
+
         }
     }
 
