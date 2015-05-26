@@ -111,14 +111,6 @@ public class DrawFragment extends Fragment implements ColorPickerDialog.OnColorC
             }
         });
 
-        Button redButton;
-        redButton = (Button) v.findViewById(R.id.redButton);
-        redButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                mDrawingView.setColor(0xFFFF0000);
-            }
-        });
 
         Button blackButton;
         blackButton = (Button) v.findViewById(R.id.blackButton);
@@ -129,6 +121,59 @@ public class DrawFragment extends Fragment implements ColorPickerDialog.OnColorC
             }
         });
 
+        Button redButton;
+        redButton = (Button) v.findViewById(R.id.redButton);
+        redButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mDrawingView.setColor(0xFFC04545);
+            }
+        });
+
+        Button yellowButton;
+        yellowButton = (Button) v.findViewById(R.id.yellowButton);
+        yellowButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mDrawingView.setColor(0xFFC0B945);
+            }
+        });
+
+        Button greenButton;
+        greenButton = (Button) v.findViewById(R.id.greenButton);
+        greenButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mDrawingView.setColor(0xFF7FC045);
+            }
+        });
+
+        Button blueButton;
+        blueButton = (Button) v.findViewById(R.id.blueButton);
+        blueButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mDrawingView.setColor(0xFF459FC0);
+            }
+        });
+
+        Button purpleButton;
+        purpleButton = (Button) v.findViewById(R.id.purpleButton);
+        purpleButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mDrawingView.setColor(0xFF9645C0);
+            }
+        });
+
+        Button pinkButton;
+        pinkButton = (Button) v.findViewById(R.id.pinkButton);
+        pinkButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mDrawingView.setColor(0xFFC04596);
+            }
+        });
 
         return v;
     }
