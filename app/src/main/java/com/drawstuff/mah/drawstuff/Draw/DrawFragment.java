@@ -93,6 +93,9 @@ public class DrawFragment extends Fragment implements ColorPickerDialog.OnColorC
             }
         });
 
+        // Setup color
+        Firebase currentColor = new Firebase(Constants.FIREBASE_URL).child("currentColor");
+        currentColor.setValue("black");
 
         // Setup buttons
 
@@ -118,6 +121,8 @@ public class DrawFragment extends Fragment implements ColorPickerDialog.OnColorC
             @Override
             public void onClick(View v) {
                 mDrawingView.setColor(0xFF000000);
+                Firebase currentColor = new Firebase(Constants.FIREBASE_URL).child("currentColor");
+                currentColor.setValue("black");
             }
         });
 
@@ -127,6 +132,8 @@ public class DrawFragment extends Fragment implements ColorPickerDialog.OnColorC
             @Override
             public void onClick(View v) {
                 mDrawingView.setColor(0xFFC04545);
+                Firebase currentColor = new Firebase(Constants.FIREBASE_URL).child("currentColor");
+                currentColor.setValue("red");
             }
         });
 
@@ -136,6 +143,8 @@ public class DrawFragment extends Fragment implements ColorPickerDialog.OnColorC
             @Override
             public void onClick(View v) {
                 mDrawingView.setColor(0xFFC0B945);
+                Firebase currentColor = new Firebase(Constants.FIREBASE_URL).child("currentColor");
+                currentColor.setValue("yellow");
             }
         });
 
@@ -145,6 +154,8 @@ public class DrawFragment extends Fragment implements ColorPickerDialog.OnColorC
             @Override
             public void onClick(View v) {
                 mDrawingView.setColor(0xFF7FC045);
+                Firebase currentColor = new Firebase(Constants.FIREBASE_URL).child("currentColor");
+                currentColor.setValue("green");
             }
         });
 
@@ -154,6 +165,8 @@ public class DrawFragment extends Fragment implements ColorPickerDialog.OnColorC
             @Override
             public void onClick(View v) {
                 mDrawingView.setColor(0xFF459FC0);
+                Firebase currentColor = new Firebase(Constants.FIREBASE_URL).child("currentColor");
+                currentColor.setValue("blue");
             }
         });
 
@@ -163,6 +176,8 @@ public class DrawFragment extends Fragment implements ColorPickerDialog.OnColorC
             @Override
             public void onClick(View v) {
                 mDrawingView.setColor(0xFF9645C0);
+                Firebase currentColor = new Firebase(Constants.FIREBASE_URL).child("currentColor");
+                currentColor.setValue("purple");
             }
         });
 
@@ -172,6 +187,8 @@ public class DrawFragment extends Fragment implements ColorPickerDialog.OnColorC
             @Override
             public void onClick(View v) {
                 mDrawingView.setColor(0xFFC04596);
+                Firebase currentColor = new Firebase(Constants.FIREBASE_URL).child("currentColor");
+                currentColor.setValue("pink");
             }
         });
 
