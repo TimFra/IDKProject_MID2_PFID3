@@ -49,7 +49,11 @@ public class DrawFragment extends Fragment implements ColorPickerDialog.OnColorC
     private Firebase fbChat;
     private ValueEventListener winCheck;
     private ValueEventListener containerListener;
+    private ValueEventListener checkTimeOut;
     private Firebase clearDraw;
+    private Firebase chicken;
+    private Firebase currentPlayer;
+    private Firebase timeOut;
 
 
 
@@ -70,11 +74,46 @@ public class DrawFragment extends Fragment implements ColorPickerDialog.OnColorC
         mDrawingView = new DrawingView(getActivity(), mFirebaseRef);
         word = new Firebase(Constants.FIREBASE_URL);
         setWin = new Firebase(Constants.FIREBASE_URL).child("gameInProgress");
+        chicken = new Firebase(Constants.FIREBASE_URL).child("chicken");
+        currentPlayer = new Firebase(Constants.FIREBASE_URL).child("currentDrawer");
+
+        chicken.setValue("false");
+        currentPlayer.setValue(Constants.userName);
+
+        timeOut = new Firebase(Constants.FIREBASE_URL).child("timedOut");
+        checkTimeOut = timeOut.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                if(dataSnapshot.getValue().toString().equals("true")){
+                    try {
+                        Toast.makeText(getActivity(), "You timed out.", Toast.LENGTH_LONG).show();
+                        setWin.setValue("false");
+                        FragmentManager fm = getActivity().getFragmentManager();
+                        FragmentTransaction ft = fm.beginTransaction();
+                        StartFragment sf = new StartFragment();
+                        ft.replace(R.id.main_activity_container, sf, "startFragment");
+                        ft.addToBackStack(null);
+                        fm.popBackStack();
+                        timeOut.removeEventListener(checkTimeOut);
+                        ft.commit();
+                    } catch (Throwable e){
+                        Log.i("Error","DrawFragment.java: TimeOut listener: "+e);
+                    }
+
+                }
+            }
+
+            @Override
+            public void onCancelled(FirebaseError firebaseError) {
+
+            }
+        });
 
 
                     setRandomWord();
                     welcomeNewDrawer();
                     winChecker();
+
         container.addView(mDrawingView);
         View v = inflater.inflate(R.layout.fragment_draw, container, false);
 
@@ -197,24 +236,12 @@ public class DrawFragment extends Fragment implements ColorPickerDialog.OnColorC
                 Firebase currentColor = new Firebase(Constants.FIREBASE_URL).child("currentColor");
                 currentColor.setValue("red");
                 redButton.setBackground(getResources().getDrawable(R.drawable.button_style_redbutton_pressed));
-
-                                   blackButton.setBackground(getResources().getDrawable(R.drawable.button_style_blackbutton));
-
-
-
-                    yellowButton.setBackground(getResources().getDrawable(R.drawable.button_style_yellowbutton));
-
-
-                                    greenButton.setBackground(getResources().getDrawable(R.drawable.button_style_greenbutton));
-
-
-                     blueButton.setBackground(getResources().getDrawable(R.drawable.button_style_bluebutton));
-
-
-                    purpleButton.setBackground(getResources().getDrawable(R.drawable.button_style_purplebutton));
-
-
-                    pinkButton.setBackground(getResources().getDrawable(R.drawable.button_style_pinkbutton));
+                blackButton.setBackground(getResources().getDrawable(R.drawable.button_style_blackbutton));
+                yellowButton.setBackground(getResources().getDrawable(R.drawable.button_style_yellowbutton));
+                greenButton.setBackground(getResources().getDrawable(R.drawable.button_style_greenbutton));
+                blueButton.setBackground(getResources().getDrawable(R.drawable.button_style_bluebutton));
+                purpleButton.setBackground(getResources().getDrawable(R.drawable.button_style_purplebutton));
+                pinkButton.setBackground(getResources().getDrawable(R.drawable.button_style_pinkbutton));
 
 
             }

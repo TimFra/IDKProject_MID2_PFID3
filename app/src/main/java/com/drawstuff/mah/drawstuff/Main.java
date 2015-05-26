@@ -96,6 +96,10 @@ public class Main extends Activity {
             Toast.makeText(this, "You quit drawing.", Toast.LENGTH_SHORT).show();
             mFirebaseRef.push().setValue(chat);
             this.getActionBar().setTitle("DrawStuff");
+            Firebase chicken = new Firebase(Constants.FIREBASE_URL).child("chicken");
+            chicken.setValue("true");
+            Firebase drawing = new Firebase(Constants.FIREBASE_URL).child("draw");
+            drawing.removeValue();
 
 
         }

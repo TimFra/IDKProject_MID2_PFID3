@@ -28,6 +28,7 @@ import com.firebase.client.ValueEventListener;
 public class StartFragment extends Fragment {
     public Firebase firebaseChecker;
     public Firebase clearDraw;
+    public Firebase timeOut;
     public StartFragment() {
         // Required empty public
     }
@@ -39,6 +40,7 @@ public class StartFragment extends Fragment {
 
         firebaseChecker = new Firebase(Constants.FIREBASE_URL).child("gameInProgress");
         clearDraw = new Firebase(Constants.FIREBASE_URL).child("draw");
+        timeOut = new Firebase(Constants.FIREBASE_URL).child("timedOut");
         View v = inflater.inflate(R.layout.fragment_start, container, false);
         getActivity().getActionBar().show();
         getActivity().getActionBar().setTitle("DrawStuff");
@@ -54,6 +56,7 @@ public class StartFragment extends Fragment {
                     @Override
                     public void onDataChange(DataSnapshot dataSnapshot) {
                         if (dataSnapshot.getValue().toString().equals("false")) {
+                            timeOut.setValue("false");
                             FragmentManager fm = getFragmentManager();
                             FragmentTransaction ft = fm.beginTransaction();
                             DrawFragment df = new DrawFragment();
