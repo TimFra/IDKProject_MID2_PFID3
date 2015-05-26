@@ -10,76 +10,62 @@
     <!-- TODO: Update blank fragment layout -->
 
     <Button
-        style="?android:attr/buttonStyleSmall"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:background="@drawable/button_style_blackbutton"
+        android:layout_width="50dp"
+        android:layout_height="48dp"
         android:id="@+id/blackButton"
         android:layout_gravity="left|top"
-        android:background="@android:color/black"
+        android:layout_marginLeft="5dp"
         android:clickable="false" />
 
     <Button
-        style="?android:attr/buttonStyleSmall"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:background="@drawable/button_style_redbutton"
+        android:layout_width="50dp"
+        android:layout_height="48dp"
         android:id="@+id/redButton"
-        android:background="#C04545"
-        android:layout_toEndOf="@+id/blackButton"
-        android:layout_alignParentTop="true" />
+        android:layout_alignTop="@+id/blackButton"
+        android:layout_toEndOf="@+id/blackButton" />
 
     <Button
-        style="?android:attr/buttonStyleSmall"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:background="@drawable/button_style_yellowbutton"
+        android:layout_width="50dp"
+        android:layout_height="48dp"
         android:id="@+id/yellowButton"
         android:layout_alignParentTop="true"
-        android:layout_toEndOf="@+id/redButton"
-        android:background="#C0B945" />
+        android:layout_toEndOf="@+id/redButton" />
 
     <Button
-        style="?android:attr/buttonStyleSmall"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:background="@drawable/button_style_greenbutton"
+        android:layout_width="50dp"
+        android:layout_height="48dp"
         android:id="@+id/greenButton"
         android:layout_alignParentTop="true"
-        android:layout_toEndOf="@+id/yellowButton"
-        android:background="#7FC045" />
+        android:layout_toEndOf="@+id/yellowButton" />
 
     <Button
-        style="?android:attr/buttonStyleSmall"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/lightBlueButton"
-        android:layout_alignParentTop="true"
-        android:layout_toEndOf="@+id/greenButton"
-        android:background="#45C096" />
-
-    <Button
-        style="?android:attr/buttonStyleSmall"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:background="@drawable/button_style_bluebutton"
+        android:layout_width="50dp"
+        android:layout_height="48dp"
         android:id="@+id/blueButton"
-        android:background="#459FC0"
         android:layout_alignParentTop="true"
-        android:layout_toEndOf="@+id/lightBlueButton" />
+        android:layout_toEndOf="@+id/greenButton" />
 
     <Button
-        style="?android:attr/buttonStyleSmall"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:background="@drawable/button_style_purplebutton"
+        android:layout_width="50dp"
+        android:layout_height="48dp"
         android:id="@+id/purpleButton"
-        android:background="#9645C0"
         android:layout_alignParentTop="true"
         android:layout_toEndOf="@+id/blueButton" />
 
     <Button
-        style="?android:attr/buttonStyleSmall"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:background="@drawable/button_style_pinkbutton"
+        android:layout_width="50dp"
+        android:layout_height="48dp"
         android:id="@+id/pinkButton"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
-        android:background="#C04596" />
+        android:layout_marginRight="5dp"/>
 
     <ImageButton
         android:layout_width="wrap_content"
@@ -89,27 +75,21 @@
         android:background="#ffffffff"
         android:layout_alignParentBottom="true"
         android:layout_alignParentStart="true"
-        android:padding="5dp" />
+        android:padding="5dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="10dp"/>
 
-    <ImageButton
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/rubberButton"
-        android:layout_alignParentBottom="true"
-        android:layout_toEndOf="@+id/pencilButton"
-        android:src="@drawable/rubber_button"
-        android:background="#ffffffff"
-        android:padding="5dp" />
 
     <ImageButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/backButton"
         android:layout_alignParentBottom="true"
-        android:layout_toEndOf="@+id/rubberButton"
+        android:layout_toEndOf="@+id/pencilButton"
         android:src="@drawable/back_button"
         android:background="#ffffffff"
-        android:padding="5dp" />
+        android:padding="5dp"
+        android:layout_marginRight="10dp"/>
 
     <ImageButton
         android:layout_width="wrap_content"
@@ -127,10 +107,9 @@
         android:text="Done"
         android:id="@+id/doneButton"
         android:layout_alignParentBottom="true"
-        android:background="#049A95"
+        android:background="@drawable/button_style"
         android:textColor="#ffffffff"
         android:layout_alignEnd="@+id/pinkButton"
-        android:layout_alignStart="@+id/purpleButton"
         android:padding="5dp" />
 
 </RelativeLayout>

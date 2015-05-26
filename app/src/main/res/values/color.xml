@@ -7,4 +7,13 @@
     <color name="white">#ffffff</color>
     <color name="background_blue">#049A95</color>
     <color name="drop_shadow_grey">#555555</color>
+
+    <!--Drawview button colors-->
+    <color name="blackButton">#000000</color>
+    <color name="redButton">#C04545</color>
+    <color name="yellowButton">#C0B945</color>
+    <color name="greenButton">#7FC045</color>
+    <color name="blueButton">#459FC0</color>
+    <color name="purpleButton">#9645C0</color>
+    <color name="pinkButton">#C04596</color>
 </resources>
