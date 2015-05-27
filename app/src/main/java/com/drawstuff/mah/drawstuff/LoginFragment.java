@@ -55,9 +55,9 @@ public class LoginFragment extends Fragment {
 
                         if(mUsername == null){
                             Random r = new Random();
-                            mUsername = "NoNamneUser" + r.nextInt(100);
+                            mUsername = "NoNamneUser" + r.nextInt(1000);
                         }
-                
+
                         Constants.userName = mUsername;
                     ft.commit();
 

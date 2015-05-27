@@ -79,13 +79,13 @@ public class DrawFragment extends Fragment{
         chicken = new Firebase(Constants.FIREBASE_URL).child("quit");
         currentPlayer = new Firebase(Constants.FIREBASE_URL).child("currentDrawer");
 
-        chicken.setValue("false");
-        currentPlayer.setValue(Constants.userName);
 
+        currentPlayer.setValue(Constants.userName);
+        chicken.setValue("false");
         drawChecker = currentDrawer.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
-                if(dataSnapshot.getValue().toString() != Constants.userName){
+                if(!dataSnapshot.getValue().toString().equals(Constants.userName)){
                     try {
                         FragmentManager fm = getActivity().getFragmentManager();
                         FragmentTransaction ft = fm.beginTransaction();

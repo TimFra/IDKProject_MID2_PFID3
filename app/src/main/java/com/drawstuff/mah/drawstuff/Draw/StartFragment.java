@@ -64,6 +64,7 @@ public class StartFragment extends Fragment {
                             clearDraw.removeValue();
                             ft.replace(R.id.fragment_start, df,"drawTag");
                             ft.addToBackStack(null);
+                            
                             ft.commit();
 
                              } else if (dataSnapshot.getValue().toString().equals("true")) {
