@@ -104,7 +104,9 @@ public boolean onCreateOptionsMenu ( Menu menu){
         }
         if(getFragmentManager().findFragmentByTag("catTag") != null){
             Firebase inDraw = new Firebase(Constants.FIREBASE_URL).child("gameInProgress");
-            inDraw.setValue(false);
+            inDraw.setValue("false");
+            Toast.makeText(this, "You quit drawing.", Toast.LENGTH_SHORT).show();
+            this.getActionBar().setTitle("DrawStuff");
         }
             super.onBackPressed();
         
