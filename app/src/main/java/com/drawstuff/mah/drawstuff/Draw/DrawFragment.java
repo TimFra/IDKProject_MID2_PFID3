@@ -40,6 +40,7 @@ public class DrawFragment extends Fragment{
         // Required empty public constructor
     }
     private static final int About = Menu.FIRST;
+    private static final int Info = Menu.FIRST;
     private DrawingView mDrawingView;
     private Firebase mFirebaseRef;
     private ValueEventListener mConnectedListener;

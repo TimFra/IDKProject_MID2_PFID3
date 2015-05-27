@@ -12,6 +12,7 @@ import android.widget.Toast;
 import com.drawstuff.mah.drawstuff.Chat.Chat;
 import com.drawstuff.mah.drawstuff.Constants.Constants;
 import com.drawstuff.mah.drawstuff.Draw.DrawingView;
+import com.drawstuff.mah.drawstuff.Draw.InfoDialog;
 import com.firebase.client.Firebase;
 
 
@@ -45,14 +46,10 @@ public class Main extends Activity {
 
 
 
+public boolean onCreateOptionsMenu ( Menu menu){
+    getMenuInflater().inflate(R.menu.menu_main, menu);
+    return true;
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        super.onCreateOptionsMenu(menu);
-
-        menu.add(0, Constants.About, 0, "About");
-        return true;
     }
 
     @Override
@@ -65,6 +62,9 @@ public class Main extends Activity {
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
+            FragmentTransaction fragm = getFragmentManager().beginTransaction();
+            InfoDialog im = new InfoDialog();
+            im.show(fragm, "info");
             return true;
         }
 

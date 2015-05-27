@@ -10,6 +10,7 @@ public class Constants {
 
     public static final String FIREBASE_URL = "https://brilliant-fire-8250.firebaseio.com/";
     public static final int About = Menu.FIRST;
+    public static final int Info = Menu.FIRST;
     public static String userName ="";
 
 
