@@ -5,7 +5,6 @@ import android.app.FragmentManager;
 import android.app.FragmentTransaction;
 import android.os.Bundle;
 import android.app.Fragment;
-import android.renderscript.Sampler;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -34,13 +33,13 @@ import java.util.Random;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class DrawFragment extends Fragment implements ColorPickerDialog.OnColorChangedListener{
+public class DrawFragment extends Fragment{
 
 
     public DrawFragment() {
         // Required empty public constructor
     }
-    private static final int COLOR_MENU_ID = Menu.FIRST;
+    private static final int About = Menu.FIRST;
     private DrawingView mDrawingView;
     private Firebase mFirebaseRef;
     private ValueEventListener mConnectedListener;
@@ -386,25 +385,7 @@ public class DrawFragment extends Fragment implements ColorPickerDialog.OnColorC
     }
 
 
-    /**
-     * TODO: Below in a method to get the colorpicker inside the drawing application. This is currently active. Please read the documentation in ColorPickerDialog.java
-     * Either implement this or remove it before release.
-     *
-     */
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        if (item.getItemId() == COLOR_MENU_ID) {
-            new ColorPickerDialog(getActivity(), this, 0xFFFF0000).show();
-            return true;
-        } else {
-            return super.onOptionsItemSelected(item);
-        }
-    }
 
-    @Override
-    public void colorChanged(int newColor) {
-        mDrawingView.setColor(newColor);
-    }
 
 
     public void displayWord(){

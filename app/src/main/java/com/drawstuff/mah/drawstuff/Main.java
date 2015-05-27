@@ -1,22 +1,17 @@
 package com.drawstuff.mah.drawstuff;
 
-import android.app.ActionBar;
 import android.app.Activity;
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
-import android.graphics.Color;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
 import android.view.Window;
 import android.widget.Toast;
 
 import com.drawstuff.mah.drawstuff.Chat.Chat;
 import com.drawstuff.mah.drawstuff.Constants.Constants;
-import com.drawstuff.mah.drawstuff.Draw.DrawFragment;
 import com.drawstuff.mah.drawstuff.Draw.DrawingView;
-import com.drawstuff.mah.drawstuff.Draw.StartFragment;
 import com.firebase.client.Firebase;
 
 
@@ -56,7 +51,7 @@ public class Main extends Activity {
         // Inflate the menu; this adds items to the action bar if it is present.
         super.onCreateOptionsMenu(menu);
 
-        menu.add(0, Constants.COLOR_MENU_ID, 0, "Color").setShortcut('3', 'c');
+        menu.add(0, Constants.About, 0, "About");
         return true;
     }
 
