@@ -74,7 +74,7 @@ public class DrawFragment extends Fragment{
         mDrawingView = new DrawingView(getActivity(), mFirebaseRef);
         word = new Firebase(Constants.FIREBASE_URL);
         setWin = new Firebase(Constants.FIREBASE_URL).child("gameInProgress");
-        chicken = new Firebase(Constants.FIREBASE_URL).child("chicken");
+        chicken = new Firebase(Constants.FIREBASE_URL).child("quit");
         currentPlayer = new Firebase(Constants.FIREBASE_URL).child("currentDrawer");
 
         chicken.setValue("false");
