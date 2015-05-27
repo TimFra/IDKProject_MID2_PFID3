@@ -102,6 +102,10 @@ public boolean onCreateOptionsMenu ( Menu menu){
 
 
         }
+        if(getFragmentManager().findFragmentByTag("catTag") != null){
+            Firebase inDraw = new Firebase(Constants.FIREBASE_URL).child("gameInProgress");
+            inDraw.setValue(false);
+        }
             super.onBackPressed();
         
     }
