@@ -52,10 +52,9 @@ public class LoginFragment extends Fragment {
                       EditText name;
                         name = (EditText) getActivity().findViewById(R.id.setUserName); //This allows the user to pick a username instead of the random generated one.
                         String usrName = name.getText().toString();
-                        if(usrName != null) {
-                            mUsername = usrName;
-                        }
-                        if(usrName == ""){
+                        mUsername = usrName;
+
+                        if(mUsername == null){
                             Random r = new Random();
                             mUsername = "NoNamneUser" + r.nextInt(100);
                         }
