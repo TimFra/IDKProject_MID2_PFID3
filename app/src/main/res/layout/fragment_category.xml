@@ -131,7 +131,7 @@
         android:background="@drawable/button_state"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/buildingsBtn"
+        android:id="@+id/sportsBtn"
         android:textColor="@android:color/white"
         android:textSize="@dimen/button_style2"
         android:textAlignment="center"
@@ -165,7 +165,7 @@
         android:layout_gravity="center_horizontal"
         android:text="@string/verbsBtn"
         android:layout_alignTop="@+id/logosBtn"
-        android:layout_alignStart="@+id/buildingsBtn" />
+        android:layout_alignStart="@+id/sportsBtn" />
 
 
 </RelativeLayout>

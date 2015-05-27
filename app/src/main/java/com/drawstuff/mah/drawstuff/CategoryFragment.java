@@ -1,0 +1,244 @@
+package com.drawstuff.mah.drawstuff;
+
+
+import android.app.FragmentManager;
+import android.app.FragmentTransaction;
+import android.os.Bundle;
+import android.app.Fragment;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.Button;
+
+import com.drawstuff.mah.drawstuff.Constants.Constants;
+import com.drawstuff.mah.drawstuff.Draw.DrawFragment;
+
+
+/**
+ * A simple {@link Fragment} subclass.
+ */
+public class CategoryFragment extends Fragment {
+
+
+    public CategoryFragment() {
+        // Required empty public constructor
+    }
+
+
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+        // Inflate the layout for this fragment
+        View v = inflater.inflate(R.layout.fragment_category, container, false);
+        getActivity().getActionBar().setTitle("DrawStuff: Chose Category");
+
+        Button cat1 = (Button) v.findViewById(R.id.animalBtn);
+        cat1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Constants.category = 1;
+
+                FragmentManager fm = getFragmentManager();
+                FragmentTransaction ft = fm.beginTransaction();
+                DrawFragment df = new DrawFragment();
+                ft.replace(R.id.fragment_start, df,"drawTag");
+                ft.addToBackStack(null);
+                fm.popBackStack();
+                ft.commit();
+
+            }
+        });
+
+        Button cat2 = (Button) v.findViewById(R.id.natureBtn);
+        cat2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Constants.category = 2;
+
+                FragmentManager fm = getFragmentManager();
+                FragmentTransaction ft = fm.beginTransaction();
+                DrawFragment df = new DrawFragment();
+                ft.replace(R.id.fragment_start, df,"drawTag");
+                ft.addToBackStack(null);
+                fm.popBackStack();
+                ft.commit();
+
+            }
+        });
+
+        Button cat3 = (Button) v.findViewById(R.id.foodBtn);
+        cat3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Constants.category = 3;
+
+                FragmentManager fm = getFragmentManager();
+                FragmentTransaction ft = fm.beginTransaction();
+                DrawFragment df = new DrawFragment();
+                ft.replace(R.id.fragment_start, df,"drawTag");
+                ft.addToBackStack(null);
+                fm.popBackStack();
+                ft.commit();
+
+            }
+        });
+
+        Button cat4 = (Button) v.findViewById(R.id.toolsBtn);
+        cat4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Constants.category = 4;
+
+                FragmentManager fm = getFragmentManager();
+                FragmentTransaction ft = fm.beginTransaction();
+                DrawFragment df = new DrawFragment();
+                ft.replace(R.id.fragment_start, df,"drawTag");
+                ft.addToBackStack(null);
+                fm.popBackStack();
+                ft.commit();
+
+            }
+        });
+
+        Button cat5 = (Button) v.findViewById(R.id.devicesBtn);
+        cat5.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Constants.category = 5;
+
+                FragmentManager fm = getFragmentManager();
+                FragmentTransaction ft = fm.beginTransaction();
+                DrawFragment df = new DrawFragment();
+                ft.replace(R.id.fragment_start, df,"drawTag");
+                ft.addToBackStack(null);
+                fm.popBackStack();
+                ft.commit();
+
+            }
+        });
+
+        Button cat6 = (Button) v.findViewById(R.id.furnitureBtn);
+        cat6.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Constants.category = 6;
+
+                FragmentManager fm = getFragmentManager();
+                FragmentTransaction ft = fm.beginTransaction();
+                DrawFragment df = new DrawFragment();
+                ft.replace(R.id.fragment_start, df,"drawTag");
+                ft.addToBackStack(null);
+                fm.popBackStack();
+                ft.commit();
+
+            }
+        });
+
+
+        Button cat7 = (Button) v.findViewById(R.id.clothingBtn);
+        cat7.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Constants.category = 7;
+
+                FragmentManager fm = getFragmentManager();
+                FragmentTransaction ft = fm.beginTransaction();
+                DrawFragment df = new DrawFragment();
+                ft.replace(R.id.fragment_start, df,"drawTag");
+                ft.addToBackStack(null);
+                fm.popBackStack();
+                ft.commit();
+
+            }
+        });
+
+        Button cat8 = (Button) v.findViewById(R.id.bodyBtn);
+        cat8.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Constants.category = 8;
+
+                FragmentManager fm = getFragmentManager();
+                FragmentTransaction ft = fm.beginTransaction();
+                DrawFragment df = new DrawFragment();
+                ft.replace(R.id.fragment_start, df,"drawTag");
+                ft.addToBackStack(null);
+                fm.popBackStack();
+                ft.commit();
+
+            }
+        });
+
+        Button cat9 = (Button) v.findViewById(R.id.vehiclesBtn);
+        cat9.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Constants.category = 9;
+
+                FragmentManager fm = getFragmentManager();
+                FragmentTransaction ft = fm.beginTransaction();
+                DrawFragment df = new DrawFragment();
+                ft.replace(R.id.fragment_start, df,"drawTag");
+                ft.addToBackStack(null);
+                fm.popBackStack();
+                ft.commit();
+
+            }
+        });
+
+        Button cat10 = (Button) v.findViewById(R.id.sportsBtn);
+        cat10.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Constants.category = 10;
+
+                FragmentManager fm = getFragmentManager();
+                FragmentTransaction ft = fm.beginTransaction();
+                DrawFragment df = new DrawFragment();
+                ft.replace(R.id.fragment_start, df,"drawTag");
+                ft.addToBackStack(null);
+                fm.popBackStack();
+                ft.commit();
+
+            }
+        });
+
+        Button cat11 = (Button) v.findViewById(R.id.logosBtn);
+        cat11.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Constants.category = 11;
+
+                FragmentManager fm = getFragmentManager();
+                FragmentTransaction ft = fm.beginTransaction();
+                DrawFragment df = new DrawFragment();
+                ft.replace(R.id.fragment_start, df,"drawTag");
+                ft.addToBackStack(null);
+                fm.popBackStack();
+                ft.commit();
+
+            }
+        });
+
+        Button cat12 = (Button) v.findViewById(R.id.verbsBtn);
+        cat12.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Constants.category = 12;
+
+                FragmentManager fm = getFragmentManager();
+                FragmentTransaction ft = fm.beginTransaction();
+                DrawFragment df = new DrawFragment();
+                ft.replace(R.id.fragment_start, df, "drawTag");
+                ft.addToBackStack(null);
+                fm.popBackStack();
+                ft.commit();
+
+            }
+        });
+
+        return v;
+    }
+
+
+}

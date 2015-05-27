@@ -13,6 +13,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.drawstuff.mah.drawstuff.CategoryFragment;
 import com.drawstuff.mah.drawstuff.Chat.ChatFragment;
 import com.drawstuff.mah.drawstuff.Constants.Constants;
 import com.drawstuff.mah.drawstuff.Draw.DrawFragment;
@@ -59,10 +60,10 @@ public class StartFragment extends Fragment {
                             timeOut.setValue("false");
                             FragmentManager fm = getFragmentManager();
                             FragmentTransaction ft = fm.beginTransaction();
-                            DrawFragment df = new DrawFragment();
+                            CategoryFragment cf = new CategoryFragment();
                             firebaseChecker.setValue("true");
                             clearDraw.removeValue();
-                            ft.replace(R.id.fragment_start, df,"drawTag");
+                            ft.replace(R.id.fragment_start, cf,"catTag");
                             ft.addToBackStack(null);
                             
                             ft.commit();

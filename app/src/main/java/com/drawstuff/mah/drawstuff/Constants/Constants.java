@@ -12,6 +12,7 @@ public class Constants {
     public static final int About = Menu.FIRST;
     public static final int Info = Menu.FIRST;
     public static String userName ="";
+    public static int category = 0;
 
 
 
