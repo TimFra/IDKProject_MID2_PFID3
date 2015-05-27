@@ -4,6 +4,7 @@
 
 
     <item android:id="@+id/action_settings" android:title="@string/Info"
+
         android:orderInCategory="100" android:showAsAction="never" />
 
 

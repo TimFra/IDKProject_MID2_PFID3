@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#ffffff"
     tools:context="com.drawstuff.mah.drawstuff.Draw.InfoDialog"
     android:id="@+id/InfoDialog"
     android:onClick="onClick"
@@ -33,6 +34,7 @@
                 android:text="@string/InfoD"
                 android:layout_below="@+id/textView1"
                 android:textColor="#049A95"
+                android:paddingBottom="10dp"
                 />
 
         </RelativeLayout>
