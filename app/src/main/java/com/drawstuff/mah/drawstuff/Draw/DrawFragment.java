@@ -3,6 +3,7 @@ package com.drawstuff.mah.drawstuff.Draw;
 
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.app.Fragment;
 import android.util.Log;
@@ -478,6 +479,8 @@ public class DrawFragment extends Fragment{
                                 ft.replace(R.id.main_activity_container, sf, "startFragment");
                                 ft.addToBackStack(null);
                                 fm.popBackStack();
+                                MediaPlayer mp = MediaPlayer.create(getActivity(), R.raw.win);
+                                mp.start();
                                 setWin.removeEventListener(winCheck);
                                 ft.commit();
                             } catch (Throwable e) {
