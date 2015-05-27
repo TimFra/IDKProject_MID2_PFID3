@@ -761,7 +761,7 @@ public class DrawFragment extends Fragment{
 
     public void welcomeNewDrawer(){
 
-        Chat chat = new Chat("Someone started drawing.", "@DrawStuff");
+        Chat chat = new Chat(Constants.userName +" started drawing.", "@DrawStuff");
         fbChat.push().setValue(chat);
     }
 
