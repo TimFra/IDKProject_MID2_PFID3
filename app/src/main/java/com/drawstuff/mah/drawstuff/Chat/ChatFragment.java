@@ -6,6 +6,7 @@ import android.app.FragmentTransaction;
 import android.app.ListFragment;
 import android.content.SharedPreferences;
 import android.database.DataSetObserver;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.app.Fragment;
 import android.view.KeyEvent;
@@ -187,6 +188,8 @@ public class ChatFragment extends ListFragment {
                         if(dataSnapshot.getValue().toString().equals("true")){
                             mFirebaseRef.push().setValue(winMsg);
                             gameStateFirebase.setValue(mUsername);
+                            MediaPlayer mp = MediaPlayer.create(getActivity(), R.raw.win);
+                            mp.start();
                         }
                     }
 
