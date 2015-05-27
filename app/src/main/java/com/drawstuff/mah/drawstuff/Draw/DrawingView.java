@@ -144,6 +144,15 @@ try {
 }
     }
 
+    public void clearView(){
+        mBuffer.drawColor(0xFFFFFFFF);
+
+        mBuffer.drawBitmap(mBitmap, 0, 0, mBitmapPaint);
+
+        mBuffer.drawPath(mPath, mPaint);
+        invalidate();
+    }
+
     @Override
     protected void onDraw(Canvas canvas) {
 try {

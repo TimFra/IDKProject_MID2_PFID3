@@ -174,11 +174,13 @@ public class DrawFragment extends Fragment{
             @Override
             public void onClick(View v) {
                 clearDraw.removeValue();
-
+                mDrawingView.clearView();
                 // Maste tomma mdrawing view
 
 
+
             }
+
         });
 
         ImageButton rubber;
