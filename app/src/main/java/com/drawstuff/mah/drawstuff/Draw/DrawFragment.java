@@ -50,11 +50,12 @@ public class DrawFragment extends Fragment{
     private ValueEventListener winCheck;
     private ValueEventListener containerListener;
     private ValueEventListener checkTimeOut;
+    private ValueEventListener drawChecker;
     private Firebase clearDraw;
     private Firebase chicken;
     private Firebase currentPlayer;
     private Firebase timeOut;
-
+    private Firebase currentDrawer;
 
 
     ArrayList<String> words = new ArrayList<>();
@@ -67,6 +68,7 @@ public class DrawFragment extends Fragment{
         super.onCreate(savedInstanceState);
         fbChat = new Firebase(Constants.FIREBASE_URL).child("chat");
 
+        currentDrawer = new Firebase(Constants.FIREBASE_URL).child("currentDrawer");
 
 
 
@@ -79,6 +81,31 @@ public class DrawFragment extends Fragment{
 
         chicken.setValue("false");
         currentPlayer.setValue(Constants.userName);
+
+        drawChecker = currentDrawer.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                if(dataSnapshot.getValue().toString() != Constants.userName){
+                    try {
+                        FragmentManager fm = getActivity().getFragmentManager();
+                        FragmentTransaction ft = fm.beginTransaction();
+                        StartFragment sf = new StartFragment();
+                        ft.replace(R.id.main_activity_container, sf, "startFragment");
+                        ft.addToBackStack(null);
+                        fm.popBackStack();
+                        currentDrawer.removeEventListener(drawChecker);
+                        ft.commit();
+                    } catch(Throwable e){
+                        Log.i("Error","DrawFragment.java: Moving player back to startfragment:" + e);
+                    }
+                }
+            }
+
+            @Override
+            public void onCancelled(FirebaseError firebaseError) {
+
+            }
+        });
 
         timeOut = new Firebase(Constants.FIREBASE_URL).child("timedOut");
         checkTimeOut = timeOut.addValueEventListener(new ValueEventListener() {
