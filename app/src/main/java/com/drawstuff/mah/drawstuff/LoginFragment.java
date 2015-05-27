@@ -55,7 +55,7 @@ public class LoginFragment extends Fragment {
                         if(usrName != null) {
                             mUsername = usrName;
                         }
-                        if(usrName == null){
+                        if(usrName == ""){
                             Random r = new Random();
                             mUsername = "NoNamneUser" + r.nextInt(100);
                         }
