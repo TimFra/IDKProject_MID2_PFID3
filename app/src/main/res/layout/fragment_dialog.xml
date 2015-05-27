@@ -20,7 +20,6 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/Info"
                 android:textSize="20dp"
                 android:textAlignment="gravity"
                 android:id="@+id/textView1"

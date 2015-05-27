@@ -1,15 +1,15 @@
 <resources>
     <string name="app_name">DrawStuff</string>
-
+    <string name="Info"></string>
     <string name="About">About</string>
-    <string name="Info">Info</string>
     <string name="InfoD">
-       Draw Stuff is a drawing game and it is place specific at one of Malmö Högskolas buildings,
-        Niagara. This game is meant for second screen gaming and there will be two options when
-        playing the game, either you can chose to be the drawer or the guesser. As a Drawer you will
-        recieve a word to draw and the guesser can start guessing as soon as the drawer started to
-        paint. The guesser also has a chat and can communicate with other guesser as well. Each game
-        will last for 60 seconds.
+
+    Each game will last for 60 seconds.
+    The player can either chose to be a painter or a guesser.
+    As a painter, the player will get a word to draw.
+    As soon as the painer has begun drawing, the guessers can start guessing.
+    The guessers can also communicate with each other in the chat during the game.
+
     </string>
 
 
