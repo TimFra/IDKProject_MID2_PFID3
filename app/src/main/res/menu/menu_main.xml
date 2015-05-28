@@ -1,13 +1,15 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools" tools:context=".Main">
-
-
-    <item android:id="@+id/action_settings" android:title="@string/Info"
-
-        android:orderInCategory="100" android:showAsAction="never" />
-
-
-
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".Main">
+    <item android:id="@+id/InfoDialog"
+        android:title="How to Play"
+        android:orderInCategory="2"
+        android:showAsAction="never">
+    </item>
+    <item android:id="@+id/AboutDialog"
+        android:title="About"
+        android:orderInCategory="1"
+        android:showAsAction="never">
+    </item>
 
 </menu>

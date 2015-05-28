@@ -3,17 +3,41 @@
     <string name="Info"></string>
     <string name="About">About</string>
     <string name="InfoD">
-    The game is place specific to Malmö Universitys building "Niagara".\n \n
 
-    The concept includes the use of second screens,
-    where the game is displayed on a public screen
-    while the players play the game on their smartphones.\n \n
+    Each game will last for 60 seconds.
+    The player can either chose to be a painter or a guesser.
+    As a painter, the player will get a word to draw.
+    As soon as the painter has begun drawing, the guessers can start guessing.
+    The guessers can also communicate with each other in the chat during the game.
 
-    &#8226; Each game will last for 60 seconds.\n \n
-    &#8226; The player can either choose to be a painter or a guesser.\n \n
-    &#8226; As a painter, the player will get a word to draw.\n \n
-    &#8226; As soon as the painter has begun drawing, the guessers can start guessing.\n \n
-    &#8226; The guessers can also communicate with each other in the chat during the game.
+    </string>
+
+    <string name="AboutFragmentText">
+
+        <![CDATA[<b>About</b><br>
+        This is a university project by Malmö Högskola.<br>
+        For more information visit <br>
+        https://github.com/TimFra/IDKProject_MID2_PFID3. <br>
+        <br>
+        <br>
+        <b>Credits</b> <br>
+        Thanks to Ossama Alami who shared https://github.com/firebase/AndroidChat. <br>
+        Thanks to Jenny Tong who shared her https://github.com/firebase/AndroidDrawing.<br>
+        <br>
+        <b>Copyright 2015 MAH IDK14 Team 4</b>
+        <br>
+        Licensed under the Apache License, Version 2.0 (the "License");
+        you may not use this file except in compliance with the License.
+        You may obtain a copy of the License at
+        <br><br>
+        http://www.apache.org/licenses/LICENSE-2.0
+        <br><br>
+        Unless required by applicable law or agreed to in writing, software
+        distributed under the License is distributed on an "AS IS" BASIS,
+        WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+        See the License for the specific language governing permissions and
+        limitations under the License.
+        ]]>
     </string>
 
 
@@ -46,5 +70,6 @@
 <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="enterUsernameString">Enter Username Here</string>
+
 
 </resources>

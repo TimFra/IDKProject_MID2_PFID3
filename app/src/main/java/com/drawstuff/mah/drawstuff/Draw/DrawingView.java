@@ -126,6 +126,8 @@ public class DrawingView extends View {
      */
     public void cleanup() {
         mFirebaseRef.removeEventListener(mListener);
+        invalidate();
+        mFirebaseRef.addChildEventListener(mListener);
     }
 
     public void setColor(int color) {

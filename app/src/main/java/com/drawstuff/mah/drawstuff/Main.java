@@ -1,16 +1,24 @@
 package com.drawstuff.mah.drawstuff;
 
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.app.Fragment;
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
+import android.content.DialogInterface;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.Window;
+import android.widget.FrameLayout;
+import android.widget.RelativeLayout;
 import android.widget.Toast;
 
 import com.drawstuff.mah.drawstuff.Chat.Chat;
 import com.drawstuff.mah.drawstuff.Constants.Constants;
+import com.drawstuff.mah.drawstuff.Draw.AboutDialog;
 import com.drawstuff.mah.drawstuff.Draw.DrawingView;
 import com.drawstuff.mah.drawstuff.Draw.InfoDialog;
 import com.firebase.client.Firebase;
@@ -46,34 +54,27 @@ public class Main extends Activity {
 
 
 
-public boolean onCreateOptionsMenu ( Menu menu){
-    getMenuInflater().inflate(R.menu.menu_main, menu);
-    return true;
+    public boolean onCreateOptionsMenu ( Menu menu){
+        getMenuInflater().inflate(R.menu.menu_main, menu);
+        return true;
 
     }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
 
-        int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            FragmentTransaction fragm = getFragmentManager().beginTransaction();
-            InfoDialog im = new InfoDialog();
-            im.show(fragm, "info");
-            return true;
+        switch (item.getItemId()){
+            case R.id.AboutDialog:
+                Log.i("TAG", "Clicked the AboutDialog");
+                new AboutDialog().show(getFragmentManager(), "AboutDialog");
+                return true;
+            case R.id.InfoDialog:
+                Log.i("TAG", "Clicked the InfoDialog");
+                new InfoDialog().show(getFragmentManager(), "InfoDialog");
+                return true;
         }
-
-        return super.onOptionsItemSelected(item);
+        return true;
     }
-
-
-
-
 
 
     @Override
@@ -108,8 +109,8 @@ public boolean onCreateOptionsMenu ( Menu menu){
             Toast.makeText(this, "You quit drawing.", Toast.LENGTH_SHORT).show();
             this.getActionBar().setTitle("DrawStuff");
         }
-            super.onBackPressed();
-        
+        super.onBackPressed();
+
     }
 
 
