@@ -5,6 +5,7 @@ import android.app.FragmentManager;
 import android.app.FragmentTransaction;
 import android.os.Bundle;
 import android.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -36,15 +37,20 @@ public class CategoryFragment extends Fragment {
         cat1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Constants.category = 1;
+                try {
+                    Constants.category = 1;
 
-                FragmentManager fm = getFragmentManager();
-                FragmentTransaction ft = fm.beginTransaction();
-                DrawFragment df = new DrawFragment();
-                ft.replace(R.id.fragment_start, df,"drawTag");
-                ft.addToBackStack(null);
-                fm.popBackStack();
-                ft.commit();
+                    FragmentManager fm = getFragmentManager();
+                    FragmentTransaction ft = fm.beginTransaction();
+                    DrawFragment df = new DrawFragment();
+                    ft.replace(R.id.fragment_start, df, "drawTag");
+                    ft.addToBackStack(null);
+                    fm.popBackStack();
+                    ft.commit();
+
+                } catch (Throwable e){
+                    Log.i("Category error", "FragmentTransaction");
+                }
 
             }
         });
@@ -53,16 +59,20 @@ public class CategoryFragment extends Fragment {
         cat2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Constants.category = 2;
+                try {
+                    Constants.category = 2;
 
-                FragmentManager fm = getFragmentManager();
-                FragmentTransaction ft = fm.beginTransaction();
-                DrawFragment df = new DrawFragment();
-                ft.replace(R.id.fragment_start, df,"drawTag");
-                ft.addToBackStack(null);
-                fm.popBackStack();
-                ft.commit();
+                    FragmentManager fm = getFragmentManager();
+                    FragmentTransaction ft = fm.beginTransaction();
+                    DrawFragment df = new DrawFragment();
+                    ft.replace(R.id.fragment_start, df, "drawTag");
+                    ft.addToBackStack(null);
+                    fm.popBackStack();
+                    ft.commit();
 
+                } catch (Throwable e) {
+                    Log.i("Category error", "FragmentTransaction");
+                }
             }
         });
 
@@ -70,6 +80,7 @@ public class CategoryFragment extends Fragment {
         cat3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                try {
                 Constants.category = 3;
 
                 FragmentManager fm = getFragmentManager();
@@ -80,6 +91,9 @@ public class CategoryFragment extends Fragment {
                 fm.popBackStack();
                 ft.commit();
 
+            }catch (Throwable e) {
+                    Log.i("Category error", "FragmentTransaction");
+                }
             }
         });
 
@@ -87,6 +101,7 @@ public class CategoryFragment extends Fragment {
         cat4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                try{
                 Constants.category = 4;
 
                 FragmentManager fm = getFragmentManager();
@@ -97,6 +112,9 @@ public class CategoryFragment extends Fragment {
                 fm.popBackStack();
                 ft.commit();
 
+            }catch (Throwable e) {
+                    Log.i("Category error", "FragmentTransaction");
+                }
             }
         });
 
@@ -104,6 +122,7 @@ public class CategoryFragment extends Fragment {
         cat5.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                try{
                 Constants.category = 5;
 
                 FragmentManager fm = getFragmentManager();
@@ -114,6 +133,9 @@ public class CategoryFragment extends Fragment {
                 fm.popBackStack();
                 ft.commit();
 
+            }catch (Throwable e) {
+                    Log.i("Category error", "FragmentTransaction");
+                }
             }
         });
 
@@ -121,6 +143,7 @@ public class CategoryFragment extends Fragment {
         cat6.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                try{
                 Constants.category = 6;
 
                 FragmentManager fm = getFragmentManager();
@@ -131,6 +154,9 @@ public class CategoryFragment extends Fragment {
                 fm.popBackStack();
                 ft.commit();
 
+            }catch (Throwable e) {
+                    Log.i("Category error", "FragmentTransaction");
+                }
             }
         });
 
@@ -139,6 +165,7 @@ public class CategoryFragment extends Fragment {
         cat7.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                try{
                 Constants.category = 7;
 
                 FragmentManager fm = getFragmentManager();
@@ -149,6 +176,9 @@ public class CategoryFragment extends Fragment {
                 fm.popBackStack();
                 ft.commit();
 
+            }catch (Throwable e) {
+                    Log.i("Category error", "FragmentTransaction");
+                }
             }
         });
 
@@ -156,6 +186,7 @@ public class CategoryFragment extends Fragment {
         cat8.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                try{
                 Constants.category = 8;
 
                 FragmentManager fm = getFragmentManager();
@@ -166,6 +197,9 @@ public class CategoryFragment extends Fragment {
                 fm.popBackStack();
                 ft.commit();
 
+            }catch (Throwable e) {
+                    Log.i("Category error", "FragmentTransaction");
+                }
             }
         });
 
@@ -173,6 +207,7 @@ public class CategoryFragment extends Fragment {
         cat9.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                try{
                 Constants.category = 9;
 
                 FragmentManager fm = getFragmentManager();
@@ -183,6 +218,9 @@ public class CategoryFragment extends Fragment {
                 fm.popBackStack();
                 ft.commit();
 
+            }catch (Throwable e) {
+                    Log.i("Category error", "FragmentTransaction");
+                }
             }
         });
 
@@ -190,6 +228,7 @@ public class CategoryFragment extends Fragment {
         cat10.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                try{
                 Constants.category = 10;
 
                 FragmentManager fm = getFragmentManager();
@@ -200,6 +239,9 @@ public class CategoryFragment extends Fragment {
                 fm.popBackStack();
                 ft.commit();
 
+            }catch (Throwable e) {
+                    Log.i("Category error", "FragmentTransaction");
+                }
             }
         });
 
@@ -207,6 +249,7 @@ public class CategoryFragment extends Fragment {
         cat11.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                try{
                 Constants.category = 11;
 
                 FragmentManager fm = getFragmentManager();
@@ -217,6 +260,9 @@ public class CategoryFragment extends Fragment {
                 fm.popBackStack();
                 ft.commit();
 
+            }catch (Throwable e) {
+                    Log.i("Category error", "FragmentTransaction");
+                }
             }
         });
 
@@ -224,6 +270,7 @@ public class CategoryFragment extends Fragment {
         cat12.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                try{
                 Constants.category = 12;
 
                 FragmentManager fm = getFragmentManager();
@@ -234,6 +281,9 @@ public class CategoryFragment extends Fragment {
                 fm.popBackStack();
                 ft.commit();
 
+            }catch (Throwable e) {
+                    Log.i("Category error", "FragmentTransaction");
+                }
             }
         });
 
