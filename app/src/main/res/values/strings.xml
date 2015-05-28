@@ -4,12 +4,21 @@
     <string name="About">About</string>
     <string name="InfoD">
 
-    Each game will last for 60 seconds.
-    The player can either chose to be a painter or a guesser.
-    As a painter, the player will get a word to draw.
-    As soon as the painter has begun drawing, the guessers can start guessing.
-    The guessers can also communicate with each other in the chat during the game.
 
+  <![CDATA[
+<br>
+     &#8226; Each game will last for 60 seconds.<br>
+     <br>
+
+   &#8226; The player can either chose to be a <i>painter</i> or a <i>guesser.</i> <br>
+   <br>
+   &#8226; As a painter, the player will get a word to draw.<br>
+    <br>
+    &#8226; As soon as the painter has begun drawing, the guessers can start guessing.<br>
+    <br>
+    &#8226; The guessers can also communicate with each other in the chat during the game.<br>
+    <br>
+    ]]>
     </string>
 
     <string name="AboutFragmentText">
