@@ -36,7 +36,7 @@ public class SplashFragment extends Fragment {
 
     public void splashTimer(){
 
-        new CountDownTimer(5000, 1000) {
+        new CountDownTimer(3000, 1000) {
             public void onTick(long millisUntilFinished) {
 
             }
