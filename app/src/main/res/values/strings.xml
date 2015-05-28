@@ -10,7 +10,7 @@
      &#8226; Each game will last for 60 seconds.<br>
      <br>
 
-   &#8226; The player can either chose to be a <i>painter</i> or a <i>guesser.</i> <br>
+   &#8226; The player can either choose to be a <i>painter</i> or a <i>guesser.</i> <br>
    <br>
    &#8226; As a painter, the player will get a word to draw.<br>
     <br>
@@ -33,7 +33,8 @@
         Thanks to Ossama Alami who shared https://github.com/firebase/AndroidChat. <br>
         Thanks to Jenny Tong who shared her https://github.com/firebase/AndroidDrawing.<br>
         <br>
-        <b>Copyright 2015 MAH IDK14 Team 4</b>
+        <b>Copyright 2015 MAH</b> <br>
+        <b>IDK14 Team 4</b>
         <br>
         Licensed under the Apache License, Version 2.0 (the "License");
         you may not use this file except in compliance with the License.
