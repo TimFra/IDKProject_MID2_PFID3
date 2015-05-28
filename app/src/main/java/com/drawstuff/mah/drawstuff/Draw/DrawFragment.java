@@ -471,7 +471,7 @@ public class DrawFragment extends Fragment{
 
                             try {
 
-                                Toast.makeText(getActivity(), "Someone guessed your word!", Toast.LENGTH_LONG).show();
+                                //Toast.makeText(getActivity(), "Someone guessed your word!", Toast.LENGTH_LONG).show();
                                 FragmentManager fm = getActivity().getFragmentManager();
                                 FragmentTransaction ft = fm.beginTransaction();
                                 StartFragment sf = new StartFragment();
