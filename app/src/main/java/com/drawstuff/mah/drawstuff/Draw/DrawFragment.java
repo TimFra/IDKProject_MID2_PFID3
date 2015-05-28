@@ -518,7 +518,6 @@ public class DrawFragment extends Fragment{
                 words.add("rabbit");
                 words.add("spider");
                 words.add("fish");
-                words.add("house");
                 words.add("bee");
                 words.add("ant");
                 words.add("mouse");
@@ -591,7 +590,7 @@ public class DrawFragment extends Fragment{
                 words.add("candy");
                 words.add("cookie");
                 words.add("pizza");
-                words.add("tomatoe");
+                words.add("tomato");
                 words.add("apple");
                 words.add("chocolate");
                 words.add("banana");
@@ -599,7 +598,7 @@ public class DrawFragment extends Fragment{
                 words.add("sandwich");
                 words.add("lollipop");
                 words.add("cake");
-                words.add("chesse");
+                words.add("cheese");
                 words.add("corn");
                 words.add("ketchup");
                 words.add("soda");
@@ -609,7 +608,7 @@ public class DrawFragment extends Fragment{
                 words.add("donut");
                 words.add("broccoli");
                 words.add("coffee");
-                words.add("taco");
+                words.add("tacos");
                 break;
 
             case 7:
@@ -685,7 +684,7 @@ public class DrawFragment extends Fragment{
 
             case 8:
                 //body parts
-                words.add("eye");
+                words.add("eyes");
                 words.add("foot");
                 words.add("elbow");
                 words.add("toe");
@@ -738,7 +737,6 @@ public class DrawFragment extends Fragment{
                 words.add("handball");
                 words.add("tennis");
                 words.add("golf");
-                words.add("floorball");
                 words.add("baseball");
                 words.add("polo");
                 words.add("swimming");

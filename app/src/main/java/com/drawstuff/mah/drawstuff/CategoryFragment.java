@@ -30,7 +30,7 @@ public class CategoryFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View v = inflater.inflate(R.layout.fragment_category, container, false);
-        getActivity().getActionBar().setTitle("DrawStuff: Chose Category");
+        getActivity().getActionBar().setTitle("DrawStuff: Choose Category");
 
         Button cat1 = (Button) v.findViewById(R.id.animalBtn);
         cat1.setOnClickListener(new View.OnClickListener() {
