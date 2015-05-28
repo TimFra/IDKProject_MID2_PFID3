@@ -2,12 +2,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:context=".Main">
     <item android:id="@+id/InfoDialog"
-        android:title="How to Play"
+        android:title="@string/HowToPlay"
         android:orderInCategory="2"
         android:showAsAction="never">
     </item>
     <item android:id="@+id/AboutDialog"
-        android:title="About"
+        android:title="@string/AboutString"
         android:orderInCategory="1"
         android:showAsAction="never">
     </item>

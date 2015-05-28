@@ -11,9 +11,6 @@
         android:layout_height="wrap_content"
         android:id="@+id/imageView"
         android:src="@drawable/start_layout"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_above="@+id/drawBtn"
         android:layout_marginTop="25dp"/>
 
     <TextView
@@ -30,16 +27,18 @@
 
     <EditText
         android:layout_width="201dp"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:id="@+id/setUserName"
         android:editable="true"
         android:background="#ffffffff"
-        android:layout_weight="0.07"
+        android:layout_weight="0.20"
         android:layout_marginLeft="80dip"
         android:textSize="@dimen/button_style2"
         android:textColor="@color/background_blue"
-        android:enabled="true" />
+        android:enabled="true"
+        android:inputType="textPersonName"
+        android:hint="@string/loginUserNameHint"/>
 
     <Button
         android:background="@drawable/button_state"

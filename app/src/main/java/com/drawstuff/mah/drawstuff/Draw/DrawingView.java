@@ -6,15 +6,9 @@ import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.graphics.Path;
 import android.util.Log;
-import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
-import android.view.ViewGroup;
-import android.widget.Button;
-import android.widget.ImageButton;
-import android.widget.RelativeLayout;
 
-import com.drawstuff.mah.drawstuff.R;
 import com.firebase.client.ChildEventListener;
 import com.firebase.client.DataSnapshot;
 import com.firebase.client.Firebase;
@@ -23,12 +17,10 @@ import com.firebase.client.FirebaseError;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
-import java.util.zip.Inflater;
 
 /**
- * The drawing-part of our application should be accredited properly.
- * TODO: Reference code to the rightful owner before product release. Add a link to the persons Github-repository.
  *
+ * @author https://github.com/firebase/AndroidDrawing
  * @author greg
  * @since 6/26/13
  */

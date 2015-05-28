@@ -29,7 +29,7 @@
 
         <EditText
             android:id="@+id/messageInput"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:inputType="textShortMessage"
@@ -41,7 +41,8 @@
             android:id="@+id/sendButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@android:drawable/ic_menu_send" />
+            android:src="@android:drawable/ic_menu_send"
+            android:contentDescription="Click to Send Here" />
     </LinearLayout>
 
 

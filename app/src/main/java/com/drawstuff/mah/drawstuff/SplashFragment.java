@@ -40,9 +40,8 @@ public class SplashFragment extends Fragment {
             public void onTick(long millisUntilFinished) {
 
             }
-            //TODO: getActivity().getActionBar().show() MAY create an issue on start up which results in a crash.
             public void onFinish() {
-                //getActivity().getActionBar().show();
+
                 try {
                     FragmentManager fm = getFragmentManager();
                     FragmentTransaction ft = fm.beginTransaction(); //Start adding the fragment by getting the manager for handling this

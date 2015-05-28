@@ -6,7 +6,6 @@
     android:background="#ffffff"
     tools:context="com.drawstuff.mah.drawstuff.Draw.InfoDialog"
     android:id="@+id/InfoDialog"
-    android:onClick="onClick"
 
     >
 

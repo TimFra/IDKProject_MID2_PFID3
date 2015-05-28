@@ -425,7 +425,7 @@ public class DrawFragment extends Fragment{
 
         /**
          * This is a function that checks for the correct word. This item will contain more words and will be presented to the drawer before he or she starts to draw.
-         * TODO: Expand the wordlist with more words. Implement so that when a drawing session begins, the drawer gets a message on what the winning word will be.
+         *
          */
         word.getRoot().addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
@@ -461,7 +461,6 @@ public class DrawFragment extends Fragment{
 
     public void winChecker(){
         //Below is a checker that halts users from picking "Drawer" as the game element if someone is already drawing.
-        //TODO: Fix the gameInProgress function so  that it works constantly and doesn't crash.
 
         winCheck = setWin.addValueEventListener(new ValueEventListener() {
             @Override
@@ -497,7 +496,7 @@ public class DrawFragment extends Fragment{
 
             @Override
             public void onCancelled(FirebaseError firebaseError) {
-                //TODO: Add a toast or message if the user experience an error in regard to trying to become a drawer.
+                //TODO: Add a toaster to alert the user if this error occurs and what to do.
             }
         });
     }

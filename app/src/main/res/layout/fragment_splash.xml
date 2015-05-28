@@ -5,12 +5,10 @@
     android:background="#049a95"
     android:orientation="vertical">
 
-    <!-- TODO: Update blank fragment layout -->
     <ImageView
     android:id="@+id/imgLogo"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:layout_centerInParent="true"
-    android:src="@drawable/splash_screen"/>
+        android:src="@drawable/splash_screen"/>
 
 </FrameLayout>
