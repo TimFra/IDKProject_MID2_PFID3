@@ -1,6 +1,5 @@
 <resources>
     <string name="app_name">DrawStuff</string>
-    <string name="Info"></string>
     <string name="About">About</string>
     <string name="InfoD">
 
@@ -93,6 +92,7 @@
     <string name="HowToPlay">How to Play</string>
     <string name="AboutString">About</string>
     <string name="loginUserNameHint">Username</string>
+    <string name="ClickToSendString">Click to Send Here</string>
 
 
 </resources>
