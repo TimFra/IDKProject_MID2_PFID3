@@ -10,8 +10,15 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
+import android.widget.Toast;
 
+import com.drawstuff.mah.drawstuff.Constants.Constants;
 import com.drawstuff.mah.drawstuff.Draw.StartFragment;
+import com.firebase.client.DataSnapshot;
+import com.firebase.client.Firebase;
+import com.firebase.client.FirebaseError;
+import com.firebase.client.ValueEventListener;
 
 
 /**
@@ -19,6 +26,10 @@ import com.drawstuff.mah.drawstuff.Draw.StartFragment;
  */
 public class SplashFragment extends Fragment {
 
+
+    private Firebase versionCheck;
+    private ValueEventListener versionListener;
+    private int fbVersion;
 
     public SplashFragment() {
         // Required empty public constructor
@@ -29,8 +40,24 @@ public class SplashFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
+        View v = inflater.inflate(R.layout.fragment_splash, container, false);
+        versionCheck = new Firebase(Constants.FIREBASE_URL).child("version");
+        versionListener = versionCheck.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                fbVersion = Integer.parseInt(dataSnapshot.getValue().toString());
+
+
+            }
+
+            @Override
+            public void onCancelled(FirebaseError firebaseError) {
+
+            }
+        });
+
         splashTimer();
-        return inflater.inflate(R.layout.fragment_splash, container, false);
+        return v;
     }
 
 
@@ -42,15 +69,35 @@ public class SplashFragment extends Fragment {
             }
             public void onFinish() {
 
-                try {
-                    FragmentManager fm = getFragmentManager();
-                    FragmentTransaction ft = fm.beginTransaction(); //Start adding the fragment by getting the manager for handling this
-                    LoginFragment lf = new LoginFragment(); //Creates splashscreen
-                    ft.replace(R.id.splash, lf); //And add it to the manager
 
-                    ft.commit();
-                } catch (Throwable e) {
-                    Log.i("Error: ", "NullPointer... :" + e.toString());
+
+                if(fbVersion == Constants.version) {
+                    try {
+                        FragmentManager fm = getFragmentManager();
+                        FragmentTransaction ft = fm.beginTransaction(); //Start adding the fragment by getting the manager for handling this
+                        LoginFragment lf = new LoginFragment(); //Creates splashscreen
+                        ft.replace(R.id.splash, lf); //And add it to the manager
+
+                        ft.commit();
+                    } catch (Throwable e) {
+                        Log.i("Error: ", "NullPointer... :" + e.toString());
+                    }
+                } else {
+
+                    if(fbVersion == 0){
+
+                        TextView version = (TextView) getView().findViewById(R.id.versionText);
+                        TextView version2 = (TextView) getView().findViewById(R.id.versionText2);
+                        version.setText("No Internet connection found.");
+                        version2.setText("Please connect to Internet and try again.");
+
+                    }else {
+                        TextView version = (TextView) getView().findViewById(R.id.versionText);
+                        TextView version2 = (TextView) getView().findViewById(R.id.versionText2);
+                        version.setText("You need to download the latest version.");
+                        version2.setText("Your version: " + Constants.version + ", latest: " + fbVersion + ".");
+                    }
+
                 }
 
             }

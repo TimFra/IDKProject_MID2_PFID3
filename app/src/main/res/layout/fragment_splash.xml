@@ -5,10 +5,33 @@
     android:background="#049a95"
     android:orientation="vertical">
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text=""
+        android:id="@+id/versionText"
+        android:layout_above="@+id/versionText2"
+        android:layout_marginBottom="42dp"
+        android:layout_gravity="center_horizontal|bottom"
+        android:textColor="#ffffe7ee"
+        android:textAlignment="center" />
+
     <ImageView
     android:id="@+id/imgLogo"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-        android:src="@drawable/splash_screen"/>
+        android:src="@drawable/splash_screen"
+        android:layout_gravity="center_horizontal|bottom" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:layout_marginBottom="20dp"
+        android:text=""
+        android:id="@+id/versionText2"
+        android:layout_gravity="center_horizontal|bottom"
+        android:textColor="#ffffe7ee" />
 
 </FrameLayout>
