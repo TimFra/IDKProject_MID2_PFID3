@@ -799,7 +799,7 @@ public class DrawFragment extends Fragment{
         String previouslySelectedWord ="";
         Random r = new Random();
 
-        int x = r.nextInt(words.size() - 0 + 1);
+        int x = r.nextInt((words.size()-1) - 0 + 1);
 
         String selectedWord = words.get(x).toString();
 
