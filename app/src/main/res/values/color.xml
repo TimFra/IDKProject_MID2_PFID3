@@ -16,4 +16,5 @@
     <color name="blueButton">#459FC0</color>
     <color name="purpleButton">#9645C0</color>
     <color name="pinkButton">#C04596</color>
+    <color name="light_grey">#A0A2A1</color>
 </resources>
