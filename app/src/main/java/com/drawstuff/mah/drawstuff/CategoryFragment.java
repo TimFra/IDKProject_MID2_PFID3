@@ -13,6 +13,7 @@ import android.widget.Button;
 
 import com.drawstuff.mah.drawstuff.Constants.Constants;
 import com.drawstuff.mah.drawstuff.Draw.DrawFragment;
+import com.firebase.client.Firebase;
 
 
 /**
@@ -20,6 +21,8 @@ import com.drawstuff.mah.drawstuff.Draw.DrawFragment;
  */
 public class CategoryFragment extends Fragment {
 
+    public Firebase currentDrawer;
+    public Firebase currentWord;
 
     public CategoryFragment() {
         // Required empty public constructor
@@ -31,6 +34,15 @@ public class CategoryFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View v = inflater.inflate(R.layout.fragment_category, container, false);
+
+        currentDrawer = new Firebase(Constants.FIREBASE_URL).child("currentDrawer");
+        currentWord = new Firebase(Constants.FIREBASE_URL).child("selectedword");
+
+        currentDrawer.setValue(Constants.userName);
+        currentWord.setValue("9849782562482464");
+
+
+
         getActivity().getActionBar().setTitle("DrawStuff: Choose Category");
 
         Button cat1 = (Button) v.findViewById(R.id.animalBtn);

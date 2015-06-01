@@ -88,8 +88,9 @@ public class SplashFragment extends Fragment {
 
                         TextView version = (TextView) getView().findViewById(R.id.versionText);
                         TextView version2 = (TextView) getView().findViewById(R.id.versionText2);
-                        version.setText("No Internet connection found.");
-                        version2.setText("Please connect to Internet and try again.");
+                        version.setText("Could not establish connection.");
+                        version2.setText("Please try restarting application.");
+
 
                     }else {
                         TextView version = (TextView) getView().findViewById(R.id.versionText);

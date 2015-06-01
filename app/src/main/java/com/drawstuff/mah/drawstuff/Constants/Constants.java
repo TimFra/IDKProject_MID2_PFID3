@@ -13,7 +13,7 @@ public class Constants {
     public static final int Info = Menu.FIRST;
     public static String userName ="";
     public static int category = 0;
-    public static int version = 1;
+    public static int version = 2;
 
 
 
