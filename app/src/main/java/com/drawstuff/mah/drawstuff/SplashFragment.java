@@ -20,6 +20,8 @@ import com.firebase.client.Firebase;
 import com.firebase.client.FirebaseError;
 import com.firebase.client.ValueEventListener;
 
+import org.w3c.dom.Text;
+
 
 /**
  * Starting Fragment for the application
@@ -58,6 +60,7 @@ public class SplashFragment extends Fragment {
             }
         });
 
+
         splashTimer();
         return v;
     }
@@ -91,7 +94,8 @@ public class SplashFragment extends Fragment {
                         TextView version = (TextView) getView().findViewById(R.id.versionText);
                         TextView version2 = (TextView) getView().findViewById(R.id.versionText2);
                         version.setText("Could not establish connection.");
-                        version2.setText("Please try restarting application.");
+                        version2.setText("");
+                        reconnect();
 
 
                     }else {
@@ -106,5 +110,39 @@ public class SplashFragment extends Fragment {
             }
         }.start();
 
+    }
+
+
+
+    public void reconnect(){
+        final TextView version2 = (TextView) getView().findViewById(R.id.versionText2);
+
+        new CountDownTimer(5000, 1000) {
+
+            public void onTick(long millisUntilFinished) {
+                version2.setText("Trying to reconnect in: " + millisUntilFinished / 1000);
+
+            }
+
+            public void onFinish() {
+
+                versionListener = versionCheck.addValueEventListener(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(DataSnapshot dataSnapshot) {
+                        fbVersion = Integer.parseInt(dataSnapshot.getValue().toString());
+
+
+                    }
+
+                    @Override
+                    public void onCancelled(FirebaseError firebaseError) {
+
+                    }
+                });
+                splashTimer();
+
+
+            }
+        }.start();
     }
 }
