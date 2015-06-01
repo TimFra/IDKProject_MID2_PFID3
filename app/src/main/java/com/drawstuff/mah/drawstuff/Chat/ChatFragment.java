@@ -32,7 +32,7 @@ import java.util.Random;
 import java.util.Scanner;
 
 /**
- * A simple {@link Fragment} subclass.
+ * This fragment controls the chat (guess) function for the application
  */
 public class ChatFragment extends ListFragment {
 

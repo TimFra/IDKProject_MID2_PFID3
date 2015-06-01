@@ -22,7 +22,9 @@ import com.firebase.client.ValueEventListener;
 
 
 /**
- * A simple {@link Fragment} subclass.
+ * Starting Fragment for the application
+ * Checks version and Internet connection
+ * Loads a splashscreen for 3 seconds
  */
 public class SplashFragment extends Fragment {
 

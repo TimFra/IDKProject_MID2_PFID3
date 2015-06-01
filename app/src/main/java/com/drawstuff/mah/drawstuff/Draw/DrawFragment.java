@@ -32,7 +32,7 @@ import java.util.ArrayList;
 import java.util.Random;
 
 /**
- * A simple {@link Fragment} subclass.
+ * This fragment handles the Drawing function and view
  */
 public class DrawFragment extends Fragment{
 

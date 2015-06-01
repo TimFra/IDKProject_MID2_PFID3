@@ -20,7 +20,7 @@ import java.util.Random;
 
 
 /**
- * A simple {@link Fragment} subclass.
+ * Sets up the username used for the application (Constats.userName)
  */
 public class LoginFragment extends Fragment {
 

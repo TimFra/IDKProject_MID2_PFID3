@@ -3,7 +3,7 @@ package com.drawstuff.mah.drawstuff.Constants;
 import android.view.Menu;
 
 /**
- * Created by Tim on 2015-05-11.
+ * Holds global variables for the application
  */
 public class Constants {
 

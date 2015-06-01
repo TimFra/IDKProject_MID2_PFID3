@@ -17,7 +17,7 @@ import com.firebase.client.Firebase;
 
 
 /**
- * A simple {@link Fragment} subclass.
+ * This fragment presents the option of category selection for the random word generator
  */
 public class CategoryFragment extends Fragment {
 

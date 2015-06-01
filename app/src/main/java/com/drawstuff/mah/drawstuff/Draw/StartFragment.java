@@ -28,7 +28,8 @@ import com.firebase.client.FirebaseError;
 import com.firebase.client.ValueEventListener;
 
 /**
- * A simple {@link Fragment} subclass.
+ * Main menu fragment for the application
+ * Contains 2 buttons (Draw and Guess)
  */
 public class StartFragment extends Fragment {
     public Firebase firebaseChecker;
