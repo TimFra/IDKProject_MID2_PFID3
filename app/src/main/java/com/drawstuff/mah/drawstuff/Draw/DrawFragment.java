@@ -57,6 +57,7 @@ public class DrawFragment extends Fragment{
     private Firebase currentPlayer;
     private Firebase timeOut;
     private Firebase currentDrawer;
+    private StartFragment startFragment;
 
 
     ArrayList<String> words = new ArrayList<>();
@@ -123,6 +124,7 @@ public class DrawFragment extends Fragment{
                         ft.addToBackStack(null);
                         fm.popBackStack();
                         timeOut.removeEventListener(checkTimeOut);
+                        Constants.cooldown = true;
                         ft.commit();
                     } catch (Throwable e){
                         Log.i("Error","DrawFragment.java: TimeOut listener: "+e);
@@ -481,6 +483,7 @@ public class DrawFragment extends Fragment{
                                 MediaPlayer mp = MediaPlayer.create(getActivity(), R.raw.win);
                                 mp.start();
                                 setWin.removeEventListener(winCheck);
+                                Constants.cooldown = true;
                                 ft.commit();
                             } catch (Throwable e) {
                                 Log.i("Error: ", " -- In DrawFragment: " + e.toString());

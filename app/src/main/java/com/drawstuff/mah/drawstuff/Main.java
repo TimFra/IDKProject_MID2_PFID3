@@ -21,6 +21,7 @@ import com.drawstuff.mah.drawstuff.Constants.Constants;
 import com.drawstuff.mah.drawstuff.Draw.AboutDialog;
 import com.drawstuff.mah.drawstuff.Draw.DrawingView;
 import com.drawstuff.mah.drawstuff.Draw.InfoDialog;
+import com.drawstuff.mah.drawstuff.Draw.StartFragment;
 import com.firebase.client.Firebase;
 
 
@@ -28,6 +29,7 @@ public class Main extends Activity {
 
     private DrawingView mDrawingView;
     private Firebase mFirebaseRef;
+    private StartFragment startFragment;
 
     //final View drawView = (View) mDrawingView;
     @Override
@@ -98,6 +100,7 @@ public class Main extends Activity {
             mFirebaseRef.push().setValue(chat);
             this.getActionBar().setTitle("DrawStuff");
 
+
             Firebase drawing = new Firebase(Constants.FIREBASE_URL).child("draw");
             drawing.removeValue();
 
@@ -108,6 +111,8 @@ public class Main extends Activity {
             inDraw.setValue("false");
             Toast.makeText(this, "You quit drawing.", Toast.LENGTH_SHORT).show();
             this.getActionBar().setTitle("DrawStuff");
+
+
         }
         super.onBackPressed();
 

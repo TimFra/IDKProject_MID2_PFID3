@@ -5,18 +5,22 @@ import android.app.FragmentManager;
 import android.app.FragmentTransaction;
 import android.os.Bundle;
 import android.app.Fragment;
+import android.os.CountDownTimer;
+import android.util.Log;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.drawstuff.mah.drawstuff.CategoryFragment;
 import com.drawstuff.mah.drawstuff.Chat.ChatFragment;
 import com.drawstuff.mah.drawstuff.Constants.Constants;
 import com.drawstuff.mah.drawstuff.Draw.DrawFragment;
+import com.drawstuff.mah.drawstuff.LoginFragment;
 import com.drawstuff.mah.drawstuff.R;
 import com.firebase.client.DataSnapshot;
 import com.firebase.client.Firebase;
@@ -30,6 +34,7 @@ public class StartFragment extends Fragment {
     public Firebase firebaseChecker;
     public Firebase clearDraw;
     public Firebase timeOut;
+
     public StartFragment() {
         // Required empty public
     }
@@ -46,8 +51,29 @@ public class StartFragment extends Fragment {
         getActivity().getActionBar().show();
         getActivity().getActionBar().setTitle("DrawStuff");
 
-        Button drawButton;
+
+
+        final Button drawButton;
         drawButton = (Button) v.findViewById(R.id.drawBtn);
+
+        if(Constants.cooldown){
+            drawButton.setEnabled(false);
+
+            new CountDownTimer(5000, 1000) {
+
+                public void onTick(long millisUntilFinished) {
+                    drawButton.setText("" + millisUntilFinished / 1000);
+
+                }
+
+                public void onFinish() {
+                    drawButton.setEnabled(true);
+                    drawButton.setText("Draw");
+                    Constants.cooldown = false;
+                }
+            }.start();
+        }
+
         drawButton.setOnClickListener(new View.OnClickListener(){
 
             @Override
@@ -91,6 +117,8 @@ public class StartFragment extends Fragment {
         Button guessButton;
         guessButton = (Button) v.findViewById(R.id.guessBtn);
 
+
+
         guessButton.setOnClickListener(new View.OnClickListener(){
 
 
@@ -107,6 +135,8 @@ public class StartFragment extends Fragment {
         return v;
 
     }
+
+
 
 
 

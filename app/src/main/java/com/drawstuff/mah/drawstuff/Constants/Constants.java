@@ -14,6 +14,7 @@ public class Constants {
     public static String userName ="";
     public static int category = 0;
     public static int version = 2;
+    public static boolean cooldown = false;
 
 
 
