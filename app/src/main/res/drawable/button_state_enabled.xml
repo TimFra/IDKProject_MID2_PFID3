@@ -14,7 +14,7 @@
             <item android:bottom="3dp" android:right="7dp">
                 <shape>
                     <gradient android:angle="270"
-                        android:endColor="@color/drop_shadow_grey" android:startColor="@color/light_grey"/>
+                        android:endColor="@color/dark_grey" android:startColor="@color/light_grey"/>
 
                     <corners android:radius="15dp" />
 
